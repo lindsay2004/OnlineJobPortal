@@ -79,9 +79,9 @@ $page = 1;
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> - <?php echo "$compname"; ?></title>
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<title> - Entreprise</title>
+	<meta name="description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employe, employeur, embauche, gestion des ressources humaines, RH, gestion d'emplois en ligne, entreprise, ouvrier, carriere, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -90,7 +90,7 @@ $page = 1;
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
+    <meta property="og:description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
 
 	<link rel="shortcut icon" href="images/ico/favicon.png">
 	
@@ -141,25 +141,25 @@ $page = 1;
 						
 							<li>
 							
-								<a href="./">Home</a>
+								<a href="./">Accueil</a>
 								
 							</li>
 							
 							<li>
-								<a href="job-list.php">Job List</a>
+								<a href="job-list.php">Liste des Offres</a>
 
 							</li>
 							
 							<li>
-								<a href="employers.php">Employers</a>
+								<a href="employers.php">Employeurs</a>
 							</li>
 							
 							<li>
-								<a href="employees.php">Employees</a>
+								<a href="employees.php">Employes</a>
 							</li>
 							
 							<li>
-								<a href="contact.php">Contact Us</a>
+								<a href="contact.php">Contactez-nous</a>
 							</li>
 
 						</ul>
@@ -175,8 +175,8 @@ $page = 1;
 							<li><a href="'.$myrole.'">Profile</a></li>';
 						}else{
 						print '
-							<li><a href="login.php">login</a></li>
-							<li><a data-toggle="modal" href="#registerModal">register</a></li>';						
+							<li><a href="login.php">connexion</a></li>
+							<li><a data-toggle="modal" href="#registerModal">inscription</a></li>';						
 						}
 						
 						?>
@@ -200,7 +200,7 @@ $page = 1;
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="employers.php">Employers</a></li>
+						<li><a href="employers.php">Employeurs</a></li>
 						<li><span><?php echo "$compname"; ?></span></li>
 					</ol>
 					
@@ -478,22 +478,22 @@ $page = 1;
 									<div class="col-sm-6 col-md-4">
 									
 										<div class="footer-about-us">
-											<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 for his project in february 2018.</p>
+											<h5 class="footer-title">A propos</h5>
+											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 pour son projet en fevrier 2018.</p>
 										
 										</div>
 
 									</div>
 									
 									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
+										<h5 class="footer-title">Liens rapides</h5>
 										<ul class="footer-menu clearfix">
-											<li><a href="../">Home</a></li>
-											<li><a href="../job-list.php">Job List</a></li>
-											<li><a href="../employers.php">Employers</a></li>
-											<li><a href="../employees.php">Employees</a></li>
-											<li><a href="../contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
+											<li><a href="./">Accueil</a></li>
+											<li><a href="job-list.php">Liste des Offres</a></li>
+											<li><a href="employers.php">Employeurs</a></li>
+											<li><a href="employees.php">Employes</a></li>
+											<li><a href="contact.php">Contactez-nous</a></li>
+											<li><a href="#">Aller en haut</a></li>
 
 										</ul>
 									
@@ -507,9 +507,9 @@ $page = 1;
 							
 								<h5 class="footer-title"> Contact</h5>
 								
-								<p>Address : Takoradi, School Junction PO.BOX AX40</p>
+								<p>Adresse : Takoradi, School Junction PO.BOX AX40</p>
 								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+233 546 607 474</a></p>
+								<p>Telephone : <a href="tel:+233546607474">+233 546 607 474</a></p>
 								
 
 							</div>
@@ -536,7 +536,7 @@ $page = 1;
 							<div class="col-sm-4 col-md-4">
 							
 								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
+									<li><a >Developpe par Groupe 65</a></li>
 								</ul>
 							
 							</div>

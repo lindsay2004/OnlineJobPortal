@@ -19,9 +19,9 @@ header("location:../");
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> - Change Password</title>
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<title>Portail Emploi - Changer le mot de passe</title>
+	<meta name="description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employe, employeur, embauche, gestion des ressources humaines, RH, gestion d'emplois en ligne, entreprise, ouvrier, carriere, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -30,7 +30,7 @@ header("location:../");
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="Bwire Jobs" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
+    <meta property="og:description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
 
 	<link rel="shortcut icon" href="../images/ico/favicon.png">
 	
@@ -89,25 +89,25 @@ header("location:../");
 						
 							<li>
 							
-								<a href="../">Home</a>
+								<a href="../">Accueil</a>
 								
 							</li>
 							
 							<li>
-								<a href="../job-list.php">Job List</a>
+								<a href="../job-list.php">Liste des Offres</a>
 
 							</li>
 							
 							<li>
-								<a href="../employers.php">Employers</a>
+								<a href="../employers.php">Employeurs</a>
 							</li>
 							
 							<li>
-								<a href="../employees.php">Employees</a>
+								<a href="../employees.php">Employes</a>
 							</li>
 							
 							<li>
-								<a href="../contact.php">Contact Us</a>
+								<a href="../contact.php">Contactez-nous</a>
 							</li>
 
 						</ul>
@@ -116,8 +116,8 @@ header("location:../");
 
 					<div class="nav-mini-wrapper">
 						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">logout</a></li>
-							<li><a href="./">Profile</a></li>
+							<li><a href="../logout.php">deconnexion</a></li>
+							<li><a href="./">Profil</a></li>
 						</ul>
 					</div>
 				
@@ -138,7 +138,7 @@ header("location:../");
 				
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="../"></a></li>
-						<li><span>Change Password</span></li>
+						<li><span>Changer le mot de passe</span></li>
 					</ol>
 					
 				</div>
@@ -179,43 +179,43 @@ header("location:../");
 									
 									<div class="admin-user-action text-center">
 									
-										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">View my CV</a>
+										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">Voir mon CV</a>
 										
 									</div>
 									
 									<ul class="admin-user-menu clearfix">
 										<li  class="">
-											<a href="./"><i class="fa fa-user"></i> Profile</a>
+											<a href="./"><i class="fa fa-user"></i> Profil</a>
 										</li>
 										<li class="active">
-										<a href="change-password.php"><i class="fa fa-key"></i> Change Password</a>
+										<a href="change-password.php"><i class="fa fa-key"></i> Changer le mot de passe</a>
 										</li>
 										<li>
-											<a href="qualifications.php"><i class="fa fa-trophy"></i> Professional Qualifications</a>
+											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications professionnelles</a>
 										</li>
 										<li>
-											<a href="language.php"><i class="fa fa-language"></i> Language Proficiency</a>
+											<a href="language.php"><i class="fa fa-language"></i> Competences linguistiques</a>
 										</li>
 										<li>
-											<a href="training.php"><i class="fa fa-gears"></i> Training & Workshop</a>
+											<a href="training.php"><i class="fa fa-gears"></i> Formations & Ateliers</a>
 										</li>
 										<li>
-											<a href="referees.php"><i class="fa fa-users"></i> Referees</a>
+											<a href="referees.php"><i class="fa fa-users"></i> Referents</a>
 										</li>
 										<li>
-											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Academic Qualifications</a>
+											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplomes academiques</a>
 										</li>
 										<li>
-											<a href="experience.php"><i class="fa fa-briefcase"></i> Working Experience</a>
+											<a href="experience.php"><i class="fa fa-briefcase"></i> Experience professionnelle</a>
 										</li>
 										<li>
-											<a href="attachments.php"><i class="fa fa-folder-open"></i> Other Attachments</a>
+											<a href="attachments.php"><i class="fa fa-folder-open"></i> Autres pieces jointes</a>
 										</li>
 										<li>
-											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Applied Jobs</a>
+											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres postulees</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i> Deconnexion</a>
 										</li>
 									</ul>
 									
@@ -229,7 +229,7 @@ header("location:../");
 
 									<div class="admin-section-title">
 									
-										<h2>Change Password</h2>
+										<h2>Changer le mot de passe</h2>
 	
 										
 									</div>
@@ -242,8 +242,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>New Password</label>
-														<input type="password" class="form-control" name="password" required placeholder="Enter your new password">
+														<label>Nouveau mot de passe</label>
+														<input type="password" class="form-control" name="password" required placeholder="Entrez votre nouveau mot de passe">
 													</div>
 													
 												</div>
@@ -253,15 +253,15 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Confirm Password</label>
-														<input type="password" class="form-control"  name="confirmpassword" required placeholder="Confirm your new password">
+														<label>Confirmer le mot de passe</label>
+														<input type="password" class="form-control"  name="confirmpassword" required placeholder="Confirmez votre nouveau mot de passe">
 													</div>
 													
 												</div>
 												
 												<div class="col-sm-12 mt-10">
-													<button type="submit" onclick="return check_passwords();" class="btn btn-primary">Update</button>
-													<button type="reset" class="btn btn-primary btn-inverse">Cancel</a>
+													<button type="submit" onclick="return check_passwords();" class="btn btn-primary">Mettre à jour</button>
+													<button type="reset" class="btn btn-primary btn-inverse">Annuler</a>
 												</div>
 
 											</div>
@@ -294,22 +294,22 @@ header("location:../");
 									<div class="col-sm-6 col-md-4">
 									
 										<div class="footer-about-us">
-											<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 for his project in february 2018.</p>
+											<h5 class="footer-title">A propos</h5>
+											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 pour son projet en fevrier 2018.</p>
 										
 										</div>
 
 									</div>
 									
 									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
+										<h5 class="footer-title">Liens rapides</h5>
 										<ul class="footer-menu clearfix">
-											<li><a href="../">Home</a></li>
-											<li><a href="../job-list.php">Job List</a></li>
-											<li><a href="../employers.php">Employers</a></li>
-											<li><a href="../employees.php">Employees</a></li>
-											<li><a href="../contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
+											<li><a href="../">Accueil</a></li>
+											<li><a href="../job-list.php">Liste des Offres</a></li>
+											<li><a href="../employers.php">Employeurs</a></li>
+											<li><a href="../employees.php">Employes</a></li>
+											<li><a href="../contact.php">Contactez-nous</a></li>
+											<li><a href="#">Aller en haut</a></li>
 
 										</ul>
 									
@@ -323,9 +323,9 @@ header("location:../");
 							
 								<h5 class="footer-title"> Contact</h5>
 								
-								<p>Address : Takoradi, School Junction PO.BOX AX40</p>
+								<p>Adresse : Takoradi, School Junction PO.BOX AX40</p>
 								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+233 546 607 474</a></p>
+								<p>Telephone : <a href="tel:+233546607474">+233 546 607 474</a></p>
 								
 
 							</div>
@@ -352,7 +352,7 @@ header("location:../");
 							<div class="col-sm-4 col-md-4">
 							
 								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
+									<li><a >Developpe par Groupe 65</a></li>
 								</ul>
 							
 							</div>
@@ -386,25 +386,25 @@ header("location:../");
 function check_passwords(){
 if(frm.password.value == "")
 {
-	alert("Enter the Password.");
+	alert("Entrez le mot de passe.");
 	frm.password.focus(); 
 	return false;
 }
 if((frm.password.value).length < 8)
 {
-	alert("Password should be minimum 8 characters.");
+	alert("Le mot de passe doit comporter au moins 8 caracteres.");
 	frm.password.focus();
 	return false;
 }
 
 if(frm.confirmpassword.value == "")
 {
-	alert("Enter the Confirmation Password.");
+	alert("Entrez la confirmation du mot de passe.");
 	return false;
 }
 if(frm.confirmpassword.value != frm.password.value)
 {
-	alert("Password confirmation does not match.");
+	alert("La confirmation du mot de passe ne correspond pas.");
 	return false;
 }
 

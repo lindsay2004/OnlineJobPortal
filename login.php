@@ -10,10 +10,10 @@ include 'constants/check-login.php';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> - Login</title>
+	<title> - Connexion</title>
 	
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<meta name="description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employe, employeur, embauche, gestion des ressources humaines, RH, gestion d'emplois en ligne, entreprise, ouvrier, carriere, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -22,7 +22,7 @@ include 'constants/check-login.php';
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
+    <meta property="og:description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
 
 	<link rel="shortcut icon" href="images/ico/favicon.png">
 
@@ -49,10 +49,10 @@ include 'constants/check-login.php';
 
 	if(document.getElementById('mymail').value == "")
    {
-	alert("Please enter your email");
+	alert("Veuillez entrer votre email");
 
     }else{
-		  document.getElementById("data").innerHTML = "Please wait...";
+		  document.getElementById("data").innerHTML = "Veuillez patienter...";
       var xmlhttp;
 
       if (window.XMLHttpRequest)
@@ -111,25 +111,25 @@ include 'constants/check-login.php';
 						
 							<li>
 							
-								<a href="./">Home</a>
+								<a href="./">Accueil</a>
 								
 							</li>
 							
 							<li>
-								<a href="job-list.php">Job List</a>
+								<a href="job-list.php">Liste des Offres</a>
 
 							</li>
 							
 							<li>
-								<a href="employers.php">Employers</a>
+								<a href="employers.php">Employeurs</a>
 							</li>
 							
 							<li>
-								<a href="employees.php">Employees</a>
+								<a href="employees.php">Employes</a>
 							</li>
 							
 							<li>
-								<a href="contact.php">Contact Us</a>
+								<a href="contact.php">Contactez-nous</a>
 							</li>
 
 						</ul>
@@ -138,8 +138,8 @@ include 'constants/check-login.php';
 
 					<div class="nav-mini-wrapper">
 						<ul class="nav-mini sign-in">
-							<li><a  href="login.php">login</a></li>
-							<li><a data-toggle="modal" href="#registerModal">register</a></li>
+							<li><a  href="login.php">connexion</a></li>
+							<li><a data-toggle="modal" href="#registerModal">inscription</a></li>
 						</ul>
 					</div>
 				
@@ -153,7 +153,7 @@ include 'constants/check-login.php';
 			
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title text-center">Create your account for free</h4>
+					<h4 class="modal-title text-center">Creez votre compte gratuitement</h4>
 				</div>
 				
 				<div class="modal-body">
@@ -161,10 +161,10 @@ include 'constants/check-login.php';
 					<div class="row gap-20">
 					
 						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Register as Employer</a>
+							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employeur</a>
 						</div>
 						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">Register as Employee</a>
+							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employe</a>
 						</div>
 
 					</div>
@@ -172,7 +172,7 @@ include 'constants/check-login.php';
 				</div>
 				
 				<div class="modal-footer text-center">
-					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				</div>
 				
 			</div>
@@ -191,8 +191,8 @@ include 'constants/check-login.php';
 				<div class="container">
 				
 					<ol class="breadcrumb-list">
-						<li><a href="./">Home</a></li>
-						<li><span>Access your account</span></li>
+						<li><a href="./">Accueil</a></li>
+						<li><span>Acceder a votre compte</span></li>
 					</ol>
 					
 				</div>
@@ -218,7 +218,7 @@ include 'constants/check-login.php';
                                 <div class="login-box-wrapper">
 							
                                 <div class="modal-header">
-                                <h4 class="modal-title text-center">Access your account</h4>
+                                <h4 class="modal-title text-center">Acceder a votre compte</h4>
                                 </div>
 
                                 <div class="modal-body">
@@ -229,8 +229,8 @@ include 'constants/check-login.php';
                                 <div class="col-sm-12 col-md-12">
 
                                 <div class="form-group"> 
-                                <label>Email Address</label>
-                                <input class="form-control" placeholder="Enter your email address" name="email" required type="text"> 
+                                <label>Adresse Email</label>
+                                <input class="form-control" placeholder="Entrez votre adresse email" name="email" required type="text"> 
                                 </div>
 												
                                  </div>
@@ -238,8 +238,8 @@ include 'constants/check-login.php';
                                 <div class="col-sm-12 col-md-12">
 												
                                 <div class="form-group"> 
-                                <label>Password</label>
-                                <input class="form-control" placeholder="Enter your password" name="password" required type="password"> 
+                                <label>Mot de passe</label>
+                                <input class="form-control" placeholder="Entrez votre mot de passe" name="password" required type="password"> 
                                 </div>
 												
                                 </div>
@@ -248,7 +248,7 @@ include 'constants/check-login.php';
 						
 					          	<div class="col-sm-12 col-md-12">
 							    <div class="login-box-link-action">
-								<a data-toggle="modal" onclick = "reset_text()" href="#forgotPasswordModal">Forgot password?</a> 
+								<a data-toggle="modal" onclick = "reset_text()" href="#forgotPasswordModal">Mot de passe oublié?</a> 
 							    </div>
 						      </div>	
 
@@ -346,11 +346,11 @@ include 'constants/check-login.php';
 									<div class="col-sm-6 col-md-5 mt-30-xs">
 										<h5 class="footer-title">Quick Links</h5>
 										<ul class="footer-menu clearfix">
-											<li><a href="./">Home</a></li>
-											<li><a href="job-list.php">Job List</a></li>
-											<li><a href="employers.php">Employers</a></li>
-											<li><a href="employees.php">Employees</a></li>
-											<li><a href="contact.php">Contact Us</a></li>
+											<li><a href="./">Accueil</a></li>
+											<li><a href="job-list.php">Liste des Offres</a></li>
+											<li><a href="employers.php">Employeurs</a></li>
+											<li><a href="employees.php">Employes</a></li>
+											<li><a href="contact.php">Contactez-nous</a></li>
 											<li><a href="#">Go to top</a></li>
 
 										</ul>

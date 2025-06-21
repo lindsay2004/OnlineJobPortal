@@ -17,10 +17,10 @@ $token = $_GET['token'];
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> - Reset Password</title>
+	<title> - Reinitialiser le mot de passe</title>
 	
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<meta name="description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employe, employeur, embauche, gestion des ressources humaines, RH, gestion d'emplois en ligne, entreprise, ouvrier, carriere, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -29,7 +29,7 @@ $token = $_GET['token'];
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="Bwire Jobs" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
+    <meta property="og:description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
 
 	<link rel="shortcut icon" href="images/ico/favicon.png">
 
@@ -78,25 +78,25 @@ $token = $_GET['token'];
 						
 							<li>
 							
-								<a href="./">Home</a>
+								<a href="./">Accueil</a>
 								
 							</li>
 							
 							<li>
-								<a href="job-list.php">Job List</a>
+								<a href="job-list.php">Liste des Offres</a>
 
 							</li>
 							
 							<li>
-								<a href="employers.php">Employers</a>
+								<a href="employers.php">Employeurs</a>
 							</li>
 							
 							<li>
-								<a href="employees.php">Employees</a>
+								<a href="employees.php">Employes</a>
 							</li>
 							
 							<li>
-								<a href="contact.php">Contact Us</a>
+								<a href="contact.php">Contactez-nous</a>
 							</li>
 
 						</ul>
@@ -105,8 +105,8 @@ $token = $_GET['token'];
 
 					<div class="nav-mini-wrapper">
 						<ul class="nav-mini sign-in">
-							<li><a  href="login.php">login</a></li>
-							<li><a data-toggle="modal" href="#registerModal">register</a></li>
+							<li><a  href="login.php">connexion</a></li>
+							<li><a data-toggle="modal" href="#registerModal">inscription</a></li>
 						</ul>
 					</div>
 				
@@ -120,7 +120,7 @@ $token = $_GET['token'];
 			
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title text-center">Create your account for free</h4>
+					<h4 class="modal-title text-center">Creez votre compte gratuitement</h4>
 				</div>
 				
 				<div class="modal-body">
@@ -128,10 +128,10 @@ $token = $_GET['token'];
 					<div class="row gap-20">
 					
 						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Register as Employer</a>
+							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employeur</a>
 						</div>
 						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">Register as Employee</a>
+							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employe</a>
 						</div>
 
 					</div>
@@ -139,7 +139,7 @@ $token = $_GET['token'];
 				</div>
 				
 				<div class="modal-footer text-center">
-					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				</div>
 				
 			</div>
@@ -158,8 +158,8 @@ $token = $_GET['token'];
 				<div class="container">
 				
 					<ol class="breadcrumb-list">
-						<li><a href="./">Home</a></li>
-						<li><span>Reset Password</span></li>
+						<li><a href="./">Accueil</a></li>
+						<li><span>Reinitialiser le mot de passe</span></li>
 					</ol>
 					
 				</div>
@@ -185,7 +185,7 @@ $token = $_GET['token'];
                                 <div class="login-box-wrapper">
 							
                                 <div class="modal-header">
-                                <h4 class="modal-title text-center">Reset your password</h4>
+                                <h4 class="modal-title text-center">Reinitialisez votre mot de passe</h4>
                                 </div>
 
                                 <div class="modal-body">
@@ -208,9 +208,9 @@ $token = $_GET['token'];
 								if ($res == "0") {
 									                                  print '
 	                            <div class="alert alert-warning">
-								<strong>Could not use this token because</strong><br>
-                                 <li>This token is invalid</li>
-								 <li>This token is already used</li>
+								<strong>Impossible d\'utiliser ce jeton car</strong><br>
+                                 <li>Ce jeton est invalide</li>
+								 <li>Ce jeton a deja ete utilise</li>
 	                          </div>
                                   ';
 								 $invalid_token = true;
@@ -223,8 +223,8 @@ $token = $_GET['token'];
 							    <div class="col-sm-12 col-md-12">
 
                                 <div class="form-group"> 
-                                <label>New password</label>
-                                <input class="form-control" placeholder="Min 8 and Max 20 characters" name="password" required type="password"> 
+                                <label>Nouveau mot de passe</label>
+                                <input class="form-control" placeholder="Min 8 et Max 20 caracteres" name="password" required type="password"> 
                                 </div>
 												
                                  </div>
@@ -232,8 +232,8 @@ $token = $_GET['token'];
                                 <div class="col-sm-12 col-md-12">
 												
                                 <div class="form-group"> 
-                                <label>Confirm New Password</label>
-                                <input class="form-control" placeholder="Min 8 and Max 20 characters" name="confirmpassword" required type="password"> 
+                                <label>Confirmer le nouveau mot de passe</label>
+                                <input class="form-control" placeholder="Min 8 et Max 20 caracteres" name="confirmpassword" required type="password"> 
                                 </div>
 												
                                 </div>
@@ -264,7 +264,7 @@ if (isset($invalid_token)) {
 }else{
 print '
 <div class="modal-footer text-center">
-<button type="submit" onclick="return val();"  class="btn btn-primary">Reset my password</button>
+<button type="submit" onclick="return val();"  class="btn btn-primary">Reinitialiser mon mot de passe</button>
 </div>';	
 }
 
@@ -300,22 +300,22 @@ print '
 									<div class="col-sm-6 col-md-4">
 									
 										<div class="footer-about-us">
-											<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 for his project in february 2018.</p>
+											<h5 class="footer-title">A propos</h5>
+											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 pour son projet en fevrier 2018.</p>
 										
 										</div>
 
 									</div>
 									
 									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
+										<h5 class="footer-title">Liens rapides</h5>
 										<ul class="footer-menu clearfix">
-											<li><a href="./">Home</a></li>
-											<li><a href="job-list.php">Job List</a></li>
-											<li><a href="employers.php">Employers</a></li>
-											<li><a href="employees.php">Employees</a></li>
-											<li><a href="contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
+											<li><a href="./">Accueil</a></li>
+											<li><a href="job-list.php">Liste des Offres</a></li>
+											<li><a href="employers.php">Employeurs</a></li>
+											<li><a href="employees.php">Employes</a></li>
+											<li><a href="contact.php">Contactez-nous</a></li>
+											<li><a href="#">Aller en haut</a></li>
 
 										</ul>
 									
@@ -329,9 +329,9 @@ print '
 							
 								<h5 class="footer-title"> Contact</h5>
 								
-								<p>Address : Takoradi, School Junction PO.BOX AX40</p>
+								<p>Adresse : Takoradi, School Junction PO.BOX AX40</p>
 								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+233 546 607 474</a></p>
+								<p>Telephone : <a href="tel:+233546607474">+233 546 607 474</a></p>
 								
 
 							</div>
@@ -358,7 +358,7 @@ print '
 							<div class="col-sm-4 col-md-4">
 							
 								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
+									<li><a >Developpe par Groupe 65</a></li>
 								</ul>
 							
 							</div>
@@ -393,32 +393,32 @@ print '
 function val(){
 if(frm.password.value == "")
 {
-	alert("Enter the Password.");
+	alert("Entrez le mot de passe.");
 	frm.password.focus(); 
 	return false;
 }
 if((frm.password.value).length < 8)
 {
-	alert("Password should be minimum 8 characters.");
+	alert("Le mot de passe doit contenir au moins 8 caracteres.");
 	frm.password.focus();
 	return false;
 }
 
 if((frm.password.value).length > 20)
 {
-	alert("Password should be maximum 20 characters.");
+	alert("Le mot de passe doit contenir au maximum 20 caracteres.");
 	frm.password.focus();
 	return false;
 }
 
 if(frm.confirmpassword.value == "")
 {
-	alert("Enter the Confirmation Password.");
+	alert("Entrez la confirmation du mot de passe.");
 	return false;
 }
 if(frm.confirmpassword.value != frm.password.value)
 {
-	alert("Password confirmation does not match.");
+	alert("La confirmation du mot de passe ne correspond pas.");
 	return false;
 }
 

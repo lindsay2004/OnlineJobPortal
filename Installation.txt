@@ -1,5 +1,11 @@
-1. Create a database on your server
-3. Update your server settings on 'constants/db_config.php'
+# Instructions d'installation
+
+1. Copier tous les fichiers dans le dossier de votre serveur web
+2. Importer la base de donnees depuis le dossier Database
+3. Configurer les informations de connexion dans constants/settings.php
+4. Acceder au portail via votre navigateur
+5. Profiter du portail d'emploi en ligne
+6. Pour toute question, contacter l'administrateur
 
 ---------------------------------------------------------------
 

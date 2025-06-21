@@ -10,9 +10,9 @@ include 'constants/check-login.php';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> - Job Portal</title>
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<title> - Portail d'Emploi</title>
+	<meta name="description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employe, employeur, embauche, gestion des ressources humaines, RH, gestion d'emplois en ligne, entreprise, ouvrier, carriere, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -88,25 +88,25 @@ include 'constants/check-login.php';
 						
 							<li>
 							
-								<a href="./">Home</a>
+								<a href="./">Accueil</a>
 								
 							</li>
 							
 							<li>
-								<a href="job-list.php">Job List</a>
+								<a href="job-list.php">Liste des Offres</a>
 
 							</li>
 							
 							<li>
-								<a href="employers.php">Employers</a>
+								<a href="employers.php">Employeurs</a>
 							</li>
 							
 							<li>
-								<a href="employees.php">Employees</a>
+								<a href="employees.php">Employes</a>
 							</li>
 							
 							<li>
-								<a href="contact.php">Contact Us</a>
+								<a href="contact.php">Contactez-nous</a>
 							</li>
 
 						</ul>
@@ -118,12 +118,12 @@ include 'constants/check-login.php';
 						<?php
 						if ($user_online == true) {
 						print '
-						    <li><a href="logout.php">logout</a></li>
-							<li><a href="'.$myrole.'">Profile</a></li>';
+						    <li><a href="logout.php">deconnexion</a></li>
+							<li><a href="'.$myrole.'">Profil</a></li>';
 						}else{
 						print '
-							<li><a href="login.php">login</a></li>
-							<li><a data-toggle="modal" href="#registerModal">register</a></li>';						
+							<li><a href="login.php">connexion</a></li>
+							<li><a data-toggle="modal" href="#registerModal">inscription</a></li>';						
 						}
 						
 						?>
@@ -142,7 +142,7 @@ include 'constants/check-login.php';
 			
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title text-center">Create your account for free</h4>
+					<h4 class="modal-title text-center">Creez votre compte gratuitement</h4>
 				</div>
 				
 				<div class="modal-body">
@@ -150,10 +150,10 @@ include 'constants/check-login.php';
 					<div class="row gap-20">
 					
 						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Register as Employer</a>
+							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employeur</a>
 						</div>
 						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">Register as Employee</a>
+							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employe</a>
 						</div>
 
 					</div>
@@ -161,7 +161,7 @@ include 'constants/check-login.php';
 				</div>
 				
 				<div class="modal-footer text-center">
-					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				</div>
 				
 			</div>
@@ -174,8 +174,8 @@ include 'constants/check-login.php';
 			<div class="hero" style="background-image:url('images/hero-header/02.jpg');">
 				<div class="container">
 
-					<h1>your bright future starts here now</h1>
-					<p>Finding your next job or career  </p>
+					<h1>Votre avenir commence ici</h1>
+					<p>Trouvez votre prochain emploi ou carriere</p>
 
 					<div class="main-search-form-wrapper">
 					
@@ -186,7 +186,7 @@ include 'constants/check-login.php';
 								
 									<div class="col-xss-6 col-xs-6 col-sm-6">
 										<select class="form-control" name="category" required/>
-										<option value="">-Select category-</option>
+										<option value="">-Selectionner une categorie-</option>
 										 <?php
 										 require 'constants/db_config.php';
 										 try {
@@ -219,7 +219,7 @@ include 'constants/check-login.php';
 									
 									<div class="col-xss-6 col-xs-6 col-sm-6">
 										<select class="form-control"  name="country" required/>
-										<option value="">-Select country-</option>
+										<option value="">-Selectionner un pays-</option>
 										 <?php
 										 require 'constants/db_config.php';
 										 try {
@@ -284,7 +284,7 @@ include 'constants/check-login.php';
 									</div>
 									
 									<div class="content">
-										<h5>01 / Search for jobs</h5>
+										<h5>01 / Rechercher un emploi</h5>
 									</div>
 									
 								</div>
@@ -300,7 +300,7 @@ include 'constants/check-login.php';
 									</div>
 									
 									<div class="content">
-										<h5>02 / Apply a Job</h5>
+										<h5>02 / Postuler a un emploi</h5>
 									</div>
 									
 								</div>
@@ -316,7 +316,7 @@ include 'constants/check-login.php';
 									</div>
 									
 									<div class="content">
-										<h5>03 / Start Working</h5>
+										<h5>03 / Commencer a travailler</h5>
 									</div>
 									
 								</div>
@@ -342,7 +342,7 @@ include 'constants/check-login.php';
 						
 							<div class="section-title">
 							
-								<br><h2>Random Companies</h2>
+								<br><h2>Entreprises aleatoires</h2>
 								
 							</div>
 						
@@ -379,7 +379,7 @@ include 'constants/check-login.php';
 					?>
 					</div>
 					<h6><?php echo $row['first_name'];?></h6>
-					<a target="_blank" href="company.php?ref=<?php echo $row['member_no']; ?>">View Company</a>
+					<a target="_blank" href="company.php?ref=<?php echo $row['member_no']; ?>">Voir l'entreprise</a>
 					</div>
 							
 					</div>
@@ -415,7 +415,7 @@ include 'constants/check-login.php';
 						
 							<div class="section-title">
 							
-								<h2>Latest Jobs</h2>
+								<h2>Dernieres Offres</h2>
 								
 							</div>
 						
@@ -466,13 +466,13 @@ include 'constants/check-login.php';
 							}
 							if ($type == "Part-time") {
 							$sta = '<div class="job-label label label-danger">
-									Part-time
+									Temps partiel
 									</div>';
 											  
 							}
 							if ($type == "Full-time") {
 							$sta = '<div class="job-label label label-warning">
-									Full-time
+									Temps plein
 									</div>';
 											  
 							}
@@ -503,7 +503,7 @@ include 'constants/check-login.php';
 							</div>
 							<div class="GridLex-col-2_xs-4_xss-12">
 							<?php echo "$sta"; ?>
-							<span class="font12 block spacing1 font400 text-center">Due - <?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?></span>
+							<span class="font12 block spacing1 font400 text-center">Jusqu'au - <?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?></span>
 							</div>
 							</div>
 							</a>
@@ -549,22 +549,22 @@ include 'constants/check-login.php';
 									<div class="col-sm-6 col-md-4">
 									
 										<div class="footer-about-us">
-											<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 </p>
+											<h5 class="footer-title">A propos</h5>
+											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 </p>
 										
 										</div>
 
 									</div>
 									
 									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
+										<h5 class="footer-title">Liens rapides</h5>
 										<ul class="footer-menu clearfix">
-											<li><a href="./">Home</a></li>
-											<li><a href="job-list.php">Job List</a></li>
-											<li><a href="employers.php">Employers</a></li>
-											<li><a href="employees.php">Employees</a></li>
-											<li><a href="contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
+											<li><a href="./">Accueil</a></li>
+											<li><a href="job-list.php">Liste des Offres</a></li>
+											<li><a href="employers.php">Employeurs</a></li>
+											<li><a href="employees.php">Employes</a></li>
+											<li><a href="contact.php">Contactez-nous</a></li>
+											<li><a href="#">Aller en haut</a></li>
 
 										</ul>
 									
@@ -578,9 +578,9 @@ include 'constants/check-login.php';
 							
 								<h5 class="footer-title"> Contact</h5>
 								
-								<p>Address : IUT de Douala </p>
+								<p>Adresse : IUT de Douala </p>
 								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">Jobnight@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+237 655454001</a></p>
+								<p>Telephone : <a href="tel:+233546607474">+237 655454001</a></p>
 								
 
 							</div>
@@ -607,7 +607,7 @@ include 'constants/check-login.php';
 							<div class="col-sm-4 col-md-4">
 							
 								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
+									<li><a >Developpe par Groupe 65</a></li>
 								</ul>
 							
 							</div>
