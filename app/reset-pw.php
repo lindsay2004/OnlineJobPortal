@@ -67,13 +67,13 @@ require '../constants/uniques.php';
     if(!$mail->send()) {
     print '
 	 <div class="alert alert-danger">
-     An error occurred please contact us for more help.
+     Une erreur est survenue, veuillez nous contacter pour plus d\'aide.
 	 </div>
      ';
     } else {
     print '
 	 <div class="alert alert-info">
-     A link to reset your password was sent to '.$mymail.'.
+     Un lien pour redéfinir votre mot de passe a été envoyé à '.$mymail.'.
 	 </div>
      ';
     }

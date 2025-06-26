@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <?php 
 require '../constants/settings.php'; 
 require 'constants/check-login.php';
@@ -66,9 +66,9 @@ $job_title = $row['title'];
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> - Applicants for the job <?php echo "$job_title"; ?></title>
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<title> - Candidats pour le poste <?php echo "$job_title"; ?></title>
+	<meta name="description" content="Gestion des emplois en ligne / Portail de l'emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employé, employeur, embauche, recrutement, gestion des ressources humaines, RH, gestion des emplois en ligne, entreprise, travailleur, carrière, recrutement, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -77,7 +77,7 @@ $job_title = $row['title'];
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="Bwire Jobs" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
+    <meta property="og:description" content="Gestion des emplois en ligne / Portail de l'emploi" />
 
 	<link rel="shortcut icon" href="../images/ico/favicon.png">
 	
@@ -116,64 +116,7 @@ $job_title = $row['title'];
 
 	<div class="container-wrapper">
 
-		<header id="header">
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="./"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Home</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Job List</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employers</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employees</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contact Us</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">logout</a></li>
-							<li><a href="./">Profile</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
-
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 
@@ -182,8 +125,8 @@ $job_title = $row['title'];
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="./">Home</a></li>
-						<li><span>Applicants for the job <?php echo "$job_title"; ?></</span></li>
+						<li><a href="./">Accueil</a></li>
+						<li><span>Candidats pour le poste <?php echo "$job_title"; ?></</span></li>
 					</ol>
 					
 				</div>
@@ -197,7 +140,7 @@ $job_title = $row['title'];
 					<div class="sorting-wrappper">
 			
 						<div class="sorting-header">
-							<h3 class="sorting-title">Applicants for the job <?php echo "$job_title"; ?></</h3>
+							<h3 class="sorting-title">Candidats pour le poste <?php echo "$job_title"; ?></</h3>
 						</div>
 						
 		
@@ -276,7 +219,7 @@ $job_title = $row['title'];
 												<h4><?php echo $rowb['first_name'] ?> <?php echo $rowb['last_name'] ?></h4>
 												<p class="location"><i class="fa fa-map-marker"></i> <?php echo $rowb['country'] ?></p>
 												
-												<h6 class="text-primary">Education : <?php echo $rowb['education'] ?></h6>
+												<h6 class="text-primary">Éducation : <?php echo $rowb['education'] ?></h6>
 												
                                                 <h6 class="text-primary"><?php echo $rowb['title'] ?></h6>
 												<?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
@@ -352,99 +295,7 @@ $job_title = $row['title'];
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-										<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 for his project in february 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="./">Home</a></li>
-											<li><a href="job-list.php">Job List</a></li>
-											<li><a href="employers.php">Employers</a></li>
-											<li><a href="employees.php">Employees</a></li>
-											<li><a href="contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title"> Contact</h5>
-								
-								<p>Address : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> Nightingale Vision Software</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 			
 		</div>
 

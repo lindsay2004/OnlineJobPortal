@@ -1,6 +1,6 @@
 <?php
-require('fpdf.php');
-require('htmlparser.inc');
+require_once(dirname(__FILE__).'/fpdf.php');
+require_once(dirname(__FILE__).'/htmlparser.inc');
 
 class PDF_HTML_Table extends FPDF
 {

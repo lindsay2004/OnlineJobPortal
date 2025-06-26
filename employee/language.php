@@ -286,7 +286,7 @@ $page = 1;
 															
 															<div class="row">
 																<div class="col-sm-12 col-md-12">
-																	<i class="fa fa-user mr-5"></i> Speak - <strong class="mr-10"><?php echo $row['speak']; ?></strong> <i class="fa fa-book mr-5"></i> Read - <strong class="mr-10"><?php echo $row['reading']; ?></strong> <i class="fa fa-pencil mr-5"></i> Write - <strong class="mr-10"><?php echo $row['writing']; ?></strong>
+																	<i class="fa fa-user mr-5"></i> Parler - <strong class="mr-10"><?php echo $row['speak']; ?></strong> <i class="fa fa-book mr-5"></i> Lire - <strong class="mr-10"><?php echo $row['reading']; ?></strong> <i class="fa fa-pencil mr-5"></i> Ecrire - <strong class="mr-10"><?php echo $row['writing']; ?></strong>
 																</div>
 
 															</div>
@@ -301,14 +301,14 @@ $page = 1;
 													
 													<div class="resume-list-btn">
 													
-														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Edit</a>
-														<a href="app/drop-language.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Are you sure you want to delete this language ?')" class="btn btn-primary btn-sm btn-inverse">Delete</a>
+														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Editer</a>
+														<a href="app/drop-language.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Etes-vous sur de vouloir supprimer cette langue ?')" class="btn btn-primary btn-sm btn-inverse">Supprimer</a>
 														
 														<div id="edit<?php echo $row['id']; ?>" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                                        <div class="modal-header">
 					                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                                    <h4 class="modal-title text-center">Edit - <?php echo $row['language']; ?></h4>
+					                                    <h4 class="modal-title text-center">Editer - <?php echo $row['language']; ?></h4>
 				                                        </div>
 				
 				                                        <div class="modal-body">
@@ -317,8 +317,8 @@ $page = 1;
 						                                <div class="col-sm-12 col-md-12">
 				
 							                            <div class="form-group"> 
-								                        <label>Language</label>
-								                        <input class="form-control" value="<?php echo $row['language']; ?>" placeholder="Enter language name" type="text" name="language" required> 
+								                        <label>Langue</label>
+								                        <input class="form-control" value="<?php echo $row['language']; ?>" placeholder="Entrez le nom de la langue" type="text" name="language" required> 
 							                            </div>
 						
 						                                </div>
@@ -327,11 +327,11 @@ $page = 1;
 						                                <div class="col-sm-12 col-md-12">
 				
 							                            <div class="form-group"> 
-								                        <label>Speak</label>
+								                        <label>Parler</label>
 								                        <select name="speak" required class="selectpicker show-tick form-control" data-live-search="false">
-									                    <option <?php if ($row ['speak'] == "Fair") { print ' selected '; } ?> value="Fair">Fair</option>
-									                    <option <?php if ($row ['speak'] == "Good") { print ' selected '; } ?> value="Good">Good</option>
-								                    	<option <?php if ($row ['speak'] == "Very Good") { print ' selected '; } ?> value="Very Good">Very Good</option>
+									                    <option <?php if ($row ['speak'] == "Fair") { print ' selected '; } ?> value="Fair">Passable</option>
+									                    <option <?php if ($row ['speak'] == "Good") { print ' selected '; } ?> value="Good">Bien</option>
+								                    	<option <?php if ($row ['speak'] == "Very Good") { print ' selected '; } ?> value="Very Good">Tres bien</option>
 									                    </select>
 							                            </div>
 						
@@ -340,11 +340,11 @@ $page = 1;
 						                                <div class="col-sm-12 col-md-12">
 				
 							                            <div class="form-group"> 
-								                        <label>Read</label>
+								                        <label>Lire</label>
 								                        <select name="read" required class="selectpicker show-tick form-control" data-live-search="false">
-									                    <option <?php if ($row ['reading'] == "Fair") { print ' selected '; } ?> value="Fair">Fair</option>
-									                    <option <?php if ($row ['reading'] == "Good") { print ' selected '; } ?> value="Good">Good</option>
-								                    	<option <?php if ($row ['reading'] == "Very Good") { print ' selected '; } ?> value="Very Good">Very Good</option>
+									                    <option <?php if ($row ['reading'] == "Fair") { print ' selected '; } ?> value="Fair">Passable</option>
+									                    <option <?php if ($row ['reading'] == "Good") { print ' selected '; } ?> value="Good">Bien</option>
+								                    	<option <?php if ($row ['reading'] == "Very Good") { print ' selected '; } ?> value="Very Good">Tres bien</option>
 									                    </select>
 							                            </div>
 						
@@ -353,11 +353,11 @@ $page = 1;
 						                                <div class="col-sm-12 col-md-12">
 				
 							                            <div class="form-group"> 
-								                        <label>Write</label>
+								                        <label>Ecrire</label>
 								                        <select name="write" required class="selectpicker show-tick form-control" data-live-search="false">
-									                    <option <?php if ($row ['writing'] == "Fair") { print ' selected '; } ?> value="Fair">Fair</option>
-									                    <option <?php if ($row ['writing'] == "Good") { print ' selected '; } ?> value="Good">Good</option>
-								                    	<option <?php if ($row ['writing'] == "Very Good") { print ' selected '; } ?> value="Very Good">Very Good</option>
+									                    <option <?php if ($row ['writing'] == "Fair") { print ' selected '; } ?> value="Fair">Passable</option>
+									                    <option <?php if ($row ['writing'] == "Good") { print ' selected '; } ?> value="Good">Bien</option>
+								                    	<option <?php if ($row ['writing'] == "Very Good") { print ' selected '; } ?> value="Very Good">Tres bien</option>
 									                    </select>
 							                            </div>
 						
@@ -367,8 +367,8 @@ $page = 1;
 				                                      </div>
 				                                       <input type="hidden" name="langid" value="<?php echo $row['id']; ?>">
 				                                       <div class="modal-footer text-center">
-				 	                                   <button type="submit" class="btn btn-primary">Update</button>
-					                                   <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	                                   <button type="submit" class="btn btn-primary">Mettre a jour</button>
+					                                   <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                                        </div>
 				                                       </form>
 			                                            </div>
@@ -441,14 +441,14 @@ $page = 1;
 									
 									<div class="mt-30">
 									
-										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Add new</a>
+										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Ajouter nouveau</a>
 										
 									</div>
 									<div id="QualifModal" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
 					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                 <h4 class="modal-title text-center">Add languages</h4>
+					                 <h4 class="modal-title text-center">Ajouter des langues</h4>
 				                    </div>
 				
 				                    <div class="modal-body">
@@ -457,8 +457,8 @@ $page = 1;
 						            <div class="col-sm-12 col-md-12">
 				
 							        <div class="form-group"> 
-								    <label>Language</label>
-								    <input class="form-control" placeholder="Enter language name" type="text" name="language" required> 
+								    <label>Langue</label>
+								    <input class="form-control" placeholder="Entrez le nom de la langue" type="text" name="language" required> 
 							        </div>
 						
 						             </div>
@@ -467,11 +467,11 @@ $page = 1;
 						            <div class="col-sm-12 col-md-12">
 				
 							        <div class="form-group"> 
-								    <label>Speak</label>
+								    <label>Parler</label>
 								    <select name="speak" required class="selectpicker show-tick form-control" data-live-search="false">
-									<option value="Fair">Fair</option>
-									<option value="Good">Good</option>
-									<option value="Very Good">Very Good</option>
+									<option value="Fair">Passable</option>
+									<option value="Good">Bien</option>
+									<option value="Very Good">Tres bien</option>
 									</select>
 							        </div>
 						
@@ -480,11 +480,11 @@ $page = 1;
 						            <div class="col-sm-12 col-md-12">
 				
 							        <div class="form-group"> 
-								    <label>Read</label>
+								    <label>Lire</label>
 								    <select name="read" required class="selectpicker show-tick form-control" data-live-search="false">
-									<option value="Fair">Fair</option>
-									<option value="Good">Good</option>
-									<option value="Very Good">Very Good</option>
+									<option value="Fair">Passable</option>
+									<option value="Good">Bien</option>
+									<option value="Very Good">Tres bien</option>
 									</select>
 							        </div>
 						
@@ -493,11 +493,11 @@ $page = 1;
 						            <div class="col-sm-12 col-md-12">
 				
 							        <div class="form-group"> 
-								    <label>Write</label>
+								    <label>Ecrire</label>
 								    <select name="write" required class="selectpicker show-tick form-control" data-live-search="false">
-									<option value="Fair">Fair</option>
-									<option value="Good">Good</option>
-									<option value="Very Good">Very Good</option>
+									<option value="Fair">Passable</option>
+									<option value="Good">Bien</option>
+									<option value="Very Good">Tres bien</option>
 									</select>
 							        </div>
 						
@@ -507,8 +507,8 @@ $page = 1;
 				                   </div>
 				
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>

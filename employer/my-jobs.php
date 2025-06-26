@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <?php 
 require '../constants/settings.php'; 
 require 'constants/check-login.php';
@@ -33,9 +33,9 @@ $page = 1;
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> - My Jobs</title>
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<title> - Mes emplois</title>
+	<meta name="description" content="Gestion en ligne des emplois / Portail de l'emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employé, employeur, embauche, recrutement, gestion des ressources humaines, RH, gestion en ligne des emplois, entreprise, travailleur, carrière, recrutement, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -44,7 +44,7 @@ $page = 1;
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="Bwire Jobs" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
+    <meta property="og:description" content="Gestion en ligne des emplois / Portail de l'emploi" />
 
 	<link rel="shortcut icon" href="../images/ico/favicon.png">
 
@@ -73,64 +73,7 @@ $page = 1;
 
 	<div class="container-wrapper">
 
-		<header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Home</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Job List</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employers</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employees</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contact Us</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">logout</a></li>
-							<li><a href="./">Profile</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 		
@@ -140,7 +83,7 @@ $page = 1;
 				
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="../">Bwire Jobs</a></li>
-						<li><span>My Jobs</span></li>
+						<li><span>Mes emplois</span></li>
 					</ol>
 					
 				</div>
@@ -166,7 +109,7 @@ $page = 1;
 										<div class="image">
 										<?php 
 										if ($logo == null) {
-										print '<center>Company Logo Here</center>';
+										print '<center>Logo de l\'entreprise ici</center>';
 										}else{
 										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
 										}
@@ -179,26 +122,26 @@ $page = 1;
 									
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Post a Job</a>
+										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Poster un emploi</a>
 										
 									</div>
 									
 									<ul class="admin-user-menu clearfix">
 										<li >
-											<a href="./"><i class="fa fa-user"></i> Profile</a>
+											<a href="./"><i class="fa fa-user"></i> Profil</a>
 										</li>
 										<li class="">
-										<a href="change-password.php"><i class="fa fa-key"></i> Change Password</a>
+										<a href="change-password.php"><i class="fa fa-key"></i> Changer le mot de passe</a>
 										</li>
 			
 										<li>
-											<a href="../company.php?ref=<?php echo "$myid"; ?>"><i class="fa fa-briefcase"></i> Company Overview</a>
+											<a href="../company.php?ref=<?php echo "$myid"; ?>"><i class="fa fa-briefcase"></i> Aperçu de l'entreprise</a>
 										</li>
 										<li  class="active">
-											<a href="my-jobs.php"><i class="fa fa-bookmark"></i> Posted Jobs</a>
+											<a href="my-jobs.php"><i class="fa fa-bookmark"></i> Emplois postés</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i> Déconnexion</a>
 										</li>
 									</ul>
 									
@@ -212,7 +155,7 @@ $page = 1;
 
 									<div class="admin-section-title">
 									
-										<h2>Posted Jobs</h2>
+										<h2>Emplois postés</h2>
 										
 									</div>
 									<?php require 'constants/check_reply.php'; ?>
@@ -244,11 +187,11 @@ $page = 1;
 											  
 										   }
 										   if ($type == "Part-time") {
-											 $sta = '<span class="label label-danger">Part-time</span>';
+											 $sta = '<span class="label label-danger">Temps partiel</span>';
 											  
 										   }
 										   if ($type == "Full-time") {
-											 $sta = '<span class="label label-warning">Full-time</span>';
+											 $sta = '<span class="label label-warning">Temps plein</span>';
 											  
 										   }
 										   
@@ -270,7 +213,7 @@ $page = 1;
 																
 											<?php 
 										    if ($logo == null) {
-										     print '<center>Company Logo Here</center>';
+										     print '<center>Logo de l\'entreprise ici</center>';
 										    }else{
 										    echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
 										     }
@@ -283,16 +226,16 @@ $page = 1;
 											<div class="content">
 											<h4 class="heading"><?php echo "$title"; ?></h4>
 											<p class="location"><i class="fa fa-map-marker text-primary"></i> <strong class="text-primary"><?php echo "$jobcountry" ?></strong> - <?php echo "$jobcity" ?></p>
-											<p class="date text-muted font12 font-italic">Deadline - <?php echo "$deadline"; ?></p>
+											<p class="date text-muted font12 font-italic">Date limite - <?php echo "$deadline"; ?></p>
 											</div>
 															
 											</a>
 														
 											<div class="content-bottom">
 											<div class="sub-category">
-											<a target="_blank" href="view-applicants.php?jobid=<?php echo $row['job_id']; ?>">Applicants</a>
-											<a href="edit-job.php?jobid=<?php echo $row['job_id']; ?>">Edit Job</a>
-											<a onclick = "return confirm('Are you sure you want to delete this job ?')" href="app/drop-job.php?id=<?php echo $row['job_id']; ?>">Delete Job</a>
+											<a target="_blank" href="view-applicants.php?jobid=<?php echo $row['job_id']; ?>">Candidats</a>
+											<a href="edit-job.php?jobid=<?php echo $row['job_id']; ?>">Modifier l'emploi</a>
+											<a onclick = "return confirm('Êtes-vous sûr de vouloir supprimer cet emploi ?')" href="app/drop-job.php?id=<?php echo $row['job_id']; ?>">Supprimer l'emploi</a>
 											</div>
 											</div>
 														
@@ -376,100 +319,7 @@ $page = 1;
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 for his project in february 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Home</a></li>
-											<li><a href="../job-list.php">Job List</a></li>
-											<li><a href="../employers.php">Employers</a></li>
-											<li><a href="../employees.php">Employees</a></li>
-											<li><a href="../contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-							<h5 class="footer-title"> Contact</h5>
-								
-								<p>Address : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> Nightingale Vision Software</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 			
 		</div>
 

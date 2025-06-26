@@ -85,64 +85,7 @@ $page = 1;
 
 	<div class="container-wrapper">
 
-		<header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Accueil</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Liste des Offres</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employeurs</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employes</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contactez-nous</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">deconnexion</a></li>
-							<li><a href="./">Profil</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 
@@ -299,7 +242,7 @@ $page = 1;
 																	<i class="fa fa-building text-primary mr-5"></i><strong class="mr-10"><?php echo $row['institution']; ?></strong>
 																</div>
 																<div class="col-sm-12 col-md-5 mt-10-sm">
-																	<i class="fa fa-calendar  text-primary mr-5"></i> <?php echo "$start_date"; ?> <b>to</b> <?php echo "$end_date"; ?>
+																	<i class="fa fa-calendar  text-primary mr-5"></i> <?php echo "$start_date"; ?> <b>à</b> <?php echo "$end_date"; ?>
 																</div>
 															</div>
 
@@ -313,8 +256,8 @@ $page = 1;
 													
 													<div class="resume-list-btn">
 													
-														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Edit</a>
-									<a href="app/drop-experience.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Are you sure you want to delete this experience ?')" class="btn btn-primary btn-sm btn-inverse">Delete</a>
+														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Modifier</a>
+									<a href="app/drop-experience.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?')" class="btn btn-primary btn-sm btn-inverse">Supprimer</a>
 									<div id="edit<?php echo $row['id']; ?>" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
@@ -323,7 +266,7 @@ $page = 1;
 				                    </div>
 				
 				                    <div class="modal-body">
-									<b style="color:#990000">All fields with * are mandatory</b>
+									<b style="color:#990000">Tous les champs avec * sont obligatoires</b>
 									<form action="app/update-experience.php" method="POST" autocomplete="off" enctype="multipart/form-data">
 					                <div class="row gap-20">
 									
@@ -331,8 +274,8 @@ $page = 1;
 						            <div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Institution Name <b style="color:#990000">*</b></label>
-								    <input value="<?php echo "$institution"; ?>" class="form-control" placeholder="Enter institution name" type="text" name="institution" required> 
+								    <label>Nom de l'institution <b style="color:#990000">*</b></label>
+								    <input value="<?php echo "$institution"; ?>" class="form-control" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 						
 						             </div>
@@ -340,16 +283,16 @@ $page = 1;
 									 <div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Supervisor Name</label>
-								    <input value="<?php echo "$supervisor"; ?>" class="form-control" placeholder="Enter supervisor name" type="text" name="supervisor"> 
+								    <label>Nom du superviseur</label>
+								    <input value="<?php echo "$supervisor"; ?>" class="form-control" placeholder="Entrez le nom du superviseur" type="text" name="supervisor"> 
 							        </div>
 						
 						             </div>
 									<div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Supervisor Telphone</label>
-								    <input value="<?php echo "$phone"; ?>" class="form-control" placeholder="Enter supervisor telphone" type="text" name="telphone"> 
+								    <label>Téléphone du superviseur</label>
+								    <input value="<?php echo "$phone"; ?>" class="form-control" placeholder="Entrez le numéro de téléphone du superviseur" type="text" name="telphone"> 
 							        </div>
 						
 						             </div>
@@ -357,8 +300,8 @@ $page = 1;
 									<div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Job Title <b style="color:#990000">*</b></label>
-								    <input  value="<?php echo "$title"; ?>" class="form-control" placeholder="Enter job title" type="text" name="jobtitle" required> 
+								    <label>Titre du poste <b style="color:#990000">*</b></label>
+								    <input  value="<?php echo "$title"; ?>" class="form-control" placeholder="Entrez le titre du poste" type="text" name="jobtitle" required> 
 							        </div>
 						
 						             </div>
@@ -367,8 +310,8 @@ $page = 1;
 								   	<div class="col-sm-6 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Start Date <b style="color:#990000">*</b></label>
-								    <input  value="<?php echo "$start_date"; ?>" class="form-control" placeholder="Eg: 13-01-2017" type="text" name="startdate" required> 
+								    <label>Date de début <b style="color:#990000">*</b></label>
+								    <input  value="<?php echo "$start_date"; ?>" class="form-control" placeholder="Ex: 13-01-2017" type="text" name="startdate" required> 
 							        </div>
 						
 						           </div>
@@ -376,8 +319,8 @@ $page = 1;
 								   	<div class="col-sm-6 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>End Date <b style="color:#990000">*</b></label>
-								    <input  value="<?php echo "$end_date"; ?>" class="form-control" placeholder="Eg: 01-12-2017" type="text" name="enddate" required> 
+								    <label>Date de fin <b style="color:#990000">*</b></label>
+								    <input  value="<?php echo "$end_date"; ?>" class="form-control" placeholder="Ex: 01-12-2017" type="text" name="enddate" required> 
 							        </div>
 						
 						           </div>
@@ -385,7 +328,7 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Duties and Responsibilities</label>
+								    <label>Fonctions et responsabilités</label>
 								    <textarea class="form-control" name="duties"><?php echo "$duties"; ?> </textarea>
 							        </div>
 						
@@ -395,8 +338,8 @@ $page = 1;
 				                   </div>
 				
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>
@@ -477,18 +420,18 @@ $page = 1;
 									
 									<div class="mt-30">
 									
-										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Add new</a>
+										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Ajouter</a>
 										
 									</div>
 									<div id="QualifModal" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
 					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                 <h4 class="modal-title text-center">Working Experience</h4>
+					                 <h4 class="modal-title text-center">Expérience professionnelle</h4>
 				                    </div>
 				
 				                    <div class="modal-body">
-									<b style="color:#990000">All fields with * are mandatory</b>
+									<b style="color:#990000">Tous les champs avec * sont obligatoires</b>
 									<form action="app/add-experience.php" method="POST" autocomplete="off" enctype="multipart/form-data">
 					                <div class="row gap-20">
 									
@@ -496,8 +439,8 @@ $page = 1;
 						            <div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Institution Name <b style="color:#990000">*</b></label>
-								    <input class="form-control" placeholder="Enter institution name" type="text" name="institution" required> 
+								    <label>Nom de l'institution <b style="color:#990000">*</b></label>
+								    <input class="form-control" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 						
 						             </div>
@@ -505,16 +448,16 @@ $page = 1;
 									 <div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Supervisor Name</label>
-								    <input class="form-control" placeholder="Enter supervisor name" type="text" name="supervisor"> 
+								    <label>Nom du superviseur</label>
+								    <input class="form-control" placeholder="Entrez le nom du superviseur" type="text" name="supervisor"> 
 							        </div>
 						
 						             </div>
 									<div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Supervisor Telphone</label>
-								    <input class="form-control" placeholder="Enter supervisor telphone" type="text" name="telphone"> 
+								    <label>Téléphone du superviseur</label>
+								    <input class="form-control" placeholder="Entrez le numéro de téléphone du superviseur" type="text" name="telphone"> 
 							        </div>
 						
 						             </div>
@@ -522,8 +465,8 @@ $page = 1;
 									<div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Job Title <b style="color:#990000">*</b></label>
-								    <input class="form-control" placeholder="Enter job title" type="text" name="jobtitle" required> 
+								    <label>Titre du poste <b style="color:#990000">*</b></label>
+								    <input class="form-control" placeholder="Entrez le titre du poste" type="text" name="jobtitle" required> 
 							        </div>
 						
 						             </div>
@@ -532,8 +475,8 @@ $page = 1;
 								   	<div class="col-sm-6 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Start Date <b style="color:#990000">*</b></label>
-								    <input class="form-control" placeholder="Eg: 01 March 2017" type="text" name="startdate" required> 
+								    <label>Date de début <b style="color:#990000">*</b></label>
+								    <input class="form-control" placeholder="Ex: 01 Mars 2017" type="text" name="startdate" required> 
 							        </div>
 						
 						           </div>
@@ -541,8 +484,8 @@ $page = 1;
 								   	<div class="col-sm-6 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>End Date <b style="color:#990000">*</b></label>
-								    <input class="form-control" placeholder="Eg: 01 June 2017" type="text" name="enddate" required> 
+								    <label>Date de fin <b style="color:#990000">*</b></label>
+								    <input class="form-control" placeholder="Ex: 01 Juin 2017" type="text" name="enddate" required> 
 							        </div>
 						
 						           </div>
@@ -550,7 +493,7 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Duties and Responsibilities</label>
+								    <label>Fonctions et responsabilités</label>
 								    <textarea class="form-control"  name="duties"> </textarea>
 							        </div>
 						
@@ -560,8 +503,8 @@ $page = 1;
 				                   </div>
 				
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>
@@ -578,98 +521,7 @@ $page = 1;
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">A propos</h5>
-											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 pour son projet en fevrier 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Liens rapides</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Accueil</a></li>
-											<li><a href="../job-list.php">Liste des Offres</a></li>
-											<li><a href="../employers.php">Employeurs</a></li>
-											<li><a href="../employees.php">Employes</a></li>
-											<li><a href="../contact.php">Contactez-nous</a></li>
-											<li><a href="#">Aller en haut</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-									<h5 class="footer-title"> Contact</h5>
-								
-								<p>Adresse : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Telephone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> Nightingale Vision Software</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developpe par Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 			
 		</div>
 

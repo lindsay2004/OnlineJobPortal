@@ -27,7 +27,6 @@ header("location:../");
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
     <meta property="og:image:secure_url" content="https://<?php echo "$actual_link"; ?>/images/banner.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="" />
@@ -63,63 +62,7 @@ header("location:../");
 
 	<div class="container-wrapper">
 
-		<header id="header">
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Home</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Job List</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employers</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employees</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contact Us</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">logout</a></li>
-							<li><a href="./">Profile</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 		
@@ -418,100 +361,7 @@ header("location:../");
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 for his project in february 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Home</a></li>
-											<li><a href="../job-list.php">Job List</a></li>
-											<li><a href="../employers.php">Employers</a></li>
-											<li><a href="../employees.php">Employees</a></li>
-											<li><a href="../contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-							<h5 class="footer-title"> Contact</h5>
-								
-								<p>Address : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-							
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> Nightingale Vision Software</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 		
 	</div>
 

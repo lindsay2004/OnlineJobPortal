@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <?php 
 require '../constants/settings.php'; 
@@ -63,8 +63,8 @@ foreach($result as $row)
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Bwire Jobs - <?php echo "$jobtitle"; ?></title>
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<meta name="description" content="Gestion des emplois en ligne / Portail de l'emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employé, employeur, embauche, recrutement, gestion des ressources humaines, RH, gestion des emplois en ligne, entreprise, travailleur, carrière, recrutement, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -73,7 +73,7 @@ foreach($result as $row)
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="Bwire Jobs" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
+    <meta property="og:description" content="Gestion des emplois en ligne / Portail de l'emploi" />
 
 	<link rel="shortcut icon" href="../images/ico/favicon.png">
 
@@ -102,63 +102,7 @@ foreach($result as $row)
 
 	<div class="container-wrapper">
 
-		<header id="header">
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Home</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Job List</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employers</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employees</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contact Us</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">logout</a></li>
-							<li><a href="./">Profile</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 		
@@ -167,7 +111,7 @@ foreach($result as $row)
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="../">Home</a></li>
+						<li><a href="../">Accueil</a></li>
 						<li><a ><?php echo "$compname"; ?></a></li>
 						<li><span><?php echo "$jobtitle"; ?></span></li>
 					</ol>
@@ -190,7 +134,7 @@ foreach($result as $row)
 									<div class="image">
 										<?php 
 										if ($logo == null) {
-										print '<center>Company Logo Here</center>';
+										print '<center>Logo de l\'entreprise ici</center>';
 										}else{
 										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
 										}
@@ -203,7 +147,7 @@ foreach($result as $row)
 									
 									<ul class="meta-list clearfix">
 										<li>
-											<h4 class="heading">Established In:</h4>
+											<h4 class="heading">Établi en:</h4>
 											<?php echo "$esta"; ?>
 										</li>
 										<li>
@@ -211,11 +155,11 @@ foreach($result as $row)
 											<?php echo "$mytitle"; ?>
 										</li>
 										<li>
-											<h4 class="heading">People:</h4>
+											<h4 class="heading">Personnes:</h4>
 											<?php echo "$mypeople"; ?>
 										</li>
 										<li>
-											<h4 class="heading">Website: </h4>
+											<h4 class="heading">Site Web: </h4>
 											<a target="_blank" href="https://<?php echo "$myweb"; ?>"><?php echo "$myweb"; ?></a>
 										</li>
 										<li>
@@ -226,7 +170,7 @@ foreach($result as $row)
 									</ul>
 									
 									
-									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Edit</a>
+									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Modifier</a>
 									
 								</div>
 					
@@ -251,8 +195,8 @@ foreach($result as $row)
 												<div class="col-sm-8 col-md-8">
 												
 													<div class="form-group">
-														<label>Job Title</label>
-														<input name="title" value="<?php echo "$jobtitle"; ?>" required type="text" class="form-control" placeholder="Enter job title">
+														<label>Titre du poste</label>
+														<input name="title" value="<?php echo "$jobtitle"; ?>" required type="text" class="form-control" placeholder="Entrez le titre du poste">
 													</div>
 													
 												</div>
@@ -262,8 +206,8 @@ foreach($result as $row)
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>City</label>
-														<input name="city" value="<?php echo "$jobcity"; ?>"  required type="text" class="form-control" placeholder="Enter city">
+														<label>Ville</label>
+														<input name="city" value="<?php echo "$jobcity"; ?>"  required type="text" class="form-control" placeholder="Entrez la ville">
 													</div>
 													
 												</div>
@@ -271,9 +215,9 @@ foreach($result as $row)
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Country</label>
+														<label>Pays</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Select</option>
+															<option disabled value="">Sélectionner</option>
 						                                   <?php
 														   require '../constants/db_config.php';
 														   try {
@@ -308,9 +252,9 @@ foreach($result as $row)
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Job Category</label>
+														<label>Catégorie d'emploi</label>
 															<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Select</option>
+															<option disabled value="">Sélectionner</option>
 						                                   <?php
 														   require '../constants/db_config.php';
 														   try {
@@ -344,8 +288,8 @@ foreach($result as $row)
 											    <div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Closing Date</label>
-														<input name="deadline" required type="text" class="form-control" value="<?php echo "$closingdate"; ?>" placeholder="Eg: 30/12/2018">
+														<label>Date de clôture</label>
+														<input name="deadline" required type="text" class="form-control" value="<?php echo "$closingdate"; ?>" placeholder="Ex: 30/12/2018">
 													</div>
 													
 												</div>
@@ -355,11 +299,11 @@ foreach($result as $row)
 												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
 													<div class="form-group mb-20">
-														<label>Job Type:</label>
-														<select name="jobtype" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
-															<option value="" selected>Select</option>
-															<option <?php if ($jobtype == "Full-time") { print ' selected '; } ?> value="Full-time" data-content="<span class='label label-warning'>Full-time</span>">Full-time</option>
-															<option <?php if ($jobtype == "Part-time") { print ' selected '; } ?> value="Part-time" data-content="<span class='label label-danger'>Part-time</span>">Part-time</option>
+														<label>Type d'emploi:</label>
+														<select name="jobtype" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="Tout">
+															<option value="" selected>Sélectionner</option>
+															<option <?php if ($jobtype == "Temps plein") { print ' selected '; } ?> value="Temps plein" data-content="<span class='label label-warning'>Temps plein</span>">Temps plein</option>
+															<option <?php if ($jobtype == "Temps partiel") { print ' selected '; } ?> value="Temps partiel" data-content="<span class='label label-danger'>Temps partiel</span>">Temps partiel</option>
 															<option <?php if ($jobtype == "Freelance") { print ' selected '; } ?> value="Freelance" data-content="<span class='label label-success'>Freelance</span>">Freelance</option>
 														</select>
 													</div>
@@ -369,14 +313,14 @@ foreach($result as $row)
 												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
 													<div class="form-group mb-20">
-														<label>Experience:</label>
-														<select name="experience" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
-															<option value="" selected >Select</option>
+														<label>Expérience:</label>
+														<select name="experience" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="Tout">
+															<option value="" selected >Sélectionner</option>
 															<option <?php if ($experience == "Expert") { print ' selected '; } ?> value="Expert">Expert</option>
-															<option <?php if ($experience == "2 Years") { print ' selected '; } ?> value="2 Years">2 Years</option>
-															<option <?php if ($experience == "3 Years") { print ' selected '; } ?> value="3 Years">3 Years</option>
-															<option <?php if ($experience == "4 Years") { print ' selected '; } ?> value="4 Years">4 Years</option>
-															<option <?php if ($experience == "5 Years") { print ' selected '; } ?> value="5 Years">5 Years</option>
+															<option <?php if ($experience == "2 ans") { print ' selected '; } ?> value="2 ans">2 ans</option>
+															<option <?php if ($experience == "3 ans") { print ' selected '; } ?> value="3 ans">3 ans</option>
+															<option <?php if ($experience == "4 ans") { print ' selected '; } ?> value="4 ans">4 ans</option>
+															<option <?php if ($experience == "5 ans") { print ' selected '; } ?> value="5 ans">5 ans</option>
 														</select>
 													</div>
 													
@@ -388,8 +332,8 @@ foreach($result as $row)
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Job Description</label>
-														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Enter description ..." style="height: 200px;"><?php echo "$jobdescription"; ?></textarea>
+														<label>Description du poste</label>
+														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Entrez la description ..." style="height: 200px;"><?php echo "$jobdescription"; ?></textarea>
 													</div>
 													
 												</div>
@@ -399,8 +343,8 @@ foreach($result as $row)
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Job Responsibilies</label>
-														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Enter responsiblities..." style="height: 200px;"><?php echo "$jobrespo"; ?></textarea>
+														<label>Responsabilités du poste</label>
+														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Entrez les responsabilités..." style="height: 200px;"><?php echo "$jobrespo"; ?></textarea>
 													</div>
 													
 												</div>
@@ -410,8 +354,8 @@ foreach($result as $row)
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Requirements</label>
-														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="Enter requirements..." style="height: 200px;"><?php echo "$jobreq"; ?></textarea>
+														<label>Exigences</label>
+														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="Entrez les exigences..." style="height: 200px;"><?php echo "$jobreq"; ?></textarea>
 													</div>
 													<input type="hidden" name="jobid" value="<?php echo "$jobid"; ?>">
 												</div>
@@ -433,7 +377,7 @@ foreach($result as $row)
 												<div class="clear"></div>
 												
 												<div class="col-sm-6 mt-30">
-													<button type="submit"  class="btn btn-primary btn-lg">Save Changes</button>
+													<button type="submit"  class="btn btn-primary btn-lg">Enregistrer les modifications</button>
 												</div>
 
 											</div>
@@ -457,99 +401,7 @@ foreach($result as $row)
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">About Bwire Jobs</h5>
-											<p>Bwire Jobs is a job portal, online job management system developed by Bwire C Mashauri in february 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Home</a></li>
-											<li><a href="../job-list.php">Job List</a></li>
-											<li><a href="../employers.php">Employers</a></li>
-											<li><a href="../employees.php">Employees</a></li>
-											<li><a href="../contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title">Bwire Jobs Contact</h5>
-								
-								<p>Address : Dar es salaam, Tanzania PO.BOX 14859</p>
-								<p>Email : <a href="mailto:mashauri@programmer.net">mashauri@programmer.net</a></p>
-								<p>Phone : <a href="tel:+255689938643">+255 689 938 643</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> BwireSoft</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developed by Bwire Charles Mashauri</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 		
 	</div>
 

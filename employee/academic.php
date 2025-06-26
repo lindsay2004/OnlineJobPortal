@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <?php 
 require '../constants/settings.php'; 
 require 'constants/check-login.php';
@@ -85,64 +85,7 @@ $page = 1;
 
 	<div class="container-wrapper">
 
-		<header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Accueil</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Liste des Offres</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employeurs</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employes</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contactez-nous</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">deconnexion</a></li>
-							<li><a href="./">Profil</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 
@@ -243,7 +186,7 @@ $page = 1;
 
 									<div class="admin-section-title">
 									
-										<h2>Diplomes academiques</h2>
+										<h2>Diplômes académiques</h2>
 					
 										
 									</div>
@@ -310,8 +253,8 @@ $page = 1;
 													
 													<div class="resume-list-btn">
 													
-														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Edit</a>
-									<a href="app/drop-academic.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Are you sure you want to delete this qualification ?')" class="btn btn-primary btn-sm btn-inverse">Delete</a>
+														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Modifier</a>
+									<a href="app/drop-academic.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Êtes-vous sûr de vouloir supprimer cette qualification ?')" class="btn btn-primary btn-sm btn-inverse">Supprimer</a>
 									<div id="edit<?php echo $row['id']; ?>" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
@@ -325,18 +268,17 @@ $page = 1;
 									<div class="col-sm-12 col-md-12">
 												
 									<div class="form-group">
-									<label>Education Level</label>
+									<label>Niveau d'éducation</label>
 									<select name="level" required class="selectpicker show-tick form-control" data-live-search="false">
-									<option disabled value="">Select</option>
-									<option <?php if ($level == "Advanced Diploma") { print ' selected '; } ?> value="Advanced Diploma">Advanced Diploma</option>
-                                    <option <?php if ($level == "Advanced Level (ACSE)") { print ' selected '; } ?>  value="Advanced Level (ACSE)">Advanced Level (ACSE)</option>
-                                    <option <?php if ($level == "Certificate") { print ' selected '; } ?>  value="Certificate">Certificate</option>
-                                    <option <?php if ($level == "Degree") { print ' selected '; } ?>  value="Degree">Degree</option>
-                                    <option <?php if ($level == "Diploma") { print ' selected '; } ?>  value="Diploma">Diploma</option>
-                                    <option <?php if ($level == "Master Degree") { print ' selected '; } ?>  value="Master Degree">Master Degree</option>
-                                    <option <?php if ($level == "Ordinary Level (CSE)") { print ' selected '; } ?>  value="Ordinary Level (CSE)">Ordinary Level (CSE)</option>
+									<option disabled value="">Sélectionner</option>
+									<option <?php if ($level == "Diplôme avancé") { print ' selected '; } ?> value="Diplôme avancé">Diplôme avancé</option>
+                                    <option <?php if ($level == "Niveau avancé (ACSE)") { print ' selected '; } ?>  value="Niveau avancé (ACSE)">Niveau avancé (ACSE)</option>
+                                    <option <?php if ($level == "Certificat") { print ' selected '; } ?>  value="Certificat">Certificat</option>
+                                    <option <?php if ($level == "Diplôme") { print ' selected '; } ?>  value="Diplôme">Diplôme</option>
+                                    <option <?php if ($level == "Diplôme de maîtrise") { print ' selected '; } ?>  value="Diplôme de maîtrise">Diplôme de maîtrise</option>
+                                    <option <?php if ($level == "Niveau ordinaire (CSE)") { print ' selected '; } ?>  value="Niveau ordinaire (CSE)">Niveau ordinaire (CSE)</option>
                                     <option <?php if ($level == "PHd") { print ' selected '; } ?>  value="PHd">PHd</option>
-                                    <option <?php if ($level == "Post Graduate Diploma") { print ' selected '; } ?>  value="Post Graduate Diploma">Post Graduate Diploma</option>
+                                    <option <?php if ($level == "Diplôme d'études supérieures") { print ' selected '; } ?>  value="Diplôme d'études supérieures">Diplôme d'études supérieures</option>
 						         
 									</select>
 									</div>
@@ -345,9 +287,9 @@ $page = 1;
 									<div class="col-sm-12 col-md-6">
 												
 									<div class="form-group">
-									<label>Country</label>
+									<label>Pays</label>
 									<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-									<option disabled value="">Select</option>
+									<option disabled value="">Sélectionner</option>
 						            <?php
 									$stmtb = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
                                     $stmtb->execute();
@@ -372,8 +314,8 @@ $page = 1;
 						            <div class="col-sm-12 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Institution Name</label>
-								    <input class="form-control" value="<?php echo "$institution"; ?>" placeholder="Enter institution name" type="text" name="institution" required> 
+								    <label>Nom de l'institution</label>
+								    <input class="form-control" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 						
 						             </div>
@@ -381,8 +323,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Course Title</label>
-								    <input class="form-control" value="<?php echo "$course"; ?>" placeholder="Enter course name" type="text" name="course" required> 
+								    <label>Titre du cours</label>
+								    <input class="form-control" placeholder="Entrez le nom du cours" type="text" name="course" required> 
 							        </div>
 						
 						           </div>
@@ -390,8 +332,8 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Time Frame</label>
-								    <input class="form-control" value="<?php echo "$timeframe"; ?>" placeholder="Eg: 2015 To 2016" type="text" name="timeframe" required> 
+								    <label>Période</label>
+								    <input class="form-control" placeholder="Ex: 2015 à 2016" type="text" name="timeframe" required> 
 							        </div>
 						
 						           </div>
@@ -399,7 +341,7 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Certificate <i>(Leave blank if you dont want to update)</i></label>
+								    <label>Certificat <i>(Laissez vide si vous ne voulez pas mettre à jour)</i></label>
 								    <input class="form-control" accept="application/pdf" type="file" name="certificate"> 
 							        </div>
 						
@@ -407,7 +349,7 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Transcript <i>(Leave blank if you dont want to update)</i></label>
+								    <label>Transcription <i>(Laissez vide si vous ne voulez pas mettre à jour)</i></label>
 								    <input class="form-control" accept="application/pdf" type="file" name="transcript"> 
 							        </div>
 						
@@ -417,8 +359,8 @@ $page = 1;
 				                   </div>
 				                   <input type="hidden" name="courseid" value="<?php echo "$course_id"; ?>">
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>
@@ -470,7 +412,7 @@ $page = 1;
 					  
 	                            }catch(PDOException $e)
                                 {
-                                echo "Connection failed: " . $e->getMessage();
+                                echo "La connexion a échoué: " . $e->getMessage();
                                 }
 	
 								$records = $total_records/5;
@@ -502,14 +444,14 @@ $page = 1;
 									
 									<div class="mt-30">
 									
-										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Add new</a>
+										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Ajouter</a>
 										
 									</div>
 									<div id="QualifModal" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
 					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                 <h4 class="modal-title text-center">Add academic qualifications</h4>
+					                 <h4 class="modal-title text-center">Ajouter des qualifications académiques</h4>
 				                    </div>
 				
 				                    <div class="modal-body">
@@ -518,18 +460,17 @@ $page = 1;
 									<div class="col-sm-12 col-md-12">
 												
 									<div class="form-group">
-									<label>Education Level</label>
+									<label>Niveau d'éducation</label>
 									<select name="level" required class="selectpicker show-tick form-control" data-live-search="false">
-									<option disabled value="">Select</option>
-									<option value="Advanced Diploma">Advanced Diploma</option>
-                                    <option value="Advanced Level (ACSE)">Advanced Level (ACSE)</option>
-                                    <option value="Certificate">Certificate</option>
-                                    <option value="Degree">Degree</option>
-                                    <option value="Diploma">Diploma</option>
-                                    <option value="Master Degree">Master Degree</option>
-                                    <option value="Ordinary Level (CSE)">Ordinary Level (CSE)</option>
+									<option disabled value="">Sélectionner</option>
+									<option value="Diplôme avancé">Diplôme avancé</option>
+                                    <option value="Niveau avancé (ACSE)">Niveau avancé (ACSE)</option>
+                                    <option value="Certificat">Certificat</option>
+                                    <option value="Diplôme">Diplôme</option>
+                                    <option value="Diplôme de maîtrise">Diplôme de maîtrise</option>
+                                    <option value="Niveau ordinaire (CSE)">Niveau ordinaire (CSE)</option>
                                     <option value="PHd">PHd</option>
-                                    <option value="Post Graduate Diploma">Post Graduate Diploma</option>
+                                    <option value="Diplôme d'études supérieures">Diplôme d'études supérieures</option>
 						         
 									</select>
 									</div>
@@ -539,9 +480,9 @@ $page = 1;
 									<div class="col-sm-6 col-md-6">
 												
 									<div class="form-group">
-									<label>Country</label>
+									<label>Pays</label>
 									<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-									<option disabled value="">Select</option>
+									<option disabled value="">Sélectionner</option>
 						            <?php
 									$stmtb = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
                                     $stmtb->execute();
@@ -566,8 +507,8 @@ $page = 1;
 						            <div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Institution Name</label>
-								    <input class="form-control" placeholder="Enter institution name" type="text" name="institution" required> 
+								    <label>Nom de l'institution</label>
+								    <input class="form-control" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 						
 						             </div>
@@ -575,8 +516,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Course Title</label>
-								    <input class="form-control" placeholder="Enter course name" type="text" name="course" required> 
+								    <label>Titre du cours</label>
+								    <input class="form-control" placeholder="Entrez le nom du cours" type="text" name="course" required> 
 							        </div>
 						
 						           </div>
@@ -584,8 +525,8 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Time Frame</label>
-								    <input class="form-control" placeholder="Eg: 2015 To 2016" type="text" name="timeframe" required> 
+								    <label>Période</label>
+								    <input class="form-control" placeholder="Ex: 2015 à 2016" type="text" name="timeframe" required> 
 							        </div>
 						
 						           </div>
@@ -593,26 +534,26 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Attach your certificate</label>
-								    <input class="form-control" accept="application/pdf" type="file" name="certificate" required> 
+								    <label>Certificat <i>(Laissez vide si vous ne voulez pas mettre à jour)</i></label>
+								    <input class="form-control" accept="application/pdf" type="file" name="certificate"> 
 							        </div>
 						
 						           </div>
-								   
 								   	<div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Academic Transcript</label>
-								    <input class="form-control" accept="application/pdf" type="file" name="transcript" required> 
+								    <label>Transcription <i>(Laissez vide si vous ne voulez pas mettre à jour)</i></label>
+								    <input class="form-control" accept="application/pdf" type="file" name="transcript"> 
 							        </div>
-					
+						
+						           </div>
 						
 					               </div>
 				                   </div>
 				
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>
@@ -629,98 +570,7 @@ $page = 1;
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">A propos</h5>
-											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 pour son projet en fevrier 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Liens rapides</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Accueil</a></li>
-											<li><a href="../job-list.php">Liste des Offres</a></li>
-											<li><a href="../employers.php">Employeurs</a></li>
-											<li><a href="../employees.php">Employes</a></li>
-											<li><a href="../contact.php">Contactez-nous</a></li>
-											<li><a href="#">Aller en haut</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title"> Contact</h5>
-								
-								<p>Adresse : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Telephone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> Nightingale Vision Software</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developpe par Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 			
 		</div>
 

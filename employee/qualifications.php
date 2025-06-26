@@ -86,64 +86,7 @@ $page = 1;
 
 	<div class="container-wrapper">
 
-		<header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Accueil</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Liste des Offres</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employeurs</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employes</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contactez-nous</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">deconnexion</a></li>
-							<li><a href="./">Profil</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 
@@ -246,7 +189,6 @@ $page = 1;
 									
 										<h2>Qualifications professionnelles</h2>
 					
-										
 									</div>
 									
 									<div class="resume-list-wrapper">
@@ -310,8 +252,8 @@ $page = 1;
 													
 													<div class="resume-list-btn">
 													
-														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Edit</a>
-									<a href="app/drop-qualification.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Are you sure you want to delete this qualification ?')" class="btn btn-primary btn-sm btn-inverse">Delete</a>
+														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Modifier</a>
+									<a href="app/drop-qualification.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Etes-vous sûr de vouloir supprimer cette qualification ?')" class="btn btn-primary btn-sm btn-inverse">Supprimer</a>
 									<div id="edit<?php echo $row['id']; ?>" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
@@ -325,9 +267,9 @@ $page = 1;
 									<div class="col-sm-12 col-md-12">
 												
 									<div class="form-group">
-									<label>Country</label>
+									<label>Pays</label>
 									<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-									<option disabled value="">Select</option>
+									<option disabled value="">Sélectionner</option>
 										<?php
 										 require '../constants/db_config.php';
 										 try {
@@ -365,8 +307,8 @@ $page = 1;
 						            <div class="col-sm-12 col-md-12">
 				
 							        <div class="form-group"> 
-								    <label>Institution Name</label>
-								    <input class="form-control" value="<?php echo "$institution"; ?>" placeholder="Enter institution name" type="text" name="institution" required> 
+								    <label>Nom de l'institution</label>
+								    <input class="form-control" value="<?php echo "$institution"; ?>" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 						
 						             </div>
@@ -374,8 +316,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Course Title</label>
-								    <input class="form-control" value="<?php echo "$course"; ?>" placeholder="Enter course name" type="text" name="course" required> 
+								    <label>Titre du cours</label>
+								    <input class="form-control" value="<?php echo "$course"; ?>" placeholder="Entrez le nom du cours" type="text" name="course" required> 
 							        </div>
 						
 						           </div>
@@ -383,8 +325,8 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Time Frame</label>
-								    <input class="form-control" value="<?php echo "$timeframe"; ?>" placeholder="Eg: 2015 To 2016" type="text" name="timeframe" required> 
+								    <label>Période</label>
+								    <input class="form-control" value="<?php echo "$timeframe"; ?>" placeholder="Ex: 2015 à 2016" type="text" name="timeframe" required> 
 							        </div>
 						
 						           </div>
@@ -392,7 +334,7 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Attach your certificate <b>*(Leave blank if you dont want to update)*</b></label>
+								    <label>Joindre votre certificat <b>*(Laissez vide si vous ne voulez pas mettre à jour)*</b></label>
 								    <input class="form-control" accept="application/pdf" type="file" name="certificate"> 
 							        </div>
 						
@@ -402,8 +344,8 @@ $page = 1;
 				                   </div>
 				                   <input type="hidden" name="courseid" value="<?php echo "$course_id"; ?>">
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>
@@ -480,14 +422,14 @@ $page = 1;
 									
 									<div class="mt-30">
 									
-										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Add new</a>
+										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Ajouter</a>
 										
 									</div>
 									<div id="QualifModal" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
 					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                 <h4 class="modal-title text-center">Add professional qualifications</h4>
+					                 <h4 class="modal-title text-center">Ajouter des qualifications professionnelles</h4>
 				                    </div>
 				
 				                    <div class="modal-body">
@@ -496,9 +438,9 @@ $page = 1;
 									<div class="col-sm-12 col-md-12">
 												
 									<div class="form-group">
-									<label>Country</label>
+									<label>Pays</label>
 									<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-									<option disabled value="">Select</option>
+									<option disabled value="">Sélectionner</option>
 										<?php
 										 require '../constants/db_config.php';
 										 try {
@@ -537,8 +479,8 @@ $page = 1;
 						            <div class="col-sm-12 col-md-12">
 				
 							        <div class="form-group"> 
-								    <label>Institution Name</label>
-								    <input class="form-control" placeholder="Enter institution name" type="text" name="institution" required> 
+								    <label>Nom de l'institution</label>
+								    <input class="form-control" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 						
 						             </div>
@@ -546,8 +488,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Course Title</label>
-								    <input class="form-control" placeholder="Enter course name" type="text" name="course" required> 
+								    <label>Titre du cours</label>
+								    <input class="form-control" placeholder="Entrez le nom du cours" type="text" name="course" required> 
 							        </div>
 						
 						           </div>
@@ -555,8 +497,8 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Time Frame</label>
-								    <input class="form-control" placeholder="Eg: 2015 To 2016" type="text" name="timeframe" required> 
+								    <label>Période</label>
+								    <input class="form-control" placeholder="Ex: 2015 à 2016" type="text" name="timeframe" required> 
 							        </div>
 						
 						           </div>
@@ -564,7 +506,7 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Attach your certificate</label>
+								    <label>Joindre votre certificat</label>
 								    <input class="form-control" accept="application/pdf" type="file" name="certificate" required> 
 							        </div>
 						
@@ -577,8 +519,8 @@ $page = 1;
 				         
 				
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>
@@ -595,99 +537,7 @@ $page = 1;
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">A propos</h5>
-											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 pour son projet en fevrier 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Liens rapides</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Accueil</a></li>
-											<li><a href="../job-list.php">Liste des Offres</a></li>
-											<li><a href="../employers.php">Employeurs</a></li>
-											<li><a href="../employees.php">Employes</a></li>
-											<li><a href="../contact.php">Contactez-nous</a></li>
-											<li><a href="#">Aller en haut</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title"> Contact</h5>
-								
-								<p>Adresse : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Telephone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> BwireSoft</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developpe par Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 			
 		</div>
 

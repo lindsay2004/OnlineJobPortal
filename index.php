@@ -1,15 +1,60 @@
-<!doctype html>
-<html lang="en">
 <?php 
+// ==========================
+// CONFIGURATION & DONNÉES
+// ==========================
 include 'constants/settings.php'; 
 include 'constants/check-login.php';
-?>
-<head>
+require 'constants/db_config.php';
 
+// Récupération des catégories
+$categories = [];
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
+    $stmt->execute();
+    $categories = $stmt->fetchAll();
+} catch (PDOException $e) {}
+
+// Récupération des pays
+$countries = [];
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
+    $stmt->execute();
+    $countries = $stmt->fetchAll();
+} catch (PDOException $e) {}
+
+// Récupération des entreprises aléatoires
+$companies = [];
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT * FROM tbl_users WHERE role = 'employer' ORDER BY rand() LIMIT 8");
+    $stmt->execute();
+    $companies = $stmt->fetchAll();
+} catch (PDOException $e) {}
+
+// Récupération des dernières offres
+$jobs = [];
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT * FROM tbl_jobs ORDER BY enc_id DESC LIMIT 8");
+    $stmt->execute();
+    $jobs = $stmt->fetchAll();
+} catch (PDOException $e) {}
+?>
+<!doctype html>
+<html lang="fr">
+<head>
+    <!-- ==========================
+         MÉTA ET FEUILLES DE STYLE
+    ========================== -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<title> - Portail d'Emploi</title>
 	<meta name="description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
 	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employe, employeur, embauche, gestion des ressources humaines, RH, gestion d'emplois en ligne, entreprise, ouvrier, carriere, recrutement" />
@@ -22,15 +67,11 @@ include 'constants/check-login.php';
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="" />
     <meta property="og:description" content="Online Job Management / Job Portal" />
-
 	<link rel="shortcut icon" href="images/ico/favicon.png">
-
-
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">	
 	<link href="css/animate.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 	<link href="css/component.css" rel="stylesheet">
-	
 	<link rel="stylesheet" href="icons/linearicons/style.css">
 	<link rel="stylesheet" href="icons/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="icons/simple-line-icons/css/simple-line-icons.css">
@@ -41,404 +82,154 @@ include 'constants/check-login.php';
 	<link rel="stylesheet" href="icons/flaticon-streamline-outline/flaticon-streamline-outline.css">
 	<link rel="stylesheet" href="icons/flaticon-thick-icons/flaticon-thick.css">
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
-
 	<link href="css/style.css" rel="stylesheet">
-
-	
-</head>
-
   <style>
-  
     .autofit2 {
 	height:70px;
 	width:400px;
     object-fit:cover; 
   }
-  
       .autofit3 {
 	height:80px;
 	width:100px;
     object-fit:cover; 
   }
-  
-
   </style>
+</head>
 <body class="home">
-
-
 	<div id="introLoader" class="introLoading"></div>
-
 	<div class="container-wrapper">
-
-		<header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="./"><img src="images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="./">Accueil</a>
-								
-							</li>
-							
-							<li>
-								<a href="job-list.php">Liste des Offres</a>
-
-							</li>
-							
-							<li>
-								<a href="employers.php">Employeurs</a>
-							</li>
-							
-							<li>
-								<a href="employees.php">Employes</a>
-							</li>
-							
-							<li>
-								<a href="contact.php">Contactez-nous</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-						<?php
-						if ($user_online == true) {
-						print '
-						    <li><a href="logout.php">deconnexion</a></li>
-							<li><a href="'.$myrole.'">Profil</a></li>';
-						}else{
-						print '
-							<li><a href="login.php">connexion</a></li>
-							<li><a data-toggle="modal" href="#registerModal">inscription</a></li>';						
-						}
-						
-						?>
-
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-			<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
-			
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title text-center">Creez votre compte gratuitement</h4>
-				</div>
-				
-				<div class="modal-body">
-				
-					<div class="row gap-20">
-					
-						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employeur</a>
-						</div>
-						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employe</a>
-						</div>
-
-					</div>
-				
-				</div>
-				
-				<div class="modal-footer text-center">
-					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
-				</div>
-				
-			</div>
-
-			
-		</header>
-
+        <!-- ==========================
+             EN-TÊTE / NAVBAR
+        ========================== -->
+        <?php include 'components/header.php'; ?>
 		<div class="main-wrapper">
-		
-			<div class="hero" style="background-image:url('images/hero-header/02.jpg');">
+            <!-- ==========================
+                 SECTION HERO
+            ========================== -->
+			<section class="hero" style="background-image:url('images/hero-header/02.jpg');">
 				<div class="container">
-
 					<h1>Votre avenir commence ici</h1>
 					<p>Trouvez votre prochain emploi ou carriere</p>
-
 					<div class="main-search-form-wrapper">
-					
 						<form action="job-list.php" method="GET" autocomplete="off">
-					
 							<div class="form-holder">
 								<div class="row gap-0">
-								
 									<div class="col-xss-6 col-xs-6 col-sm-6">
-										<select class="form-control" name="category" required/>
+                                        <select class="form-control" name="category" required>
 										<option value="">-Selectionner une categorie-</option>
-										 <?php
-										 require 'constants/db_config.php';
-										 try {
-                                         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-	
-                                         $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
-                                         $stmt->execute();
-                                         $result = $stmt->fetchAll();
-
-                                         foreach($result as $row)
-                                         {
-                                        ?>
-										
+                                            <?php foreach ($categories as $row): ?>
 										<option style="color:black" value="<?php echo $row['category']; ?>"><?php echo $row['category']; ?></option>
-										<?php
-	                                     }
-                                         $stmt->execute();
-					  
-	                                     }catch(PDOException $e)
-                                         {
-        
-                                         }
-	
-										?>
-														   
+                                            <?php endforeach; ?>
 										</select>
 									</div>
-									
 									<div class="col-xss-6 col-xs-6 col-sm-6">
-										<select class="form-control"  name="country" required/>
+                                        <select class="form-control" name="country" required>
 										<option value="">-Selectionner un pays-</option>
-										 <?php
-										 require 'constants/db_config.php';
-										 try {
-                                         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-	
-                                         $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
-                                         $stmt->execute();
-                                         $result = $stmt->fetchAll();
-
-                                         foreach($result as $row)
-                                         {
-                                        ?>
-										
+                                            <?php foreach ($countries as $row): ?>
 										<option style="color:black" value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option>
-										<?php
-	                                     }
-                                         $stmt->execute();
-					  
-	                                     }catch(PDOException $e)
-                                         {
-               
-                                         }
-	
-										?>
-
+                                            <?php endforeach; ?>
 										</select>
 									</div>
-									
 								</div>
-							
 							</div>
-							
 							<div class="btn-holder">
 								<button name="search" value="✓" type="submit" class="btn"><i class="ion-android-search"></i></button>
 							</div>
-						
 						</form>
-						
 					</div>
-
 				</div>
-				
-			</div>
-
-			
-			<div class="post-hero bg-light">
-			
+			</section>
+            <!-- ==========================
+                 SECTION PROCESSUS
+            ========================== -->
+			<section class="post-hero bg-light">
 				<div class="container">
-
 					<div class="process-item-wrapper mt-20">
-							
 						<div class="row">
-						
 							<div class="col-sm-4">
-								
 								<div class="process-item clearfix">
-									
 									<div class="icon">
 										<i class="flaticon-line-icon-set-magnification-lens"></i>
 									</div>
-									
 									<div class="content">
 										<h5>01 / Rechercher un emploi</h5>
 									</div>
-									
 								</div>
-								
 							</div>
-							
 							<div class="col-sm-4">
-							
 								<div class="process-item clearfix">
-									
 									<div class="icon">
 										<i class="flaticon-line-icon-set-pencil"></i>
 									</div>
-									
 									<div class="content">
 										<h5>02 / Postuler a un emploi</h5>
 									</div>
-									
 								</div>
-								
 							</div>
-							
 							<div class="col-sm-4">
-								
 								<div class="process-item clearfix">
-									
 									<div class="icon">
 										<i class="flaticon-line-icon-set-calendar"></i>
 									</div>
-									
 									<div class="content">
 										<h5>03 / Commencer a travailler</h5>
 									</div>
-									
 								</div>
-								
 							</div>
-							
 						</div>
-					
 					</div>
-					
 				</div>
-			
-			</div>
-
-
-			<div class="pt-0 pb-50">
-			
+			</section>
+            <!-- ==========================
+                 SECTION ENTREPRISES ALÉATOIRES
+            ========================== -->
+			<section class="pt-0 pb-50">
 				<div class="container">
-
 					<div class="row">
-					
 						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-						
 							<div class="section-title">
-							
 								<br><h2>Entreprises aleatoires</h2>
-								
 							</div>
-						
 						</div>
-					
 					</div>
-					
 					<div class="row top-company-wrapper with-bg">
-
-							
-					<?php
-					require 'constants/db_config.php';
-					try {
-                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                    $stmt = $conn->prepare("SELECT * FROM tbl_users WHERE role = 'employer' ORDER BY rand() LIMIT 8");
-                    $stmt->execute();
-                    $result = $stmt->fetchAll();
-
-                    foreach($result as $row) {
-					$complogo = $row['avatar'];
-					?>
+                        <?php foreach ($companies as $row): ?>
+                            <?php $complogo = $row['avatar']; ?>
 					<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
-							
 					<div class="top-company">
 					<div class="image">
-					<?php 
-					if ($complogo == null) {
-					print '<center><img class="autofit2" alt="image"  src="images/blank.png"/></center>';
-					}else{
-					echo '<center><img class="autofit2" alt="image"  src="data:image/jpeg;base64,'.base64_encode($complogo).'"/></center>';	
-					}
-					?>
+                                        <?php if ($complogo == null): ?>
+                                            <center><img class="autofit2" alt="image" src="images/blank.png"/></center>
+                                        <?php else: ?>
+                                            <center><img class="autofit2" alt="image" src="data:image/jpeg;base64,<?php echo base64_encode($complogo); ?>"/></center>
+                                        <?php endif; ?>
 					</div>
-					<h6><?php echo $row['first_name'];?></h6>
+                                    <h6><?php echo $row['first_name']; ?></h6>
 					<a target="_blank" href="company.php?ref=<?php echo $row['member_no']; ?>">Voir l'entreprise</a>
 					</div>
-							
 					</div>
-					<?php
-					
-                    {
-
-	                }
-					  
-	                }}catch(PDOException $e)
-                    {
-
-                    }
-	
-					?>
-						
-
-						
-						
+                        <?php endforeach; ?>
 					</div>
-
 				</div>
-
-			</div>
-			
-			<div class="bg-light pt-80 pb-80">
-			
+			</section>
+            <!-- ==========================
+                 SECTION DERNIÈRES OFFRES
+            ========================== -->
+			<section class="bg-light pt-80 pb-80">
 				<div class="container">
-				
 					<div class="row">
-						
 						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-						
 							<div class="section-title">
-							
 								<h2>Dernieres Offres</h2>
-								
 							</div>
-						
 						</div>
-					
 					</div>
-					
 					<div class="row">
-						
 						<div class="col-md-12">
-						
 							<div class="recent-job-wrapper alt-stripe mr-0">
+                                <?php foreach ($jobs as $row): ?>
 							<?php
-							require 'constants/db_config.php';
-							try {
-                            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            $stmt = $conn->prepare("SELECT * FROM tbl_jobs ORDER BY enc_id DESC LIMIT 8");
-                            $stmt->execute();
-                            $result = $stmt->fetchAll();
-  
-
-                            foreach($result as $row) {
 							$jobcity = $row['city'];
 							$jobcountry = $row['country'];
 							$type = $row['type'];
@@ -448,33 +239,23 @@ include 'constants/check-login.php';
 							$post_date = date_format(date_create_from_format('d/m/Y', $closingdate), 'd');
                             $post_month = date_format(date_create_from_format('d/m/Y', $closingdate), 'F');
                             $post_year = date_format(date_create_from_format('d/m/Y', $closingdate), 'Y');
-										   
 							$stmtb = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$company_id' and role = 'employer'");
                             $stmtb->execute();
                             $resultb = $stmtb->fetchAll();
+                                    $complogo = null;
+                                    $thecompname = '';
 							foreach($resultb as $rowb) {
 							$complogo = $rowb['avatar'];
 							$thecompname = $rowb['first_name'];	
-								
 							}
-							
 							if ($type == "Freelance") {
-							$sta = '<div class="job-label label label-success">
-									Freelance
-									</div>';
-											  
-							}
-							if ($type == "Part-time") {
-							$sta = '<div class="job-label label label-danger">
-									Temps partiel
-									</div>';
-											  
-							}
-							if ($type == "Full-time") {
-							$sta = '<div class="job-label label label-warning">
-									Temps plein
-									</div>';
-											  
+                                        $sta = '<div class="job-label label label-success">Freelance</div>';
+                                    } elseif ($type == "Part-time") {
+                                        $sta = '<div class="job-label label label-danger">Temps partiel</div>';
+                                    } elseif ($type == "Full-time") {
+                                        $sta = '<div class="job-label label label-warning">Temps plein</div>';
+                                    } else {
+                                        $sta = '';
 							}
 							?>
 							<a class="recent-job-item clearfix" target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>">
@@ -482,13 +263,11 @@ include 'constants/check-login.php';
 							<div class="GridLex-col-5_xs-12">
 							<div class="job-position">
 							<div class="image">
-							<?php 
-							if ($complogo == null) {
-							print '<center><img alt="image"  src="images/blank.png"/></center>';
-							}else{
-							echo '<center><img alt="image" title="'.$thecompname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($complogo).'"/></center>';	
-							}
-							?>
+                                                        <?php if ($complogo == null): ?>
+                                                            <center><img alt="image" src="images/blank.png"/></center>
+                                                        <?php else: ?>
+                                                            <center><img alt="image" title="<?php echo $thecompname; ?>" width="180" height="100" src="data:image/jpeg;base64,<?php echo base64_encode($complogo); ?>"/></center>
+                                                        <?php endif; ?>
 							</div>
 							<div class="content">
 							<h4><?php echo "$title"; ?></h4>
@@ -498,7 +277,7 @@ include 'constants/check-login.php';
 							</div>
 							<div class="GridLex-col-5_xs-8_xss-12 mt-10-xss">
 							<div class="job-location">
-							<i class="fa fa-map-marker text-primary"></i> <?php echo "$jobcountry" ?></strong> - <?php echo "$jobcity" ?>
+                                                    <i class="fa fa-map-marker text-primary"></i> <?php echo "$jobcountry" ?> - <?php echo "$jobcity" ?>
 							</div>
 							</div>
 							<div class="GridLex-col-2_xs-4_xss-12">
@@ -507,137 +286,24 @@ include 'constants/check-login.php';
 							</div>
 							</div>
 							</a>
-								
-							<?php
-
-                            }
-	                        }catch(PDOException $e)
-                            { 
-                   
-                             }
-                             ?>
-						
-
-
-
-							
+                                <?php endforeach; ?>
 							</div>
-							
 						</div>
-						
-					</div>
-					
-				</div>
-			
-			</div>
-			
-
-
-			
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">A propos</h5>
-											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 </p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Liens rapides</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="./">Accueil</a></li>
-											<li><a href="job-list.php">Liste des Offres</a></li>
-											<li><a href="employers.php">Employeurs</a></li>
-											<li><a href="employees.php">Employes</a></li>
-											<li><a href="contact.php">Contactez-nous</a></li>
-											<li><a href="#">Aller en haut</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title"> Contact</h5>
-								
-								<p>Adresse : IUT de Douala </p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">Jobnight@gmail.com</a></p>
-								<p>Telephone : <a href="tel:+233546607474">+237 655454001</a></p>
-								
-
-							</div>
-
-							
 						</div>
-						
 					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> iut de douala</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developpe par Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
+            </section>
+            <!-- ==========================
+                 PIED DE PAGE
+            ========================== -->
+<?php include 'components/footer.php'; ?>
 					</div>
-					
 				</div>
-			
-			</footer>
-			
-		</div>
-
-
-	</div>
-
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
-
-
+    <!-- ==========================
+         SCRIPTS JS
+    ========================== -->
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -664,9 +330,5 @@ include 'constants/check-login.php';
 <script type="text/javascript" src="js/jquery.introLoader.min.js"></script>
 <script type="text/javascript" src="js/jquery.responsivegrid.js"></script>
 <script type="text/javascript" src="js/customs.js"></script>
-
-
 </body>
-
-
 </html>

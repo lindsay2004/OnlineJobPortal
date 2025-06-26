@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <?php 
 include '../constants/settings.php'; 
 include 'constants/check-login.php';
@@ -19,9 +19,9 @@ header("location:../");
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> - Company Profile</title>
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
+	<title>Profil de l'entreprise</title>
+	<meta name="description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
+	<meta name="keywords" content="emploi, travail, CV, candidats, candidature, employe, employeur, embauche, gestion des ressources humaines, RH, gestion d'emplois en ligne, entreprise, ouvrier, carriere, recrutement" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
@@ -30,7 +30,7 @@ header("location:../");
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="Bwire Jobs" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
+    <meta property="og:description" content="Gestion d'Emplois en Ligne / Portail d'Emploi" />
 
 	<link rel="shortcut icon" href="../images/ico/favicon.png">
 
@@ -59,64 +59,7 @@ header("location:../");
 
 	<div class="container-wrapper">
 
-		<header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Home</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Job List</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employers</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employees</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contact Us</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">logout</a></li>
-							<li><a href="./">Profile</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 		
@@ -125,8 +68,8 @@ header("location:../");
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="../"></a></li>
-						<li><span>Profile</span></li>
+						<li><a href="../">Bwire Jobs</a></li>
+						<li><span>Profil</span></li>
 					</ol>
 					
 				</div>
@@ -152,7 +95,7 @@ header("location:../");
 										<div class="image">
 										<?php 
 										if ($logo == null) {
-										print '<center>Company Logo Here</center>';
+										print '<center>Logo de l\'entreprise ici</center>';
 										}else{
 										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
 										}
@@ -165,26 +108,26 @@ header("location:../");
 									
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Post a Job</a>
+										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Publier une offre</a>
 										
 									</div>
 									
 									<ul class="admin-user-menu clearfix">
 										<li  class="active">
-											<a href="./"><i class="fa fa-user"></i> Profile</a>
+											<a href="./"><i class="fa fa-user"></i> Profil</a>
 										</li>
 										<li class="">
-										<a href="change-password.php"><i class="fa fa-key"></i> Change Password</a>
+										<a href="change-password.php"><i class="fa fa-key"></i> Changer le mot de passe</a>
 										</li>
 			
 										<li>
-											<a href="../company.php?ref=<?php echo "$myid"; ?>"><i class="fa fa-briefcase"></i> Company Overview</a>
+											<a href="../company.php?ref=<?php echo "$myid"; ?>"><i class="fa fa-briefcase"></i> Aperçu de l'entreprise</a>
 										</li>
 										<li>
-											<a href="my-jobs.php"><i class="fa fa-bookmark"></i> Posted Jobs</a>
+											<a href="my-jobs.php"><i class="fa fa-bookmark"></i> Offres publiées</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i> Déconnexion</a>
 										</li>
 									</ul>
 									
@@ -198,8 +141,8 @@ header("location:../");
 
 									<div class="admin-section-title">
 									
-										<h2>Profile</h2>
-										<p>Your last loged-in: <span class="text-primary"><?php echo "$mylogin"; ?></span></p>
+										<h2>Profil</h2>
+										<p>Votre dernière connexion: <span class="text-primary"><?php echo "$mylogin"; ?></span></p>
 										
 									</div>
 									
@@ -212,8 +155,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-8">
 												
 													<div class="form-group">
-														<label>Company Name</label>
-														<input name="company" placeholder="Enter company name" type="text" class="form-control" value="<?php echo "$compname"; ?>" required>
+														<label>Nom de l'entreprise</label>
+														<input name="company" placeholder="Entrez le nom de l'entreprise" type="text" class="form-control" value="<?php echo "$compname"; ?>" required>
 													</div>
 													
 												</div>
@@ -222,8 +165,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Established In</label>
-                                                    <input name="year" placeholder="Enter year eg: 2016, 2017, 2018" type="text" class="form-control" value="<?php echo "$esta"; ?>" required>
+														<label>Établi en</label>
+                                                    <input name="year" placeholder="Entrez l'année ex: 2016, 2017, 2018" type="text" class="form-control" value="<?php echo "$esta"; ?>" required>
 													</div>
 													
 												</div>
@@ -232,7 +175,7 @@ header("location:../");
 												
 													<div class="form-group">
 														<label>Type</label>
-                                                    <input class="form-control" placeholder="Eg: Booking, Travel" name="type" required type="text" value="<?php echo "$mytitle"; ?>" required> 
+                                                    <input class="form-control" placeholder="Ex: Réservation, Voyage" name="type" required type="text" value="<?php echo "$mytitle"; ?>" required> 
 													</div>
 													
 												</div>
@@ -242,7 +185,7 @@ header("location:../");
 												<div class="form-group">
 													
 													<div class="col-sm-6 col-md-4">
-														<label>People</label>
+														<label>Personnes</label>
 														<select name="people" required class="selectpicker show-tick form-control mb-15" data-live-search="false">
 															<option <?php if ($mypeople == "1-10") { print ' selected '; } ?> value="1-10">1-10</option>
 															<option <?php if ($mypeople == "11-100") { print ' selected '; } ?> value="11-100">11-100</option>
@@ -253,8 +196,8 @@ header("location:../");
 													</div>
 
 													<div class="col-sm-6 col-md-4">
-														<label>Website</label>
-														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="Enter your website">
+														<label>Site web</label>
+														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="Entrez votre site web">
 													</div>
 														
 												</div>
@@ -264,8 +207,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>City/town</label>
-														<input name="city" required type="text" class="form-control" value="<?php echo "$city"; ?>" placeholder="Enter your city">
+														<label>Ville</label>
+														<input name="city" required type="text" class="form-control" value="<?php echo "$city"; ?>" placeholder="Entrez votre ville">
 													</div>
 													
 												</div>
@@ -273,8 +216,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Street</label>
-														<input name="street" required type="text" class="form-control" value="<?php echo "$street"; ?>" placeholder="Enter your street">
+														<label>Rue</label>
+														<input name="street" required type="text" class="form-control" value="<?php echo "$street"; ?>" placeholder="Entrez votre rue">
 													</div>
 													
 												</div>
@@ -284,8 +227,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Zip Code</label>
-														<input name="zip" required type="text" class="form-control" value="<?php echo "$zip"; ?>" placeholder="Enter your zip">
+														<label>Code postal</label>
+														<input name="zip" required type="text" class="form-control" value="<?php echo "$zip"; ?>" placeholder="Entrez votre code postal">
 													</div>
 													
 												</div>
@@ -293,9 +236,9 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Country</label>
+														<label>Pays</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Select</option>
+															<option disabled value="">Sélectionner</option>
 						                                   <?php
 														   require '../constants/db_config.php';
 														   try {
@@ -330,8 +273,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Phone Number</label>
-														<input type="text" name="phone" required class="form-control" value="<?php echo "$myphone"; ?>" placeholder="Enter your phone">
+														<label>Numéro de téléphone</label>
+														<input type="text" name="phone" required class="form-control" value="<?php echo "$myphone"; ?>" placeholder="Entrez votre téléphone">
 													</div>
 													
 												</div>
@@ -339,8 +282,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Email Address</label>
-														<input type="email" name="email" required class="form-control" value="<?php echo "$mymail"; ?>" placeholder="Enter your email">
+														<label>Adresse e-mail</label>
+														<input type="email" name="email" required class="form-control" value="<?php echo "$mymail"; ?>" placeholder="Entrez votre e-mail">
 													</div>
 													
 												</div>
@@ -356,8 +299,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Company background</label>
-														<textarea name="background" class="bootstrap3-wysihtml5 form-control" placeholder="Enter company background ..." style="height: 200px;"><?php echo "$desc"; ?></textarea>
+														<label>Historique de l'entreprise</label>
+														<textarea name="background" class="bootstrap3-wysihtml5 form-control" placeholder="Entrez l'historique de l'entreprise ..." style="height: 200px;"><?php echo "$desc"; ?></textarea>
 													</div>
 													
 												</div>
@@ -368,7 +311,7 @@ header("location:../");
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Services</label>
-														<textarea name="services" class="bootstrap3-wysihtml5 form-control" placeholder="Enter company services ..." style="height: 200px;"><?php echo "$myserv"; ?></textarea>
+														<textarea name="services" class="bootstrap3-wysihtml5 form-control" placeholder="Entrez les services de l'entreprise ..." style="height: 200px;"><?php echo "$myserv"; ?></textarea>
 													</div>
 													
 												</div>
@@ -379,7 +322,7 @@ header("location:../");
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Expertise</label>
-														<textarea name="expertise" class="bootstrap3-wysihtml5 form-control" placeholder="Enter company expertise ..." style="height: 200px;"><?php echo "$myex"; ?></textarea>
+														<textarea name="expertise" class="bootstrap3-wysihtml5 form-control" placeholder="Entrez l'expertise de l'entreprise ..." style="height: 200px;"><?php echo "$myex"; ?></textarea>
 													</div>
 													
 												</div>
@@ -387,8 +330,8 @@ header("location:../");
 												<div class="clear"></div>
 
 												<div class="col-sm-12 mt-10">
-													<button type="submit" class="btn btn-primary">Save</button>
-													<button type="reset" class="btn btn-warning">Cancel</button>
+													<button type="submit" class="btn btn-primary">Enregistrer</button>
+													<button type="reset" class="btn btn-warning">Annuler</button>
 												</div>
 
 											</div>
@@ -400,7 +343,7 @@ header("location:../");
 										<div class="col-sm-12 col-md-12">
 												
 										<div class="form-group bootstrap3-wysihtml5-wrapper">
-										<label>Company Logo</label>
+										<label>Logo de l'entreprise</label>
 										<input accept="image/*" type="file" name="image"  required >
 										</div>
 													
@@ -409,12 +352,12 @@ header("location:../");
 										<div class="clear"></div>
 
 										<div class="col-sm-12 mt-10">
-										<button type="submit" class="btn btn-primary">Update</button>
+										<button type="submit" class="btn btn-primary">Mettre à jour</button>
 										<?php 
 										if ($logo == null) {
 
 										}else{
-										?><a onclick = "return confirm('Are you sure you want to delete your logo ?')" class="btn btn-primary btn-inverse" href="app/drop-dp.php">Delete</a> <?php
+										?><a onclick = "return confirm('Êtes-vous sûr de vouloir supprimer votre logo ?')" class="btn btn-primary btn-inverse" href="app/drop-dp.php">Supprimer</a> <?php
 										}
 										?>
 										</div>
@@ -433,99 +376,7 @@ header("location:../");
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 for his project in february 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Home</a></li>
-											<li><a href="../job-list.php">Job List</a></li>
-											<li><a href="../employers.php">Employers</a></li>
-											<li><a href="../employees.php">Employees</a></li>
-											<li><a href="../contact.php">Contact Us</a></li>
-											<li><a href="#">Go to top</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title"> Contact</h5>
-								
-								<p>Address : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> Nightingale Vision Software</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 			
 		</div>
 

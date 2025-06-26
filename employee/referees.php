@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <?php 
 require '../constants/settings.php'; 
 require 'constants/check-login.php';
@@ -303,8 +303,8 @@ $page = 1;
 													
 													<div class="resume-list-btn">
 													
-														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Edit</a>
-									<a href="app/drop-ref.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Are you sure you want to delete this referee ?')" class="btn btn-primary btn-sm btn-inverse">Delete</a>
+														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Modifier</a>
+									<a href="app/drop-ref.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Etes-vous sur de vouloir supprimer ce referent ?')" class="btn btn-primary btn-sm btn-inverse">Supprimer</a>
 									<div id="edit<?php echo $row['id']; ?>" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
@@ -331,8 +331,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Email</label>
-								    <input class="form-control" value="<?php echo "$refmail"; ?>"placeholder="Enter referee email" type="email" name="email" required> 
+								    <label>Email du referent</label>
+								    <input class="form-control" value="<?php echo "$refmail"; ?>"placeholder="Entrez l'email du referent" type="email" name="email" required> 
 							        </div>
 						
 						           </div>
@@ -340,8 +340,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Title</label>
-								    <input class="form-control" value="<?php echo "$reftitle"; ?>" placeholder="Enter referee title" type="text" name="title" required> 
+								    <label>Titre du referent</label>
+								    <input class="form-control" value="<?php echo "$reftitle"; ?>" placeholder="Entrez le titre du referent" type="text" name="title" required> 
 							        </div>
 						
 						           </div>
@@ -349,8 +349,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Phone</label>
-								    <input class="form-control" value="<?php echo "$refphone"; ?>" placeholder="Enter referee phone" type="text" name="phone" required> 
+								    <label>Telephone du referent</label>
+								    <input class="form-control" value="<?php echo "$refphone"; ?>" placeholder="Entrez le telephone du referent" type="text" name="phone" required> 
 							        </div>
 						
 						           </div>
@@ -359,8 +359,8 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Institution Name</label>
-								    <input class="form-control" value="<?php echo "$institution"; ?>" placeholder="Enter institution name" type="text" name="institution" required> 
+								    <label>Nom de l'institution</label>
+								    <input class="form-control" value="<?php echo "$institution"; ?>" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 					
 						
@@ -369,8 +369,8 @@ $page = 1;
 				                   </div>
 				                   <input type="hidden" name="refid" value="<?php echo "$ref_id"; ?>">
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>
@@ -452,14 +452,14 @@ $page = 1;
 									
 									<div class="mt-30">
 									
-										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Add new</a>
+										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Ajouter nouveau</a>
 										
 									</div>
 									<div id="QualifModal" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
 					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                 <h4 class="modal-title text-center">Add Referee</h4>
+					                 <h4 class="modal-title text-center">Ajouter un referent</h4>
 				                    </div>
 				
 				                    <div class="modal-body">
@@ -470,8 +470,8 @@ $page = 1;
 									<div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Referee Name</label>
-								    <input class="form-control" placeholder="Enter referee name" type="text" name="name" required> 
+								    <label>Nom du referent</label>
+								    <input class="form-control" placeholder="Entrez le nom du referent" type="text" name="name" required> 
 							        </div>
 						
 						             </div>
@@ -482,8 +482,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Email</label>
-								    <input class="form-control" placeholder="Enter referee email" type="email" name="email" required> 
+								    <label>Email du referent</label>
+								    <input class="form-control" placeholder="Entrez l'email du referent" type="email" name="email" required> 
 							        </div>
 						
 						           </div>
@@ -491,8 +491,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Title</label>
-								    <input class="form-control" placeholder="Enter referee title" type="text" name="title" required> 
+								    <label>Titre du referent</label>
+								    <input class="form-control" placeholder="Entrez le titre du referent" type="text" name="title" required> 
 							        </div>
 						
 						           </div>
@@ -500,8 +500,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Phone</label>
-								    <input class="form-control" placeholder="Enter referee phone" type="text" name="phone" required> 
+								    <label>Telephone du referent</label>
+								    <input class="form-control" placeholder="Entrez le telephone du referent" type="text" name="phone" required> 
 							        </div>
 						
 						           </div>
@@ -510,8 +510,8 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Institution Name</label>
-								    <input class="form-control" placeholder="Enter institution name" type="text" name="institution" required> 
+								    <label>Nom de l'institution</label>
+								    <input class="form-control" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 					
 						
@@ -519,8 +519,8 @@ $page = 1;
 				                   </div>
 				
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Submit</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				                   </div>
 				                   </form>
 			                       </div>
