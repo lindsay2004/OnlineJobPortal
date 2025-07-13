@@ -111,6 +111,7 @@ $page = 1;
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/contact-company-enhancements.css" rel="stylesheet">
 
 	
 </head>
@@ -154,7 +155,7 @@ $page = 1;
 										<div class="image">
 										<?php 
 										if ($complogo == null) {
-										print '<center>Company Logo Here</center>';
+										print '<center>Logo de l\'entreprise ici</center>';
 										}else{
 										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($complogo).'"/></center>';	
 										}
@@ -167,19 +168,19 @@ $page = 1;
 										
 										<ul class="meta-list clearfix">
 											<li>
-												<h4 class="heading">Established In:</h4>
+												<h4 class="heading">Fondée en :</h4>
 												<?php echo "$compesta"; ?>
 											</li>
 											<li>
-												<h4 class="heading">Type:</h4>
+												<h4 class="heading">Type :</h4>
 												<?php echo "$comptype"; ?>
 											</li>
 											<li>
-												<h4 class="heading">People:</h4>
+												<h4 class="heading">Effectifs :</h4>
 												<?php echo "$comppeopl"; ?>
 											</li>
 											<li>
-												<h4 class="heading">Website: </h4>
+												<h4 class="heading">Site web :</h4>
 												<a target="_blank" href="https://<?php echo "$compweb"; ?>"><?php echo "$compweb"; ?></a>
 											</li>
 										</ul>
@@ -188,7 +189,7 @@ $page = 1;
 						
 									<div class="company-detail-company-overview clearfix">
 									
-										<h3>Company background</h3>
+										<h3>Présentation de l'entreprise</h3>
 										
 										<p><?php echo "$compbout"; ?></p>
 
@@ -206,7 +207,7 @@ $page = 1;
 									
 									<div class="section-title mb-40">
 						
-										<h4 class="text-left">jobs offered at <?php echo "$compname"; ?></h4>
+										<h4 class="text-left">Offres d'emploi proposées par <?php echo "$compname"; ?></h4>
 										
 									</div>
 
@@ -265,7 +266,7 @@ $page = 1;
 														
 															<h4 class="heading"><?php echo $row['title']; ?></h4>
 															<div class="meta-div clearfix mb-25">
-															<span>at <a href="company.php?ref=<?php echo "$company_id"; ?>"><?php echo "$compname"; ?></a></span>
+															<span>Chez <a href="company.php?ref=<?php echo "$company_id"; ?>"><?php echo "$compname"; ?></a></span>
 															<?php echo "$sta"; ?>
 															</div>
 															
@@ -275,19 +276,19 @@ $page = 1;
 														<div class="col-sm-5 col-md-4">
 														<ul class="meta-list">
 															<li>
-																<span>Country:</span>
+																<span>Pays :</span>
 																<?php echo $row['country']; ?>
 															</li>
 															<li>
-																<span>City:</span>
+																<span>Ville :</span>
 																<?php echo $row['city']; ?>
 															</li>
 															<li>
-																<span>Experience:</span>
+																<span>Expérience :</span>
 																<?php echo $row['experience']; ?>
 															</li>
 															<li>
-																<span>Deadline: </span>
+																<span>Date limite :</span>
 																<?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
 															</li>
 														</ul>
@@ -309,7 +310,7 @@ $page = 1;
 														</div>
 														
 													<div class="col-sm-5 col-md-4">
-														<a target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="btn btn-primary">View This Job</a>
+														<a target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="btn btn-primary">Voir cette offre</a>
 													</div>
 														
 													</div>

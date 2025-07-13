@@ -1,0 +1,535 @@
+/* ========================================
+   AMÉLIORATIONS VISUELLES - PAGE DE CONNEXION
+   ======================================== */
+
+/* ==========================
+   SECTION BREADCRUMB AMÉLIORÉE
+   ========================== */
+
+.breadcrumb-wrapper {
+    background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+}
+
+.breadcrumb-wrapper .container {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumb-list li {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+    content: '>';
+    margin-left: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+.breadcrumb-list li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.breadcrumb-list li a:hover {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.breadcrumb-list li span {
+    color: #fff;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* ==========================
+   CONTAINER DE CONNEXION AMÉLIORÉ
+   ========================== */
+
+.login-container-wrapper {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+}
+
+.login-container-wrapper .container {
+    max-width: 1200px;
+}
+
+/* ==========================
+   BOX DE CONNEXION AMÉLIORÉE
+   ========================== */
+
+.login-box-wrapper {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.login-box-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--couleur-principale), var(--couleur-secondaire));
+}
+
+.login-box-wrapper .modal-header {
+    background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: none;
+    position: relative;
+}
+
+.login-box-wrapper .modal-header h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.login-box-wrapper .modal-body {
+    padding: 2.5rem;
+    background: #fff;
+}
+
+.login-box-wrapper .modal-footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* ==========================
+   FORMULAIRES AMÉLIORÉS
+   ========================== */
+
+.login-box-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.login-box-wrapper .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--couleur-texte-titre);
+    font-size: 0.95rem;
+    text-transform: capitalize;
+}
+
+.login-box-wrapper .form-control {
+    height: 50px;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    font-size: 1rem;
+    padding: 0 1rem;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    color: #333;
+    width: 100%;
+}
+
+.login-box-wrapper .form-control:focus {
+    border-color: var(--couleur-secondaire);
+    box-shadow: 0 0 0 3px rgba(0, 73, 255, 0.1);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.login-box-wrapper .form-control::-webkit-input-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.login-box-wrapper .form-control:-moz-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.login-box-wrapper .form-control::-moz-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.login-box-wrapper .form-control:-ms-input-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+/* ==========================
+   BOUTONS AMÉLIORÉS
+   ========================== */
+
+.login-box-wrapper .btn-primary {
+    background: var(--couleur-bouton);
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 72, 0, 0.3);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.login-box-wrapper .btn-primary:hover {
+    background: #e63900;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 72, 0, 0.4);
+}
+
+.login-box-wrapper .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 72, 0, 0.2);
+}
+
+.login-box-wrapper .btn-inverse {
+    background: transparent;
+    border: 2px solid var(--couleur-principale);
+    color: var(--couleur-principale);
+}
+
+.login-box-wrapper .btn-inverse:hover {
+    background: var(--couleur-principale);
+    color: #fff;
+}
+
+/* ==========================
+   LIENS AMÉLIORÉS
+   ========================== */
+
+.login-box-link-action {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.login-box-link-action a {
+    color: var(--couleur-secondaire);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.login-box-link-action a:hover {
+    color: var(--couleur-principale);
+    text-decoration: underline;
+}
+
+.login-box-box-action {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--couleur-texte-discret);
+}
+
+.login-box-box-action a {
+    color: var(--couleur-secondaire);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.login-box-box-action a:hover {
+    color: var(--couleur-principale);
+    text-decoration: underline;
+}
+
+/* ==========================
+   MODAL MOT DE PASSE OUBLIÉ
+   ========================== */
+
+#forgotPasswordModal .modal-header {
+    background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: none;
+}
+
+#forgotPasswordModal .modal-header h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+#forgotPasswordModal .modal-body {
+    padding: 2.5rem;
+    background: #fff;
+}
+
+#forgotPasswordModal .modal-body p {
+    color: var(--couleur-texte-discret);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+#forgotPasswordModal .modal-footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* ==========================
+   MODAL D'INSCRIPTION
+   ========================== */
+
+#registerModal .modal-header {
+    background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: none;
+}
+
+#registerModal .modal-header h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+#registerModal .modal-body {
+    padding: 2.5rem;
+    background: #fff;
+}
+
+#registerModal .btn-facebook {
+    background: var(--couleur-bouton);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 72, 0, 0.3);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+#registerModal .btn-facebook:hover {
+    background: #e63900;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 72, 0, 0.4);
+    color: #fff;
+    text-decoration: none;
+}
+
+#registerModal .modal-footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* ==========================
+   ANIMATIONS
+   ========================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+
+@media (max-width: 991px) {
+    .login-container-wrapper {
+        padding: 3rem 0;
+    }
+    
+    .login-box-wrapper {
+        margin: 0 1rem;
+    }
+    
+    .login-box-wrapper .modal-header,
+    .login-box-wrapper .modal-body {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .login-container-wrapper {
+        padding: 2rem 0;
+    }
+    
+    .breadcrumb-wrapper {
+        padding: 1.5rem 0;
+    }
+    
+    .breadcrumb-list {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .breadcrumb-list li:not(:last-child)::after {
+        display: none;
+    }
+    
+    .login-box-wrapper {
+        margin: 0 0.5rem;
+    }
+    
+    .login-box-wrapper .modal-header,
+    .login-box-wrapper .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .login-box-wrapper .modal-header h4 {
+        font-size: 1.3rem;
+    }
+    
+    .form-control {
+        height: 45px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-primary {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .login-container-wrapper {
+        padding: 1rem 0;
+    }
+    
+    .login-box-wrapper {
+        margin: 0 0.25rem;
+    }
+    
+    .login-box-wrapper .modal-header,
+    .login-box-wrapper .modal-body {
+        padding: 1rem;
+    }
+    
+    .login-box-wrapper .modal-header h4 {
+        font-size: 1.2rem;
+    }
+    
+    .form-control {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================
+   STYLES SUPPLÉMENTAIRES
+   ========================== */
+
+/* Amélioration des transitions globales */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Amélioration des espacements */
+.container {
+    max-width: 1200px;
+}
+
+/* Amélioration des ombres */
+.shadow-enhanced {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Amélioration de la typographie */
+.text-center {
+    text-align: center;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+/* Amélioration des couleurs de texte */
+.text-primary {
+    color: var(--couleur-principale) !important;
+}
+
+.text-secondary {
+    color: var(--couleur-secondaire) !important;
+}
+
+.text-bouton {
+    color: var(--couleur-bouton) !important;
+} 

@@ -17,18 +17,18 @@ if ($base_url === '.' || $base_url === '/') $base_url = '';
             <div id="navbar" class="navbar-nav-wrapper navbar-arrow">
                 <ul class="nav navbar-nav" id="responsive-menu">
                     <li><a href="/OnlineJobPortal/" style="text-transform: capitalize;">Accueil</a></li>
-                    <li><a href="/OnlineJobPortal/job-list.php" style="text-transform: capitalize;">Liste des Offres</a></li>
+                    <li><a href="/OnlineJobPortal/job-list.php" style="text-transform: capitalize;">Liste Des Offres</a></li>
                     <li><a href="/OnlineJobPortal/employers.php" style="text-transform: capitalize;">Employeurs</a></li>
                     <li><a href="/OnlineJobPortal/employees.php" style="text-transform: capitalize;">Employés</a></li>
-                    <li><a href="/OnlineJobPortal/contact.php" style="text-transform: capitalize;">Contactez-nous</a></li>
+                    <li><a href="/OnlineJobPortal/contact.php" style="text-transform: capitalize;">Contactez-Nous</a></li>
                 </ul>
             </div>
             <div class="nav-mini-wrapper">
                 <ul class="nav-mini sign-in">
                 <?php if (isset($user_online) && $user_online == true) {
-                    print '<li><a href="/OnlineJobPortal/logout.php">deconnexion</a></li><li><a href="'.$myrole.'">Profil</a></li>';
+                    print '<li><a href="/OnlineJobPortal/logout.php">Déconnexion</a></li><li><a href="'.$myrole.'">Profil</a></li>';
                 } else {
-                    print '<li><a href="/OnlineJobPortal/login.php">connexion</a></li><li><a data-toggle="modal" href="#registerModal">inscription</a></li>';
+                    print '<li><a href="/OnlineJobPortal/login.php">Connexion</a></li><li><a data-toggle="modal" href="#registerModal">Inscription</a></li>';
                 } ?>
                 </ul>
             </div>
@@ -36,18 +36,18 @@ if ($base_url === '.' || $base_url === '/') $base_url = '';
         <div id="slicknav-mobile"></div>
     </nav>
     <!-- Modal d'inscription -->
-    <div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
+    <div id="registerModal" class="modal fade login-box-wrapper shadow-enhanced" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title text-center">Creez votre compte gratuitement</h4>
+            <h4 class="modal-title text-center">Créez Votre Compte Gratuitement</h4>
         </div>
         <div class="modal-body">
             <div class="row gap-20">
                 <div class="col-sm-6 col-md-6">
-                    <a href="/OnlineJobPortal/register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employeur</a>
+                    <a href="/OnlineJobPortal/register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">S'Inscrire Comme Employeur</a>
                 </div>
                 <div class="col-sm-6 col-md-6">
-                    <a href="/OnlineJobPortal/register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employe</a>
+                    <a href="/OnlineJobPortal/register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">S'Inscrire Comme Employé</a>
                 </div>
             </div>
         </div>

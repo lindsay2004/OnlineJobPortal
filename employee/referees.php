@@ -68,7 +68,8 @@ $page = 1;
 
 
 	<link href="../css/style.css" rel="stylesheet">
-
+	<link href="../css/employee-final.css" rel="stylesheet">
+	<link href="../css/employee-sidebar.css" rel="stylesheet">
 	
 </head>
   <style>
@@ -85,64 +86,7 @@ $page = 1;
 
 	<div class="container-wrapper">
 
-		<header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Accueil</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Liste des Offres</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employeurs</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employes</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contactez-nous</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">deconnexion</a></li>
-							<li><a href="./">Profil</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 
@@ -193,43 +137,45 @@ $page = 1;
 									
 									<div class="admin-user-action text-center">
 									
-										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">Voir mon CV</a>
+										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">
+											<i class="fa fa-file-text-o"></i> Voir mon CV
+										</a>
 										
 									</div>
 									
 									<ul class="admin-user-menu clearfix">
 										<li>
-											<a href="./"><i class="fa fa-user"></i> Profil</a>
+											<a href="./"><i class="fa fa-user"></i> Mon Profil</a>
 										</li>
 										<li class="">
-										<a href="change-password.php"><i class="fa fa-key"></i> Changer le mot de passe</a>
+										<a href="change-password.php"><i class="fa fa-key"></i> Changer le Mot de Passe</a>
 										</li>
 										<li  >
-											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications professionnelles</a>
+											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications Professionnelles</a>
 										</li>
 										<li>
-											<a href="language.php"><i class="fa fa-language"></i> Competences linguistiques</a>
+											<a href="language.php"><i class="fa fa-language"></i> Compétences Linguistiques</a>
 										</li>
 										<li>
 											<a href="training.php"><i class="fa fa-gears"></i> Formations & Ateliers</a>
 										</li>
 										<li class="active">
-											<a href="referees.php"><i class="fa fa-users"></i> Referents</a>
+											<a href="referees.php"><i class="fa fa-users"></i> Références</a>
 										</li>
 										<li >
-											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplomes academiques</a>
+											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplômes Académiques</a>
 										</li>
 										<li>
-											<a href="experience.php"><i class="fa fa-briefcase"></i> Experience professionnelle</a>
+											<a href="experience.php"><i class="fa fa-briefcase"></i> Expérience Professionnelle</a>
 										</li>
 										<li>
-											<a href="attachments.php"><i class="fa fa-folder-open"></i> Autres pieces jointes</a>
+											<a href="attachments.php"><i class="fa fa-folder-open"></i> Pièces Jointes</a>
 										</li>
 										<li>
-											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres postulees</a>
+											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres Postulées</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Deconnexion</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i> Déconnexion</a>
 										</li>
 									</ul>
 									
@@ -237,15 +183,61 @@ $page = 1;
 
 							</div>
 							
-							<div class="GridLex-col-9_sm-8_xs-12">
+																<div class="GridLex-col-9_sm-8_xs-12">
 							
 								<div class="admin-content-wrapper">
-
+								
 									<div class="admin-section-title">
 									
-										<h2>Referents</h2>
-					
+										<h2><i class="fa fa-users"></i> Références</h2>
+										<p><i class="fa fa-info-circle"></i> Gérez vos références professionnelles</p>
 										
+									</div>
+									
+									<!-- Formulaire d'ajout de référence -->
+									<div class="referee-form-wrapper">
+										<h4><i class="fa fa-plus-circle"></i> Ajouter une nouvelle référence</h4>
+										<form action="app/add-referee.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+											<div class="row gap-20">
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-user"></i> Nom du référent</label>
+														<input class="form-control" placeholder="Entrez le nom complet du référent" type="text" name="name" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-envelope"></i> Email du référent</label>
+														<input class="form-control" placeholder="Entrez l'email du référent" type="email" name="email" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-briefcase"></i> Titre du référent</label>
+														<input class="form-control" placeholder="Entrez le titre ou poste du référent" type="text" name="title" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-phone"></i> Téléphone du référent</label>
+														<input class="form-control" placeholder="Entrez le numéro de téléphone" type="text" name="phone" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-12">
+													<div class="form-group"> 
+														<label><i class="fa fa-building"></i> Nom de l'institution</label>
+														<input class="form-control" placeholder="Entrez le nom de l'entreprise ou institution" type="text" name="institution" required> 
+													</div>
+												</div>
+											</div>
+											<div class="row gap-20">
+												<div class="col-sm-12">
+													<button type="submit" class="btn btn-primary">
+														<i class="fa fa-save"></i> Ajouter la référence
+													</button>
+												</div>
+											</div>
+										</form>
 									</div>
 									
 									<div class="resume-list-wrapper">
@@ -269,7 +261,7 @@ $page = 1;
 									 $institution = $row['institution'];
 									 
 									 ?>
-									 									<div class="resume-list-item">
+									 									<div class="referee-item">
 										
 											<div class="row">
 											
@@ -277,23 +269,13 @@ $page = 1;
 												
 													<div class="content">
 													
-														<a>
-
-															<div class="image">
-                                                            <center><img src="../images/default.jpg"  alt="image" width="100" height="100" /></center>
-
-															</div>
-															
-															<h4><?php echo "$refname"; ?></h4>
-															
-															<div class="row">
-																<div class="col-sm-12 col-md-9">
-																	<i class="fa fa-building text-primary mr-5"></i><strong class="mr-10"><?php echo $row['institution']; ?></strong> <i class="fa fa-user text-primary mr-5"></i> <?php echo "$reftitle"; ?>.
-																</div>
-
-															</div>
-
-														</a>
+														<div class="referee-name"><?php echo "$refname"; ?></div>
+														<div class="referee-position"><?php echo "$reftitle"; ?></div>
+														<div class="referee-company"><?php echo $row['institution']; ?></div>
+														<div class="referee-contact">
+															<i class="fa fa-envelope"></i> <?php echo "$refmail"; ?><br>
+															<i class="fa fa-phone"></i> <?php echo "$refphone"; ?>
+														</div>
 													
 													</div>
 												
@@ -301,15 +283,15 @@ $page = 1;
 												
 												<div class="col-sm-12 col-md-2">
 													
-													<div class="resume-list-btn">
+													<div class="referee-actions">
 													
-														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Modifier</a>
-									<a href="app/drop-ref.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Etes-vous sur de vouloir supprimer ce referent ?')" class="btn btn-primary btn-sm btn-inverse">Supprimer</a>
+														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Modifier</a>
+									<a href="app/drop-ref.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Êtes-vous sûr de vouloir supprimer cette référence ?')" class="btn btn-danger btn-sm">Supprimer</a>
 									<div id="edit<?php echo $row['id']; ?>" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
 					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                 <h4 class="modal-title text-center"><?php echo "$refname"; ?></h4>
+					                 <h4 class="modal-title text-center"><i class="fa fa-edit"></i> Modifier la référence : <?php echo "$refname"; ?></h4>
 				                    </div>
 				
 				                    <div class="modal-body">
@@ -319,8 +301,8 @@ $page = 1;
 									<div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Nom du referent</label>
-								    <input class="form-control" value="<?php echo "$refname"; ?>" placeholder="Entrez le nom du referent" type="text" name="name" required> 
+								    <label><i class="fa fa-user"></i> Nom du référent</label>
+								    <input class="form-control" value="<?php echo "$refname"; ?>" placeholder="Entrez le nom du référent" type="text" name="name" required> 
 							        </div>
 						
 						             </div>
@@ -331,8 +313,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Email du referent</label>
-								    <input class="form-control" value="<?php echo "$refmail"; ?>"placeholder="Entrez l'email du referent" type="email" name="email" required> 
+								    <label><i class="fa fa-envelope"></i> Email du référent</label>
+								    <input class="form-control" value="<?php echo "$refmail"; ?>" placeholder="Entrez l'email du référent" type="email" name="email" required> 
 							        </div>
 						
 						           </div>
@@ -340,8 +322,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Titre du referent</label>
-								    <input class="form-control" value="<?php echo "$reftitle"; ?>" placeholder="Entrez le titre du referent" type="text" name="title" required> 
+								    <label><i class="fa fa-briefcase"></i> Titre du référent</label>
+								    <input class="form-control" value="<?php echo "$reftitle"; ?>" placeholder="Entrez le titre du référent" type="text" name="title" required> 
 							        </div>
 						
 						           </div>
@@ -349,8 +331,8 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Telephone du referent</label>
-								    <input class="form-control" value="<?php echo "$refphone"; ?>" placeholder="Entrez le telephone du referent" type="text" name="phone" required> 
+								    <label><i class="fa fa-phone"></i> Téléphone du référent</label>
+								    <input class="form-control" value="<?php echo "$refphone"; ?>" placeholder="Entrez le téléphone du référent" type="text" name="phone" required> 
 							        </div>
 						
 						           </div>
@@ -359,7 +341,7 @@ $page = 1;
 								   	<div class="col-sm-12 col-md-12">
 						
 							        <div class="form-group"> 
-								    <label>Nom de l'institution</label>
+								    <label><i class="fa fa-building"></i> Nom de l'institution</label>
 								    <input class="form-control" value="<?php echo "$institution"; ?>" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
 							        </div>
 					
@@ -369,8 +351,8 @@ $page = 1;
 				                   </div>
 				                   <input type="hidden" name="refid" value="<?php echo "$ref_id"; ?>">
 				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
+				 	               <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Mettre à jour</button>
+					               <button type="button" data-dismiss="modal" class="btn btn-default"><i class="fa fa-times"></i> Annuler</button>
 				                   </div>
 				                   </form>
 			                       </div>
@@ -537,99 +519,7 @@ $page = 1;
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">A propos</h5>
-											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 pour son projet en fevrier 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Liens rapides</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Accueil</a></li>
-											<li><a href="../job-list.php">Liste des Offres</a></li>
-											<li><a href="../employers.php">Employeurs</a></li>
-											<li><a href="../employees.php">Employes</a></li>
-											<li><a href="../contact.php">Contactez-nous</a></li>
-											<li><a href="#">Aller en haut</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title"> Contact</h5>
-								
-								<p>Adresse : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Telephone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> BwireSoft</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developpe par Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 			
 		</div>
 

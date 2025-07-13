@@ -1,0 +1,775 @@
+/* ===== CONTACT & COMPANY ENHANCEMENTS ===== */
+
+/* ===== CONTACT PAGE ENHANCEMENTS ===== */
+
+/* Breadcrumb amélioré */
+.breadcrumb-wrapper {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 20px 0;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 0;
+}
+
+.breadcrumb-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.breadcrumb-list li {
+    font-size: 14px;
+    color: #6c757d;
+    text-transform: capitalize;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+    content: "›";
+    margin-left: 10px;
+    color: #adb5bd;
+    font-weight: bold;
+}
+
+.breadcrumb-list li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-list li a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.breadcrumb-list li span {
+    color: #495057;
+    font-weight: 600;
+}
+
+/* Section principale */
+.section.sm {
+    padding: 40px 0;
+    background: #ffffff;
+}
+
+/* Titre de section */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+/* Formulaire de contact */
+.contact-form-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-form-wrapper .form-group {
+    margin-bottom: 25px;
+}
+
+.contact-form-wrapper label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.contact-form-wrapper .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.contact-form-wrapper .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    background: #ffffff;
+}
+
+.contact-form-wrapper textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form-wrapper .btn {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.contact-form-wrapper .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Liste d'adresse */
+.address-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.address-list li {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.address-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.address-list li h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
+}
+
+.address-list li address {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #495057;
+    margin: 0;
+    font-style: normal;
+}
+
+.address-list li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.address-list li a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Réseaux sociaux */
+.contact-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.contact-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: #007bff;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.contact-social a:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* ===== COMPANY PAGE ENHANCEMENTS ===== */
+
+/* Container du détail d'entreprise */
+.company-detail-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* En-tête du détail d'entreprise */
+.company-detail-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+}
+
+.company-detail-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.company-detail-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.company-detail-header .image {
+    margin-bottom: 25px;
+}
+
+.company-detail-header .image img {
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.company-detail-header .image img:hover {
+    transform: scale(1.05);
+}
+
+.company-detail-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    line-height: 1.3;
+}
+
+.company-detail-header .location {
+    font-size: 18px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.company-detail-header .location i {
+    margin-right: 8px;
+    color: #ffffff;
+}
+
+/* Liste des métadonnées dans l'en-tête */
+.company-detail-header .meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.company-detail-header .meta-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.company-detail-header .meta-list h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.company-detail-header .meta-list li:not(:has(h4)) {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.company-detail-header .meta-list li a {
+    color: #ffffff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.company-detail-header .meta-list li a:hover {
+    color: #f8f9fa;
+}
+
+/* Vue d'ensemble de l'entreprise */
+.company-detail-company-overview {
+    padding: 30px;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.company-detail-company-overview h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+}
+
+.company-detail-company-overview p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #495057;
+    margin-bottom: 25px;
+}
+
+/* Section des offres d'emploi */
+.section-title.mb-40 {
+    margin-bottom: 30px;
+}
+
+.section-title.mb-40 h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* Liste des offres d'emploi */
+.result-list-wrapper {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.job-item-list {
+    display: flex;
+    padding: 25px;
+    border-bottom: 1px solid #f1f3f4;
+    transition: all 0.3s ease;
+    background: #ffffff;
+}
+
+.job-item-list:hover {
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.job-item-list:last-child {
+    border-bottom: none;
+}
+
+.job-item-list .image {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.job-item-list .image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.job-item-list .content {
+    flex: 1;
+}
+
+.job-item-list-info h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.job-item-list-info .meta-div {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #6c757d;
+}
+
+.job-item-list-info .meta-div a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.job-item-list-info .meta-div a:hover {
+    text-decoration: underline;
+}
+
+.job-item-list-info .texing {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #495057;
+    margin-bottom: 15px;
+}
+
+/* Métadonnées des offres */
+.job-item-list-info .meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job-item-list-info .meta-list li {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.job-item-list-info .meta-list li span {
+    font-weight: 600;
+    color: #495057;
+    min-width: 80px;
+}
+
+/* Section inférieure des offres */
+.job-item-list-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.job-item-list-bottom .sub-category a {
+    display: inline-block;
+    background: #e9ecef;
+    color: #495057;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+
+.job-item-list-bottom .sub-category a:hover {
+    background: #007bff;
+    color: #ffffff;
+}
+
+.job-item-list-bottom .btn {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+.job-item-list-bottom .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Labels des types d'emploi */
+.job-label {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-left: 10px;
+}
+
+.label-success {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.label-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.label-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* Pagination */
+.pager-wrapper {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.pager-list {
+    display: inline-flex;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pager-list li {
+    margin: 0 2px;
+}
+
+.pager-list li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    color: #007bff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #e9ecef;
+    font-weight: 600;
+}
+
+.pager-list li a:hover {
+    background: #f8f9fa;
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
+.pager-list li.paging-nav a {
+    background: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+}
+
+.pager-list li.paging-nav a:hover {
+    background: #0056b3;
+    border-color: #0056b3;
+}
+
+.pager-list li.disabled a {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f8f9fa;
+    color: #6c757d;
+    border-color: #e9ecef;
+}
+
+.pager-list li.disabled a:hover {
+    transform: none;
+    background: #f8f9fa;
+    border-color: #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 24px;
+    }
+    
+    .contact-form-wrapper {
+        padding: 20px;
+    }
+    
+    .address-list li {
+        padding: 20px;
+    }
+    
+    .company-detail-header {
+        padding: 30px 20px;
+    }
+    
+    .company-detail-header h2 {
+        font-size: 24px;
+    }
+    
+    .company-detail-header .meta-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .company-detail-header .meta-list li {
+        padding: 12px 15px;
+    }
+    
+    .company-detail-company-overview {
+        padding: 20px;
+    }
+    
+    .job-item-list {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .job-item-list .image {
+        margin-right: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .job-item-list-info h4 {
+        font-size: 18px;
+    }
+    
+    .job-item-list-info .meta-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .job-item-list-info .meta-list li span {
+        min-width: auto;
+    }
+    
+    .job-item-list-bottom {
+        text-align: center;
+    }
+    
+    .job-item-list-bottom .sub-category {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 20px;
+    }
+    
+    .contact-form-wrapper .btn {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+    
+    .company-detail-header h2 {
+        font-size: 20px;
+    }
+    
+    .company-detail-header .location {
+        font-size: 16px;
+    }
+    
+    .company-detail-header .meta-list {
+        gap: 10px;
+    }
+    
+    .company-detail-header .meta-list li {
+        padding: 10px 12px;
+    }
+    
+    .job-item-list {
+        padding: 15px;
+    }
+    
+    .job-item-list-info h4 {
+        font-size: 16px;
+    }
+    
+    .job-item-list-info .texing {
+        font-size: 14px;
+    }
+    
+    .job-item-list-bottom .btn {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+    
+    .contact-social {
+        justify-content: center;
+    }
+    
+    .pager-list li a {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-form-wrapper,
+.address-list li,
+.company-detail-wrapper {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.meta-list li {
+    animation: fadeInUp 0.6s ease-out;
+    animation-delay: calc(var(--i, 0) * 0.1s);
+}
+
+/* Améliorations pour les messages d'erreur */
+.help-block {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.help-block.with-errors {
+    color: #dc3545;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+/* Footer amélioré */
+.footer-wrapper {
+    margin-top: 50px;
+}
+
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+#back-to-top a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #007bff;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+#back-to-top a:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+} 

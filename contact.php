@@ -42,6 +42,7 @@ include 'constants/check-login.php';
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/contact-company-enhancements.css" rel="stylesheet">
 
 	
 </head>
@@ -79,6 +80,7 @@ include 'constants/check-login.php';
 							<div class="section-title">
 							
 								<h2>Contactez-nous pour obtenir de l'aide</h2>
+								<p class="text-muted">Nous sommes là pour vous aider. N'hésitez pas à nous contacter pour toute question.</p>
 								
 							</div>
 
@@ -98,8 +100,8 @@ include 'constants/check-login.php';
 									<div class="col-sm-6">
 									
 										<div class="form-group">
-											<label for="inputName">Votre Nom <span class="font10 text-danger">(required)</span></label>
-											<input id="inputName" name="fullname" type="text" class="form-control" data-error="Your name is required" required>
+											<label for="inputName">Votre Nom <span class="font10 text-danger">(requis)</span></label>
+											<input id="inputName" name="fullname" type="text" class="form-control" data-error="Votre nom est requis" required>
 											<div class="help-block with-errors"></div>
 										</div>
 										
@@ -108,8 +110,8 @@ include 'constants/check-login.php';
 									<div class="col-sm-6">
 									
 										<div class="form-group">
-											<label for="inputEmail">Votre Email <span class="font10 text-danger">(required)</span></label>
-											<input id="inputEmail" name="email" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<label for="inputEmail">Votre Email <span class="font10 text-danger">(requis)</span></label>
+											<input id="inputEmail" name="email" type="email" class="form-control" data-error="Votre email est requis et doit être une adresse email valide" required>
 											<div class="help-block with-errors"></div>
 										</div>
 										
@@ -119,15 +121,15 @@ include 'constants/check-login.php';
 									<div class="col-sm-12">
 									
 										<div class="form-group">
-											<label for="inputMessage">Message <span class="font10 text-danger">(required)</span></label>
-											<textarea id="inputMessage" name="message" class="form-control" rows="8" data-minlength="50" data-error="Your message is required and must not less than 50 characters" required></textarea>
+											<label for="inputMessage">Message <span class="font10 text-danger">(requis)</span></label>
+											<textarea id="inputMessage" name="message" class="form-control" rows="8" data-minlength="50" data-error="Votre message est requis et doit contenir au moins 50 caractères" required></textarea>
 											<div class="help-block with-errors"></div>
 										</div>
 
 									</div>
 									
 									<div class="col-sm-12 text-right">
-										<button type="submit" class="btn btn-primary mt-5">Send Message</button>
+										<button type="submit" class="btn btn-primary mt-5">Envoyer le message</button>
 									</div>
 									
 								</div>
@@ -151,7 +153,7 @@ include 'constants/check-login.php';
 								</li>
 
 								<li>
-										<h5>Social Networks</h5>
+										<h5>Réseaux sociaux</h5>
 										<div class="contact-social">
 										
 											<a href="<?php echo "$fb"; ?>" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>

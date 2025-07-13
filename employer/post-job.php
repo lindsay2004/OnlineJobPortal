@@ -53,6 +53,7 @@ header("location:../");
 	<link rel="stylesheet" href="../icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="../css/style.css" rel="stylesheet">
+	<link href="../css/employer-jobs.css" rel="stylesheet">
 
 	
 </head>
@@ -64,16 +65,16 @@ header("location:../");
 
 		<?php include '../components/header.php'; ?>
 
-		<div class="main-wrapper">
+		<div class="main-wrapper employer-jobs-wrapper">
 		
 			<div class="breadcrumb-wrapper">
 			
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="../">Home</a></li>
-						<li><a ><?php echo "$compname"; ?></a></li>
-						<li><span>Post a Job</span></li>
+						<li><a href="../"><i class="fa fa-home"></i> Accueil</a></li>
+						<li><a href="./"><i class="fa fa-building"></i> <?php echo "$compname"; ?></a></li>
+						<li><span><i class="fa fa-plus"></i> Publier une offre</span></li>
 					</ol>
 					
 				</div>
@@ -94,43 +95,43 @@ header("location:../");
 									<div class="image">
 										<?php 
 										if ($logo == null) {
-										print '<center>Company Logo Here</center>';
+										print '<div class="logo-placeholder"><i class="fa fa-building fa-3x"></i><p>Logo de l\'entreprise</p></div>';
 										}else{
-										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
+										echo '<img alt="Logo '.$compname.'" title="'.$compname.'" class="company-logo" src="data:image/jpeg;base64,'.base64_encode($logo).'"/>';	
 										}
 										?>
 									</div>
 									
-									<h2 class="heading mb-15"><h4><?php echo "$compname"; ?></h4>
+									<h4><?php echo "$compname"; ?></h4>
 								
 									<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
 									
 									<ul class="meta-list clearfix">
 										<li>
-											<h4 class="heading">Established In:</h4>
+											<h4 class="heading"><i class="fa fa-calendar"></i> Établi en:</h4>
 											<?php echo "$esta"; ?>
 										</li>
 										<li>
-											<h4 class="heading">Type:</h4>
+											<h4 class="heading"><i class="fa fa-tag"></i> Secteur:</h4>
 											<?php echo "$mytitle"; ?>
 										</li>
 										<li>
-											<h4 class="heading">People:</h4>
+											<h4 class="heading"><i class="fa fa-users"></i> Effectif:</h4>
 											<?php echo "$mypeople"; ?>
 										</li>
 										<li>
-											<h4 class="heading">Website: </h4>
+											<h4 class="heading"><i class="fa fa-globe"></i> Site Web:</h4>
 											<a target="_blank" href="https://<?php echo "$myweb"; ?>"><?php echo "$myweb"; ?></a>
 										</li>
 										<li>
-											<h4 class="heading">Email: </h4>
+											<h4 class="heading"><i class="fa fa-envelope"></i> Email:</h4>
 											<?php echo "$mymail"; ?>
 										</li>
 
 									</ul>
 									
 									
-									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Edit</a>
+									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Retour au profil</a>
 									
 								</div>
 					
@@ -144,7 +145,7 @@ header("location:../");
 									<div class="company-detail-company-overview  mt-0 clearfix">
 										
 										<div class="section-title-02">
-											<h3 class="text-left">Post a Job</h3>
+											<h3 class="text-left"><i class="fa fa-plus-circle"></i> Publier une nouvelle offre d'emploi</h3>
 										</div>
 
 										<form class="post-form-wrapper" action="app/post-job.php" method="POST" autocomplete="off">
@@ -155,8 +156,8 @@ header("location:../");
 												<div class="col-sm-8 col-md-8">
 												
 													<div class="form-group">
-														<label>Job Title</label>
-														<input name="title" required type="text" class="form-control" placeholder="Enter job title">
+														<label class="required"><i class="fa fa-briefcase"></i> Titre du poste</label>
+														<input name="title" required type="text" class="form-control" placeholder="Ex: Développeur Web Senior">
 													</div>
 													
 												</div>
@@ -166,8 +167,8 @@ header("location:../");
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>City</label>
-														<input name="city" required type="text" class="form-control" placeholder="Enter city">
+														<label class="required"><i class="fa fa-map-marker"></i> Ville</label>
+														<input name="city" required type="text" class="form-control" placeholder="Ex: Paris">
 													</div>
 													
 												</div>
@@ -175,9 +176,9 @@ header("location:../");
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Country</label>
+														<label class="required"><i class="fa fa-flag"></i> Pays</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Select</option>
+															<option disabled value="">Sélectionner un pays</option>
 						                                   <?php
 														   require '../constants/db_config.php';
 														   try {
@@ -212,9 +213,9 @@ header("location:../");
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Job Category</label>
+														<label class="required"><i class="fa fa-tags"></i> Catégorie d'emploi</label>
 															<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Select</option>
+															<option disabled value="">Sélectionner une catégorie</option>
 						                                   <?php
 														   require '../constants/db_config.php';
 														   try {
@@ -248,8 +249,8 @@ header("location:../");
 											    <div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Closing Date</label>
-														<input name="deadline" required type="text" class="form-control" placeholder="Eg: 30/12/2018">
+														<label class="required"><i class="fa fa-calendar-times-o"></i> Date de clôture</label>
+														<input name="deadline" required type="text" class="form-control" placeholder="Ex: 30/12/2024">
 													</div>
 													
 												</div>
@@ -259,11 +260,11 @@ header("location:../");
 												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
 													<div class="form-group mb-20">
-														<label>Job Type:</label>
+														<label class="required"><i class="fa fa-clock-o"></i> Type d'emploi:</label>
 														<select name="jobtype" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
-															<option value="" selected>Select</option>
-															<option value="Full-time" data-content="<span class='label label-warning'>Full-time</span>">Full-time</option>
-															<option value="Part-time" data-content="<span class='label label-danger'>Part-time</span>">Part-time</option>
+															<option value="" selected>Sélectionner</option>
+															<option value="Temps plein" data-content="<span class='label label-warning'>Temps plein</span>">Temps plein</option>
+															<option value="Temps partiel" data-content="<span class='label label-danger'>Temps partiel</span>">Temps partiel</option>
 															<option value="Freelance" data-content="<span class='label label-success'>Freelance</span>">Freelance</option>
 														</select>
 													</div>
@@ -273,14 +274,14 @@ header("location:../");
 												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
 													<div class="form-group mb-20">
-														<label>Experience:</label>
+														<label class="required"><i class="fa fa-star"></i> Expérience:</label>
 														<select name="experience" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
-															<option value="" selected >Select</option>
+															<option value="" selected >Sélectionner</option>
 															<option value="Expert">Expert</option>
-															<option value="2 Years">2 Years</option>
-															<option value="3 Years">3 Years</option>
-															<option value="4 Years">4 Years</option>
-															<option value="5 Years">5 Years</option>
+															<option value="2 ans">2 ans</option>
+															<option value="3 ans">3 ans</option>
+															<option value="4 ans">4 ans</option>
+															<option value="5 ans">5 ans</option>
 														</select>
 													</div>
 													
@@ -292,8 +293,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Job Description</label>
-														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Enter description ..." style="height: 200px;"></textarea>
+														<label class="required"><i class="fa fa-file-text"></i> Description du poste</label>
+														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Décrivez en détail le poste, les missions principales, l'environnement de travail..." style="height: 200px;"></textarea>
 													</div>
 													
 												</div>
@@ -303,8 +304,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Job Responsibilies</label>
-														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Enter responsiblities..." style="height: 200px;"></textarea>
+														<label class="required"><i class="fa fa-tasks"></i> Responsabilités du poste</label>
+														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Listez les principales responsabilités et missions du poste..." style="height: 200px;"></textarea>
 													</div>
 													
 												</div>
@@ -314,8 +315,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Requirements</label>
-														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="Enter requirements..." style="height: 200px;"></textarea>
+														<label class="required"><i class="fa fa-check-circle"></i> Exigences et compétences</label>
+														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="Listez les compétences, diplômes et expériences requises..." style="height: 200px;"></textarea>
 													</div>
 													
 												</div>
@@ -337,7 +338,9 @@ header("location:../");
 												<div class="clear"></div>
 												
 												<div class="col-sm-6 mt-30">
-													<button type="submit"  onclick = "validate(this)" class="btn btn-primary btn-lg">Post Your Job</button>
+													<button type="submit" onclick = "validate(this)" class="btn btn-primary btn-lg">
+														<i class="fa fa-paper-plane"></i> Publier l'offre d'emploi
+													</button>
 												</div>
 
 											</div>

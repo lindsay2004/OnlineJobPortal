@@ -94,6 +94,7 @@ foreach($result as $row)
 	<link rel="stylesheet" href="../icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="../css/style.css" rel="stylesheet">
+	<link href="../css/employer-jobs.css" rel="stylesheet">
 	
 </head>
 
@@ -104,16 +105,16 @@ foreach($result as $row)
 
 		<?php include '../components/header.php'; ?>
 
-		<div class="main-wrapper">
+		<div class="main-wrapper employer-jobs-wrapper">
 		
 			<div class="breadcrumb-wrapper">
 			
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="../">Accueil</a></li>
-						<li><a ><?php echo "$compname"; ?></a></li>
-						<li><span><?php echo "$jobtitle"; ?></span></li>
+						<li><a href="../"><i class="fa fa-home"></i> Accueil</a></li>
+						<li><a href="./"><i class="fa fa-building"></i> <?php echo "$compname"; ?></a></li>
+						<li><span><i class="fa fa-edit"></i> Modifier "<?php echo "$jobtitle"; ?>"</span></li>
 					</ol>
 					
 				</div>
@@ -134,43 +135,43 @@ foreach($result as $row)
 									<div class="image">
 										<?php 
 										if ($logo == null) {
-										print '<center>Logo de l\'entreprise ici</center>';
+										print '<div class="logo-placeholder"><i class="fa fa-building fa-3x"></i><p>Logo de l\'entreprise</p></div>';
 										}else{
-										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
+										echo '<img alt="Logo '.$compname.'" title="'.$compname.'" class="company-logo" src="data:image/jpeg;base64,'.base64_encode($logo).'"/>';	
 										}
 										?>
 									</div>
 									
-									<h2 class="heading mb-15"><h4><?php echo "$compname"; ?></h4>
+									<h4><?php echo "$compname"; ?></h4>
 								
 									<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
 									
 									<ul class="meta-list clearfix">
 										<li>
-											<h4 class="heading">Établi en:</h4>
+											<h4 class="heading"><i class="fa fa-calendar"></i> Établi en:</h4>
 											<?php echo "$esta"; ?>
 										</li>
 										<li>
-											<h4 class="heading">Type:</h4>
+											<h4 class="heading"><i class="fa fa-tag"></i> Secteur:</h4>
 											<?php echo "$mytitle"; ?>
 										</li>
 										<li>
-											<h4 class="heading">Personnes:</h4>
+											<h4 class="heading"><i class="fa fa-users"></i> Effectif:</h4>
 											<?php echo "$mypeople"; ?>
 										</li>
 										<li>
-											<h4 class="heading">Site Web: </h4>
+											<h4 class="heading"><i class="fa fa-globe"></i> Site Web:</h4>
 											<a target="_blank" href="https://<?php echo "$myweb"; ?>"><?php echo "$myweb"; ?></a>
 										</li>
 										<li>
-											<h4 class="heading">Email: </h4>
+											<h4 class="heading"><i class="fa fa-envelope"></i> Email:</h4>
 											<?php echo "$mymail"; ?>
 										</li>
 
 									</ul>
 									
 									
-									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Modifier</a>
+									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Retour au profil</a>
 									
 								</div>
 					
@@ -184,7 +185,7 @@ foreach($result as $row)
 									<div class="company-detail-company-overview  mt-0 clearfix">
 										
 										<div class="section-title-02">
-											<h3 class="text-left"><?php echo "$jobtitle"; ?></h3>
+											<h3 class="text-left"><i class="fa fa-edit"></i> Modifier l'offre d'emploi</h3>
 										</div>
 
 										<form class="post-form-wrapper" action="app/update-job.php" method="POST" autocomplete="off">
@@ -195,8 +196,8 @@ foreach($result as $row)
 												<div class="col-sm-8 col-md-8">
 												
 													<div class="form-group">
-														<label>Titre du poste</label>
-														<input name="title" value="<?php echo "$jobtitle"; ?>" required type="text" class="form-control" placeholder="Entrez le titre du poste">
+														<label class="required"><i class="fa fa-briefcase"></i> Titre du poste</label>
+														<input name="title" value="<?php echo "$jobtitle"; ?>" required type="text" class="form-control" placeholder="Ex: Développeur Web Senior">
 													</div>
 													
 												</div>
@@ -206,8 +207,8 @@ foreach($result as $row)
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Ville</label>
-														<input name="city" value="<?php echo "$jobcity"; ?>"  required type="text" class="form-control" placeholder="Entrez la ville">
+														<label class="required"><i class="fa fa-map-marker"></i> Ville</label>
+														<input name="city" value="<?php echo "$jobcity"; ?>"  required type="text" class="form-control" placeholder="Ex: Paris">
 													</div>
 													
 												</div>
@@ -215,9 +216,9 @@ foreach($result as $row)
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Pays</label>
+														<label class="required"><i class="fa fa-flag"></i> Pays</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Sélectionner</option>
+															<option disabled value="">Sélectionner un pays</option>
 						                                   <?php
 														   require '../constants/db_config.php';
 														   try {
@@ -252,9 +253,9 @@ foreach($result as $row)
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Catégorie d'emploi</label>
+														<label class="required"><i class="fa fa-tags"></i> Catégorie d'emploi</label>
 															<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Sélectionner</option>
+															<option disabled value="">Sélectionner une catégorie</option>
 						                                   <?php
 														   require '../constants/db_config.php';
 														   try {
@@ -288,8 +289,8 @@ foreach($result as $row)
 											    <div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Date de clôture</label>
-														<input name="deadline" required type="text" class="form-control" value="<?php echo "$closingdate"; ?>" placeholder="Ex: 30/12/2018">
+														<label class="required"><i class="fa fa-calendar-times-o"></i> Date de clôture</label>
+														<input name="deadline" required type="text" class="form-control" value="<?php echo "$closingdate"; ?>" placeholder="Ex: 30/12/2024">
 													</div>
 													
 												</div>
@@ -299,7 +300,7 @@ foreach($result as $row)
 												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
 													<div class="form-group mb-20">
-														<label>Type d'emploi:</label>
+														<label class="required"><i class="fa fa-clock-o"></i> Type d'emploi:</label>
 														<select name="jobtype" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="Tout">
 															<option value="" selected>Sélectionner</option>
 															<option <?php if ($jobtype == "Temps plein") { print ' selected '; } ?> value="Temps plein" data-content="<span class='label label-warning'>Temps plein</span>">Temps plein</option>
@@ -313,7 +314,7 @@ foreach($result as $row)
 												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
 													<div class="form-group mb-20">
-														<label>Expérience:</label>
+														<label class="required"><i class="fa fa-star"></i> Expérience:</label>
 														<select name="experience" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="Tout">
 															<option value="" selected >Sélectionner</option>
 															<option <?php if ($experience == "Expert") { print ' selected '; } ?> value="Expert">Expert</option>
@@ -332,8 +333,8 @@ foreach($result as $row)
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Description du poste</label>
-														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Entrez la description ..." style="height: 200px;"><?php echo "$jobdescription"; ?></textarea>
+														<label class="required"><i class="fa fa-file-text"></i> Description du poste</label>
+														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Décrivez en détail le poste, les missions principales, l'environnement de travail..." style="height: 200px;"><?php echo "$jobdescription"; ?></textarea>
 													</div>
 													
 												</div>
@@ -343,8 +344,8 @@ foreach($result as $row)
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Responsabilités du poste</label>
-														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Entrez les responsabilités..." style="height: 200px;"><?php echo "$jobrespo"; ?></textarea>
+														<label class="required"><i class="fa fa-tasks"></i> Responsabilités du poste</label>
+														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Listez les principales responsabilités et missions du poste..." style="height: 200px;"><?php echo "$jobrespo"; ?></textarea>
 													</div>
 													
 												</div>
@@ -354,8 +355,8 @@ foreach($result as $row)
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Exigences</label>
-														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="Entrez les exigences..." style="height: 200px;"><?php echo "$jobreq"; ?></textarea>
+														<label class="required"><i class="fa fa-check-circle"></i> Exigences et compétences</label>
+														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="Listez les compétences, diplômes et expériences requises..." style="height: 200px;"><?php echo "$jobreq"; ?></textarea>
 													</div>
 													<input type="hidden" name="jobid" value="<?php echo "$jobid"; ?>">
 												</div>
@@ -377,7 +378,9 @@ foreach($result as $row)
 												<div class="clear"></div>
 												
 												<div class="col-sm-6 mt-30">
-													<button type="submit"  class="btn btn-primary btn-lg">Enregistrer les modifications</button>
+													<button type="submit" class="btn btn-primary btn-lg">
+														<i class="fa fa-save"></i> Enregistrer les modifications
+													</button>
 												</div>
 
 											</div>

@@ -1,0 +1,636 @@
+/* ===== CSS pour les derniers fichiers Employee ===== */
+
+/* Améliorations générales pour referees.php, academic.php, experience.php */
+
+/* Amélioration du titre de section */
+.admin-section-title h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.admin-section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+.admin-section-title p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Amélioration du contenu principal */
+.admin-content-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+/* Amélioration du breadcrumb */
+.breadcrumb-wrapper {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb-list {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-list li {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.breadcrumb-list li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-list li a:hover {
+    color: #f39c12;
+    transform: translateX(5px);
+}
+
+.breadcrumb-list li span {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+/* ===== SPÉCIFIQUE POUR REFEREES.PHP ===== */
+
+/* Amélioration de la liste des références */
+.resume-list-wrapper {
+    margin-top: 2rem;
+}
+
+.referee-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #ecf0f1;
+}
+
+.referee-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.referee-item .content {
+    padding: 1.5rem;
+}
+
+.referee-item .referee-name {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.referee-item .referee-position {
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.referee-item .referee-company {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.referee-item .referee-contact {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.referee-item .referee-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.referee-item .referee-actions a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.referee-item .referee-actions .btn-edit {
+    background: #f39c12;
+    color: white;
+}
+
+.referee-item .referee-actions .btn-edit:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+.referee-item .referee-actions .btn-remove {
+    background: #e74c3c;
+    color: white;
+}
+
+.referee-item .referee-actions .btn-remove:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Amélioration du formulaire d'ajout de référence */
+.referee-form-wrapper {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.referee-form-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.referee-form-wrapper .form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.referee-form-wrapper .form-control {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.referee-form-wrapper .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.referee-form-wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ===== SPÉCIFIQUE POUR ACADEMIC.PHP ===== */
+
+/* Amélioration de la liste des diplômes académiques */
+.academic-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #ecf0f1;
+}
+
+.academic-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.academic-item .content {
+    padding: 1.5rem;
+}
+
+.academic-item .academic-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.academic-item .academic-institution {
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.academic-item .academic-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.academic-item .academic-description {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.academic-item .academic-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.academic-item .academic-actions a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.academic-item .academic-actions .btn-edit {
+    background: #f39c12;
+    color: white;
+}
+
+.academic-item .academic-actions .btn-edit:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+.academic-item .academic-actions .btn-remove {
+    background: #e74c3c;
+    color: white;
+}
+
+.academic-item .academic-actions .btn-remove:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Amélioration du formulaire d'ajout de diplôme */
+.academic-form-wrapper {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.academic-form-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.academic-form-wrapper .form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.academic-form-wrapper .form-control {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.academic-form-wrapper .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.academic-form-wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ===== SPÉCIFIQUE POUR EXPERIENCE.PHP ===== */
+
+/* Amélioration de la liste des expériences professionnelles */
+.experience-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #ecf0f1;
+}
+
+.experience-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.experience-item .content {
+    padding: 1.5rem;
+}
+
+.experience-item .experience-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item .experience-company {
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item .experience-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.experience-item .experience-description {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.experience-item .experience-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.experience-item .experience-actions a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.experience-item .experience-actions .btn-edit {
+    background: #f39c12;
+    color: white;
+}
+
+.experience-item .experience-actions .btn-edit:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+.experience-item .experience-actions .btn-remove {
+    background: #e74c3c;
+    color: white;
+}
+
+.experience-item .experience-actions .btn-remove:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Amélioration du formulaire d'ajout d'expérience */
+.experience-form-wrapper {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.experience-form-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.experience-form-wrapper .form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.experience-form-wrapper .form-control {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.experience-form-wrapper .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.experience-form-wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Amélioration des boutons */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.8rem 2rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: #3498db;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.btn-success {
+    background: #27ae60;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.btn-success:hover {
+    background: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.btn-danger {
+    background: #e74c3c;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.btn-warning {
+    background: #f39c12;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.btn-warning:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .admin-content-wrapper {
+        padding: 1rem;
+    }
+    
+    .referee-item .content,
+    .academic-item .content,
+    .experience-item .content {
+        padding: 1rem;
+    }
+    
+    .referee-form-wrapper,
+    .academic-form-wrapper,
+    .experience-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .admin-section-title h2 {
+        font-size: 1.5rem;
+    }
+    
+    .referee-item .referee-actions a,
+    .academic-item .academic-actions a,
+    .experience-item .experience-actions a {
+        display: block;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-container-wrapper {
+        margin: 1rem 0;
+    }
+    
+    .referee-form-wrapper,
+    .academic-form-wrapper,
+    .experience-form-wrapper {
+        padding: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-content-wrapper {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.referee-item,
+.academic-item,
+.experience-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.referee-item:nth-child(1) { animation-delay: 0.1s; }
+.referee-item:nth-child(2) { animation-delay: 0.2s; }
+.referee-item:nth-child(3) { animation-delay: 0.3s; }
+.referee-item:nth-child(4) { animation-delay: 0.4s; }
+.referee-item:nth-child(5) { animation-delay: 0.5s; }
+
+.academic-item:nth-child(1) { animation-delay: 0.1s; }
+.academic-item:nth-child(2) { animation-delay: 0.2s; }
+.academic-item:nth-child(3) { animation-delay: 0.3s; }
+.academic-item:nth-child(4) { animation-delay: 0.4s; }
+.academic-item:nth-child(5) { animation-delay: 0.5s; }
+
+.experience-item:nth-child(1) { animation-delay: 0.1s; }
+.experience-item:nth-child(2) { animation-delay: 0.2s; }
+.experience-item:nth-child(3) { animation-delay: 0.3s; }
+.experience-item:nth-child(4) { animation-delay: 0.4s; }
+.experience-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Améliorations pour l'accessibilité */
+.form-control:focus,
+.btn:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* États de chargement */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Amélioration des messages d'erreur */
+.alert {
+    border-radius: 8px;
+    border: none;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+} 

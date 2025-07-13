@@ -83,6 +83,7 @@ try {
 	<link rel="stylesheet" href="icons/flaticon-thick-icons/flaticon-thick.css">
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/index-enhancements.css" rel="stylesheet">
   <style>
     .autofit2 {
 	height:70px;
@@ -109,34 +110,38 @@ try {
             ========================== -->
 			<section class="hero" style="background-image:url('images/hero-header/02.jpg');">
 				<div class="container">
-					<h1>Votre avenir commence ici</h1>
-					<p>Trouvez votre prochain emploi ou carriere</p>
+					<div class="hero-content">
+						<h1>Votre Avenir Commence Ici</h1>
+						<p>Trouvez Votre Prochain Emploi Ou Carrière</p>
 					<div class="main-search-form-wrapper">
 						<form action="job-list.php" method="GET" autocomplete="off">
 							<div class="form-holder">
 								<div class="row gap-0">
 									<div class="col-xss-6 col-xs-6 col-sm-6">
                                         <select class="form-control" name="category" required>
-										<option value="">-Selectionner une categorie-</option>
+												<option value="">- Sélectionner une catégorie -</option>
                                             <?php foreach ($categories as $row): ?>
-										<option style="color:black" value="<?php echo $row['category']; ?>"><?php echo $row['category']; ?></option>
+													<option value="<?php echo $row['category']; ?>"><?php echo $row['category']; ?></option>
                                             <?php endforeach; ?>
 										</select>
 									</div>
 									<div class="col-xss-6 col-xs-6 col-sm-6">
                                         <select class="form-control" name="country" required>
-										<option value="">-Selectionner un pays-</option>
+												<option value="">- Sélectionner un pays -</option>
                                             <?php foreach ($countries as $row): ?>
-										<option style="color:black" value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option>
+													<option value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option>
                                             <?php endforeach; ?>
 										</select>
 									</div>
 								</div>
 							</div>
 							<div class="btn-holder">
-								<button name="search" value="✓" type="submit" class="btn"><i class="ion-android-search"></i></button>
+									<button name="search" value="✓" type="submit" class="btn">
+										<i class="ion-android-search"></i>
+									</button>
 							</div>
 						</form>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -145,35 +150,42 @@ try {
             ========================== -->
 			<section class="post-hero bg-light">
 				<div class="container">
-					<div class="process-item-wrapper mt-20">
+					<div class="section-title">
+						<h2>Comment Ça Marche ?</h2>
+						<p>Trois Étapes Simples Pour Trouver Votre Emploi Idéal</p>
+					</div>
+					<div class="process-item-wrapper">
 						<div class="row">
 							<div class="col-sm-4">
-								<div class="process-item clearfix">
+								<div class="process-item">
 									<div class="icon">
 										<i class="flaticon-line-icon-set-magnification-lens"></i>
 									</div>
 									<div class="content">
-										<h5>01 / Rechercher un emploi</h5>
+										<h5>01 / Rechercher Un Emploi</h5>
+										<p>Parcourez Nos Milliers D'Offres D'Emploi Et Trouvez Celle Qui Vous Correspond</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-4">
-								<div class="process-item clearfix">
+								<div class="process-item">
 									<div class="icon">
 										<i class="flaticon-line-icon-set-pencil"></i>
 									</div>
 									<div class="content">
-										<h5>02 / Postuler a un emploi</h5>
+										<h5>02 / Postuler À Un Emploi</h5>
+										<p>Envoyez Votre Candidature En Quelques Clics Avec Votre CV Optimisé</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-4">
-								<div class="process-item clearfix">
+								<div class="process-item">
 									<div class="icon">
 										<i class="flaticon-line-icon-set-calendar"></i>
 									</div>
 									<div class="content">
-										<h5>03 / Commencer a travailler</h5>
+										<h5>03 / Commencer À Travailler</h5>
+										<p>Recevez Des Réponses Rapides Et Démarrez Votre Nouvelle Carrière</p>
 									</div>
 								</div>
 							</div>
@@ -186,27 +198,24 @@ try {
             ========================== -->
 			<section class="pt-0 pb-50">
 				<div class="container">
-					<div class="row">
-						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 							<div class="section-title">
-								<br><h2>Entreprises aleatoires</h2>
-							</div>
-						</div>
+						<h2>Entreprises Partenaires</h2>
+						<p>Découvrez Les Entreprises Qui Nous Font Confiance</p>
 					</div>
-					<div class="row top-company-wrapper with-bg">
+					<div class="row top-company-wrapper">
                         <?php foreach ($companies as $row): ?>
                             <?php $complogo = $row['avatar']; ?>
 					<div class="col-xss-12 col-xs-6 col-sm-4 col-md-3">
 					<div class="top-company">
 					<div class="image">
                                         <?php if ($complogo == null): ?>
-                                            <center><img class="autofit2" alt="image" src="images/blank.png"/></center>
+                                            <img class="autofit2" alt="image" src="images/blank.png"/>
                                         <?php else: ?>
-                                            <center><img class="autofit2" alt="image" src="data:image/jpeg;base64,<?php echo base64_encode($complogo); ?>"/></center>
+                                            <img class="autofit2" alt="image" src="data:image/jpeg;base64,<?php echo base64_encode($complogo); ?>"/>
                                         <?php endif; ?>
 					</div>
                                     <h6><?php echo $row['first_name']; ?></h6>
-					<a target="_blank" href="company.php?ref=<?php echo $row['member_no']; ?>">Voir l'entreprise</a>
+									<a target="_blank" href="company.php?ref=<?php echo $row['member_no']; ?>">Voir L'Entreprise</a>
 					</div>
 					</div>
                         <?php endforeach; ?>
@@ -218,16 +227,13 @@ try {
             ========================== -->
 			<section class="bg-light pt-80 pb-80">
 				<div class="container">
-					<div class="row">
-						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 							<div class="section-title">
-								<h2>Dernieres Offres</h2>
-							</div>
-						</div>
+						<h2>Dernières Offres</h2>
+						<p>Les Opportunités Les Plus Récentes Pour Votre Carrière</p>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="recent-job-wrapper alt-stripe mr-0">
+							<div class="recent-job-wrapper">
                                 <?php foreach ($jobs as $row): ?>
 							<?php
 							$jobcity = $row['city'];
@@ -258,15 +264,15 @@ try {
                                         $sta = '';
 							}
 							?>
-							<a class="recent-job-item clearfix" target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>">
+							<a class="recent-job-item" target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>">
 							<div class="GridLex-grid-middle">
 							<div class="GridLex-col-5_xs-12">
 							<div class="job-position">
 							<div class="image">
                                                         <?php if ($complogo == null): ?>
-                                                            <center><img alt="image" src="images/blank.png"/></center>
+													<img alt="image" src="images/blank.png"/>
                                                         <?php else: ?>
-                                                            <center><img alt="image" title="<?php echo $thecompname; ?>" width="180" height="100" src="data:image/jpeg;base64,<?php echo base64_encode($complogo); ?>"/></center>
+													<img alt="image" title="<?php echo $thecompname; ?>" width="180" height="100" src="data:image/jpeg;base64,<?php echo base64_encode($complogo); ?>"/>
                                                         <?php endif; ?>
 							</div>
 							<div class="content">

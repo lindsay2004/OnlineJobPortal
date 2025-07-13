@@ -1,0 +1,408 @@
+/* ===== CSS pour la page Profil Employé - Employee ===== */
+
+/* Améliorations visuelles sans changer les couleurs existantes */
+
+/* Amélioration de l'avatar */
+.admin-user-item .image {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.admin-user-item .image img {
+    border: 4px solid #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.admin-user-item .image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Amélioration des informations utilisateur */
+.admin-user-item h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+.admin-user-item .user-role {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Amélioration du bouton CV */
+.admin-user-action .btn {
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.8rem 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.admin-user-action .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Amélioration du menu de navigation */
+.admin-user-menu li a {
+    border-radius: 8px;
+    margin-bottom: 0.3rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.admin-user-menu li a:hover {
+    transform: translateX(8px);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.admin-user-menu li.active a {
+    background: #3498db;
+    color: white;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Amélioration du titre de section */
+.admin-section-title h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.admin-section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+.admin-section-title p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Amélioration des formulaires */
+.post-form-wrapper {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #bdc3c7;
+    font-style: italic;
+}
+
+/* Amélioration des selects */
+.selectpicker {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    transition: all 0.3s ease;
+}
+
+.selectpicker:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Amélioration de la date de naissance */
+.row.gap-5 .col-xs-3,
+.row.gap-5 .col-xs-4,
+.row.gap-5 .col-xs-5 {
+    padding: 0 0.25rem;
+}
+
+.row.gap-5 .form-control {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Amélioration du textarea */
+.bootstrap3-wysihtml5-wrapper .form-control {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    transition: all 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+
+.bootstrap3-wysihtml5-wrapper .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Amélioration des boutons */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.8rem 2rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: #3498db;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.btn-inverse {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-inverse:hover {
+    background: #7f8c8d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Amélioration du formulaire de photo */
+.form-group input[type="file"] {
+    padding: 0.8rem;
+    border: 2px dashed #bdc3c7;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #3498db;
+    background: #ecf0f1;
+}
+
+.form-group input[type="file"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Amélioration des grilles */
+.GridLex-gap-15-wrappper {
+    margin: 0;
+}
+
+.GridLex-grid-noGutter-equalHeight {
+    margin: 0;
+}
+
+/* Amélioration de la sidebar */
+.admin-sidebar {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    position: sticky;
+    top: 2rem;
+}
+
+/* Amélioration du contenu principal */
+.admin-content-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+/* Amélioration du breadcrumb */
+.breadcrumb-wrapper {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb-list {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-list li {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.breadcrumb-list li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-list li a:hover {
+    color: #f39c12;
+    transform: translateX(5px);
+}
+
+.breadcrumb-list li span {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        margin-bottom: 2rem;
+        position: static;
+    }
+    
+    .admin-content-wrapper {
+        padding: 1rem;
+    }
+    
+    .post-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .admin-section-title h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-container-wrapper {
+        margin: 1rem 0;
+    }
+    
+    .post-form-wrapper {
+        padding: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-content-wrapper {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Améliorations pour l'accessibilité */
+.form-control:focus,
+.selectpicker:focus,
+.btn:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* États de chargement */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Amélioration des messages d'erreur */
+.alert {
+    border-radius: 8px;
+    border: none;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+/* Amélioration des tooltips */
+.tooltip {
+    font-size: 0.85rem;
+}
+
+.tooltip-inner {
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+}
+
+/* Amélioration des modales */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-bottom: 1px solid #ecf0f1;
+    padding: 1.5rem 2rem;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #ecf0f1;
+    padding: 1.5rem 2rem;
+} 

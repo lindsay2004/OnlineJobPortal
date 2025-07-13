@@ -57,6 +57,7 @@ $page = 1;
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/employee-employers-enhancements.css" rel="stylesheet">
 
 	
 </head>
@@ -167,7 +168,7 @@ $page = 1;
 												<h4><?php echo $row['first_name'] ?> <?php echo $row['last_name'] ?></h4>
 												<p class="location"><i class="fa fa-map-marker"></i> <?php echo $row['country'] ?></p>
 												
-												<h6 class="text-primary">Education : <?php echo $row['education'] ?></h6>
+												<h6 class="text-primary">Formation : <?php echo $row['education'] ?></h6>
 												
                                                 <h6 class="text-primary"><?php echo $row['title'] ?></h6>
 												

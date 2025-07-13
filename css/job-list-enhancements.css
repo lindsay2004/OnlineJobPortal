@@ -1,0 +1,726 @@
+/* ========================================
+   AMÉLIORATIONS VISUELLES - PAGE LISTE DES OFFRES
+   ======================================== */
+
+/* ==========================
+   SECTION DE RECHERCHE AMÉLIORÉE
+   ========================== */
+
+.second-search-result-wrapper {
+    background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.second-search-result-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.second-search-result-inner {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.second-search-result-inner .labeling {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--couleur-texte-titre);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.second-search-result-inner .form-group {
+    margin-bottom: 1rem;
+}
+
+.second-search-result-inner .form-control {
+    height: 50px;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    font-size: 1rem;
+    padding: 0 1rem;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    color: #333;
+    width: 100%;
+}
+
+.second-search-result-inner .form-control:focus {
+    border-color: var(--couleur-secondaire);
+    box-shadow: 0 0 0 3px rgba(0, 73, 255, 0.1);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.second-search-result-inner .btn {
+    background: var(--couleur-bouton);
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 72, 0, 0.3);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    height: 50px;
+    width: 100%;
+}
+
+.second-search-result-inner .btn:hover {
+    background: #e63900;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 72, 0, 0.4);
+}
+
+/* ==========================
+   SECTION BREADCRUMB AMÉLIORÉE
+   ========================== */
+
+.breadcrumb-wrapper {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.breadcrumb-wrapper .container {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-list li {
+    color: var(--couleur-texte-discret);
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+    content: '>';
+    margin-left: 1rem;
+    color: var(--couleur-texte-discret);
+    font-weight: 300;
+}
+
+.breadcrumb-list li a {
+    color: var(--couleur-principale);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.breadcrumb-list li a:hover {
+    color: var(--couleur-secondaire);
+    text-decoration: underline;
+}
+
+.breadcrumb-list li span {
+    color: var(--couleur-texte-titre);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* ==========================
+   SECTION DE TRI AMÉLIORÉE
+   ========================== */
+
+.sorting-wrappper {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+.sorting-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.sorting-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--couleur-texte-titre);
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* ==========================
+   LISTE DES OFFRES AMÉLIORÉE
+   ========================== */
+
+.result-list-wrapper {
+    margin-bottom: 2rem;
+}
+
+.job-item-list {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-item-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--couleur-principale), var(--couleur-secondaire));
+}
+
+.job-item-list:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.job-item-list .image {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.job-item-list .image img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+.job-item-list:hover .image img {
+    transform: scale(1.05);
+}
+
+.job-item-list .content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-item-list-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-item-list-info .heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--couleur-texte-titre);
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    line-height: 1.3;
+}
+
+.job-item-list-info .meta-div {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.job-item-list-info .meta-div span {
+    color: var(--couleur-texte-discret);
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.job-item-list-info .meta-div a {
+    color: var(--couleur-principale);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.job-item-list-info .meta-div a:hover {
+    color: var(--couleur-secondaire);
+    text-decoration: underline;
+}
+
+.job-label {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-left: auto;
+}
+
+.job-label.label-success {
+    background: linear-gradient(135deg, #51cf66, #40c057);
+    color: #fff;
+}
+
+.job-label.label-danger {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: #fff;
+}
+
+.job-label.label-warning {
+    background: linear-gradient(135deg, #ffd43b, #fcc419);
+    color: #333;
+}
+
+.job-item-list-info .texing {
+    color: var(--couleur-texte-discret);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.job-item-list-info .meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.job-item-list-info .meta-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f3f4;
+    font-size: 0.9rem;
+}
+
+.job-item-list-info .meta-list li:last-child {
+    border-bottom: none;
+}
+
+.job-item-list-info .meta-list li span {
+    font-weight: 600;
+    color: var(--couleur-texte-titre);
+    text-transform: capitalize;
+    margin-right: 0.5rem;
+}
+
+.job-item-list-info .meta-list li:not(:has(span)) {
+    color: var(--couleur-texte-discret);
+}
+
+.job-item-list-bottom {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.job-item-list-bottom .sub-category {
+    flex: 1;
+    min-width: 200px;
+}
+
+.job-item-list-bottom .sub-category a {
+    background: var(--couleur-principale);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.job-item-list-bottom .sub-category a:hover {
+    background: var(--couleur-secondaire);
+    transform: translateY(-2px);
+}
+
+.job-item-list-bottom .btn-primary {
+    background: var(--couleur-bouton);
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 72, 0, 0.3);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.job-item-list-bottom .btn-primary:hover {
+    background: #e63900;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 72, 0, 0.4);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ==========================
+   PAGINATION AMÉLIORÉE
+   ========================== */
+
+.pager-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.pager-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.pager-list .paging-nav {
+    margin: 0 0.25rem;
+}
+
+.pager-list .paging-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--couleur-texte-titre);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.pager-list .paging-nav a:hover {
+    background: var(--couleur-principale);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 73, 255, 0.3);
+}
+
+.pager-list .paging-nav a[style*="background-color:#33B6CB"] {
+    background: var(--couleur-principale) !important;
+    color: #fff !important;
+    box-shadow: 0 5px 15px rgba(0, 73, 255, 0.3);
+}
+
+.pager-list .paging-nav.disabled a {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ==========================
+   ANIMATIONS
+   ========================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.job-item-list {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+
+@media (max-width: 991px) {
+    .second-search-result-wrapper {
+        padding: 2rem 0;
+    }
+    
+    .second-search-result-inner {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .job-item-list {
+        padding: 1.5rem;
+    }
+    
+    .job-item-list-info .heading {
+        font-size: 1.2rem;
+    }
+    
+    .job-item-list-info .meta-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .second-search-result-wrapper {
+        padding: 1.5rem 0;
+    }
+    
+    .second-search-result-inner {
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+    
+    .second-search-result-inner .labeling {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .second-search-result-inner .form-control,
+    .second-search-result-inner .btn {
+        height: 45px;
+        font-size: 0.95rem;
+    }
+    
+    .breadcrumb-wrapper {
+        padding: 1.5rem 0;
+    }
+    
+    .breadcrumb-list {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .breadcrumb-list li:not(:last-child)::after {
+        display: none;
+    }
+    
+    .sorting-wrappper {
+        padding: 1.5rem;
+    }
+    
+    .sorting-title {
+        font-size: 1.5rem;
+    }
+    
+    .job-item-list {
+        padding: 1rem;
+    }
+    
+    .job-item-list-info .heading {
+        font-size: 1.1rem;
+    }
+    
+    .job-item-list-info .meta-div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .job-item-list-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .job-item-list-bottom .sub-category {
+        min-width: auto;
+        text-align: center;
+    }
+    
+    .pager-list .paging-nav a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .second-search-result-wrapper {
+        padding: 1rem 0;
+    }
+    
+    .second-search-result-inner {
+        padding: 0.8rem;
+        margin: 0 0.25rem;
+    }
+    
+    .second-search-result-inner .form-control,
+    .second-search-result-inner .btn {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .job-item-list {
+        padding: 0.8rem;
+    }
+    
+    .job-item-list-info .heading {
+        font-size: 1rem;
+    }
+    
+    .pager-list .paging-nav a {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================
+   STYLES SUPPLÉMENTAIRES
+   ========================== */
+
+/* Amélioration des transitions globales */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Amélioration des espacements */
+.container {
+    max-width: 1200px;
+}
+
+/* Amélioration des ombres */
+.shadow-enhanced {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Amélioration de la typographie */
+.text-center {
+    text-align: center;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+/* Amélioration des couleurs de texte */
+.text-primary {
+    color: var(--couleur-principale) !important;
+}
+
+.text-secondary {
+    color: var(--couleur-secondaire) !important;
+}
+
+.text-bouton {
+    color: var(--couleur-bouton) !important;
+}
+
+/* Amélioration des espacements entre les éléments */
+.mt-25 {
+    margin-top: 1.5rem;
+}
+
+.mb-25 {
+    margin-bottom: 1.5rem;
+}
+
+/* Amélioration de la lisibilité */
+.form-control::placeholder {
+    color: #999;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+/* Amélioration des focus states */
+.form-control:focus {
+    border-color: var(--couleur-secondaire);
+    box-shadow: 0 0 0 3px rgba(0, 73, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Amélioration des boutons de soumission */
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 72, 0, 0.3);
+}
+
+/* Correction des problèmes de superposition */
+.row {
+    margin: 0;
+}
+
+.col-xss-12, .col-xs-6, .col-sm-6, .col-sm-4, .col-md-5, .col-md-2 {
+    padding: 0 0.5rem;
+}
+
+/* Amélioration de l'espacement des colonnes */
+@media (max-width: 767px) {
+    .col-xss-12, .col-xs-6, .col-sm-6, .col-sm-4, .col-md-5, .col-md-2 {
+        padding: 0 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+} 

@@ -51,6 +51,7 @@ header("location:../");
 	<link rel="stylesheet" href="../icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="../css/style.css" rel="stylesheet">
+	<link href="../css/employer-common.css" rel="stylesheet">
 	
 </head>
 
@@ -61,15 +62,15 @@ header("location:../");
 
 		<?php include '../components/header.php'; ?>
 
-		<div class="main-wrapper">
+		<div class="main-wrapper employer-common-wrapper">
 		
 			<div class="breadcrumb-wrapper">
 			
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="../">Bwire Jobs</a></li>
-						<li><span>Changer le mot de passe</span></li>
+						<li><a href="../"><i class="fa fa-home"></i> Accueil</a></li>
+						<li><span><i class="fa fa-key"></i> Changer le mot de passe</span></li>
 					</ol>
 					
 				</div>
@@ -95,11 +96,11 @@ header("location:../");
 										<div class="image">
 										<?php 
 										if ($logo == null) {
-										print '<center>Logo de l\'entreprise ici</center>';
+										print '<div class="logo-placeholder"><i class="fa fa-building fa-3x"></i><p>Logo de l\'entreprise</p></div>';
 										}else{
-										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
+										echo '<img alt="Logo '.$compname.'" title="'.$compname.'" class="company-logo" src="data:image/jpeg;base64,'.base64_encode($logo).'"/>';	
 										}
-										?><br>
+										?>
 										</div>
 										
 										<h4><?php echo "$compname"; ?></h4>
@@ -108,7 +109,9 @@ header("location:../");
 									
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Poster un emploi</a>
+										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">
+											<i class="fa fa-plus"></i> Publier une offre
+										</a>
 										
 									</div>
 									
@@ -141,7 +144,8 @@ header("location:../");
 
 									<div class="admin-section-title">
 									
-										<h2>Changer le mot de passe</h2>
+										<h2><i class="fa fa-lock"></i> Sécurité du compte</h2>
+										<p><i class="fa fa-shield"></i> Modifiez votre mot de passe pour sécuriser votre compte</p>
 										
 									</div>
 									
@@ -150,29 +154,33 @@ header("location:../");
 											<div class="row gap-20">
                                              <?php include 'constants/check_reply.php'; ?>
 												
-												<div class="col-sm-6 col-md-4">
+												<div class="col-sm-6 col-md-6">
 												
 													<div class="form-group">
-														<label>Nouveau mot de passe</label>
-														<input type="password" class="form-control" name="password" required placeholder="Entrez votre nouveau mot de passe">
+														<label><i class="fa fa-key"></i> Nouveau mot de passe</label>
+														<input type="password" class="form-control" name="password" id="password" required placeholder="Entrez votre nouveau mot de passe" minlength="8">
+														<div id="password-strength" class="password-strength" style="display: none;"></div>
 													</div>
 													
 												</div>
 												
-												<div class="clear"></div>
-												
-												<div class="col-sm-6 col-md-4">
+												<div class="col-sm-6 col-md-6">
 												
 													<div class="form-group">
-														<label>Confirmer le mot de passe</label>
-														<input type="password" class="form-control"  name="confirmpassword" required placeholder="Confirmez votre nouveau mot de passe">
+														<label><i class="fa fa-check-circle"></i> Confirmer le mot de passe</label>
+														<input type="password" class="form-control" name="confirmpassword" id="confirmpassword" required placeholder="Confirmez votre nouveau mot de passe">
+														<div id="password-match" class="password-strength" style="display: none;"></div>
 													</div>
 													
 												</div>
 												
 												<div class="col-sm-12 mt-10">
-													<button type="submit" onclick="return check_passwords();" class="btn btn-primary">Mettre à jour</button>
-													<button type="reset" class="btn btn-primary btn-inverse">Annuler</a>
+													<button type="submit" onclick="return check_passwords();" class="btn btn-primary">
+														<i class="fa fa-save"></i> Mettre à jour le mot de passe
+													</button>
+													<button type="reset" class="btn btn-primary btn-inverse">
+														<i class="fa fa-undo"></i> Réinitialiser
+													</button>
 												</div>
 
 											</div>
@@ -205,32 +213,98 @@ header("location:../");
 </div>
 
 <script type="text/javascript">
+// Validation en temps réel du mot de passe
+document.getElementById('password').addEventListener('input', function() {
+    const password = this.value;
+    const strengthDiv = document.getElementById('password-strength');
+    
+    if (password.length === 0) {
+        strengthDiv.style.display = 'none';
+        return;
+    }
+    
+    let strength = 0;
+    let message = '';
+    let className = '';
+    
+    // Vérification de la longueur
+    if (password.length >= 8) strength++;
+    if (password.length >= 12) strength++;
+    
+    // Vérification des caractères
+    if (/[a-z]/.test(password)) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/[0-9]/.test(password)) strength++;
+    if (/[^A-Za-z0-9]/.test(password)) strength++;
+    
+    // Détermination de la force
+    if (strength <= 2) {
+        message = 'Mot de passe faible';
+        className = 'weak';
+    } else if (strength <= 4) {
+        message = 'Mot de passe moyen';
+        className = 'medium';
+    } else {
+        message = 'Mot de passe fort';
+        className = 'strong';
+    }
+    
+    strengthDiv.textContent = message;
+    strengthDiv.className = 'password-strength ' + className;
+    strengthDiv.style.display = 'block';
+});
+
+// Validation de la correspondance des mots de passe
+document.getElementById('confirmpassword').addEventListener('input', function() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = this.value;
+    const matchDiv = document.getElementById('password-match');
+    
+    if (confirmPassword.length === 0) {
+        matchDiv.style.display = 'none';
+        return;
+    }
+    
+    if (password === confirmPassword) {
+        matchDiv.textContent = 'Les mots de passe correspondent';
+        matchDiv.className = 'password-strength strong';
+    } else {
+        matchDiv.textContent = 'Les mots de passe ne correspondent pas';
+        matchDiv.className = 'password-strength weak';
+    }
+    
+    matchDiv.style.display = 'block';
+});
+
 function check_passwords(){
-if(frm.password.value == "")
-{
-	alert("Entrez le mot de passe.");
-	frm.password.focus(); 
-	return false;
-}
-if((frm.password.value).length < 8)
-{
-	alert("Le mot de passe doit comporter au moins 8 caractères.");
-	frm.password.focus();
-	return false;
-}
-
-if(frm.confirmpassword.value == "")
-{
-	alert("Entrez le mot de passe de confirmation.");
-	return false;
-}
-if(frm.confirmpassword.value != frm.password.value)
-{
-	alert("La confirmation du mot de passe ne correspond pas.");
-	return false;
-}
-
-return true;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmpassword').value;
+    
+    if(password == "") {
+        alert("Veuillez entrer le mot de passe.");
+        document.getElementById('password').focus(); 
+        return false;
+    }
+    
+    if(password.length < 8) {
+        alert("Le mot de passe doit comporter au moins 8 caractères.");
+        document.getElementById('password').focus();
+        return false;
+    }
+    
+    if(confirmPassword == "") {
+        alert("Veuillez confirmer le mot de passe.");
+        document.getElementById('confirmpassword').focus();
+        return false;
+    }
+    
+    if(confirmPassword != password) {
+        alert("La confirmation du mot de passe ne correspond pas.");
+        document.getElementById('confirmpassword').focus();
+        return false;
+    }
+    
+    return true;
 }
 </script>
 

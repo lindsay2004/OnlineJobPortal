@@ -50,6 +50,7 @@ $token = $_GET['token'];
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/reset-enhancements.css" rel="stylesheet">
 
 </head>
 
@@ -95,7 +96,10 @@ $token = $_GET['token'];
                                 <div class="login-box-wrapper">
 							
                                 <div class="modal-header">
-                                <h4 class="modal-title text-center">Reinitialisez votre mot de passe</h4>
+                                <div class="security-icon">
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                                <h4 class="modal-title text-center">Réinitialisez votre mot de passe</h4>
                                 </div>
 
                                 <div class="modal-body">
@@ -134,7 +138,8 @@ $token = $_GET['token'];
 
                                 <div class="form-group"> 
                                 <label>Nouveau mot de passe</label>
-                                <input class="form-control" placeholder="Min 8 et Max 20 caracteres" name="password" required type="password"> 
+                                <input class="form-control" placeholder="Min 8 et Max 20 caractères" name="password" required type="password" id="password"> 
+                                <div class="password-strength" id="password-strength" style="display: none;"></div>
                                 </div>
 												
                                  </div>
@@ -143,7 +148,7 @@ $token = $_GET['token'];
 												
                                 <div class="form-group"> 
                                 <label>Confirmer le nouveau mot de passe</label>
-                                <input class="form-control" placeholder="Min 8 et Max 20 caracteres" name="confirmpassword" required type="password"> 
+                                <input class="form-control" placeholder="Min 8 et Max 20 caractères" name="confirmpassword" required type="password" id="confirmpassword"> 
                                 </div>
 												
                                 </div>
@@ -174,7 +179,7 @@ if (isset($invalid_token)) {
 }else{
 print '
 <div class="modal-footer text-center">
-<button type="submit" onclick="return val();"  class="btn btn-primary">Reinitialiser mon mot de passe</button>
+<button type="submit" onclick="return val();"  class="btn btn-primary">Réinitialiser mon mot de passe</button>
 </div>';	
 }
 
@@ -208,6 +213,61 @@ print '
 </div>
 
 <script type="text/javascript">
+// Validation de la force du mot de passe
+document.getElementById('password').addEventListener('input', function() {
+    const password = this.value;
+    const strengthDiv = document.getElementById('password-strength');
+    
+    if (password.length === 0) {
+        strengthDiv.style.display = 'none';
+        return;
+    }
+    
+    let strength = 0;
+    let message = '';
+    let className = '';
+    
+    if (password.length >= 8) strength++;
+    if (password.match(/[a-z]/)) strength++;
+    if (password.match(/[A-Z]/)) strength++;
+    if (password.match(/[0-9]/)) strength++;
+    if (password.match(/[^a-zA-Z0-9]/)) strength++;
+    
+    if (strength < 3) {
+        message = 'Mot de passe faible';
+        className = 'weak';
+    } else if (strength < 5) {
+        message = 'Mot de passe moyen';
+        className = 'medium';
+    } else {
+        message = 'Mot de passe fort';
+        className = 'strong';
+    }
+    
+    strengthDiv.textContent = message;
+    strengthDiv.className = 'password-strength ' + className;
+    strengthDiv.style.display = 'block';
+});
+
+// Validation de la correspondance des mots de passe
+document.getElementById('confirmpassword').addEventListener('input', function() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = this.value;
+    
+    if (confirmPassword.length > 0) {
+        if (password === confirmPassword) {
+            this.style.borderColor = '#28a745';
+            this.style.boxShadow = '0 0 0 0.2rem rgba(40, 167, 69, 0.25)';
+        } else {
+            this.style.borderColor = '#dc3545';
+            this.style.boxShadow = '0 0 0 0.2rem rgba(220, 53, 69, 0.25)';
+        }
+    } else {
+        this.style.borderColor = '#e9ecef';
+        this.style.boxShadow = 'none';
+    }
+});
+
 function val(){
 if(frm.password.value == "")
 {
@@ -217,14 +277,14 @@ if(frm.password.value == "")
 }
 if((frm.password.value).length < 8)
 {
-	alert("Le mot de passe doit contenir au moins 8 caracteres.");
+	alert("Le mot de passe doit contenir au moins 8 caractères.");
 	frm.password.focus();
 	return false;
 }
 
 if((frm.password.value).length > 20)
 {
-	alert("Le mot de passe doit contenir au maximum 20 caracteres.");
+	alert("Le mot de passe doit contenir au maximum 20 caractères.");
 	frm.password.focus();
 	return false;
 }

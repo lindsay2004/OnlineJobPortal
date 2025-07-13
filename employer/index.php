@@ -51,6 +51,7 @@ header("location:../");
 	<link rel="stylesheet" href="../icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="../css/style.css" rel="stylesheet">
+	<link href="../css/employer-profile.css" rel="stylesheet">
 	
 </head>
 
@@ -61,15 +62,15 @@ header("location:../");
 
 		<?php include '../components/header.php'; ?>
 
-		<div class="main-wrapper">
+		<div class="main-wrapper employer-profile-wrapper">
 		
 			<div class="breadcrumb-wrapper">
 			
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="../">Bwire Jobs</a></li>
-						<li><span>Profil</span></li>
+						<li><a href="../"><i class="fa fa-home"></i> Accueil</a></li>
+						<li><span><i class="fa fa-user"></i> Profil Employeur</span></li>
 					</ol>
 					
 				</div>
@@ -95,11 +96,11 @@ header("location:../");
 										<div class="image">
 										<?php 
 										if ($logo == null) {
-										print '<center>Logo de l\'entreprise ici</center>';
+										print '<div class="logo-placeholder"><i class="fa fa-building fa-3x"></i><p>Logo de l\'entreprise</p></div>';
 										}else{
-										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
+										echo '<img alt="Logo '.$compname.'" title="'.$compname.'" class="company-logo" src="data:image/jpeg;base64,'.base64_encode($logo).'"/>';	
 										}
-										?><br>
+										?>
 										</div>
 										
 										<h4><?php echo "$compname"; ?></h4>
@@ -108,7 +109,9 @@ header("location:../");
 									
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Publier une offre</a>
+										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">
+											<i class="fa fa-plus"></i> Publier une offre
+										</a>
 										
 									</div>
 									
@@ -141,8 +144,8 @@ header("location:../");
 
 									<div class="admin-section-title">
 									
-										<h2>Profil</h2>
-										<p>Votre dernière connexion: <span class="text-primary"><?php echo "$mylogin"; ?></span></p>
+										<h2><i class="fa fa-user-circle"></i> Profil de l'Entreprise</h2>
+										<p><i class="fa fa-clock-o"></i> Dernière connexion: <span class="text-primary"><?php echo "$mylogin"; ?></span></p>
 										
 									</div>
 									
@@ -155,8 +158,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-8">
 												
 													<div class="form-group">
-														<label>Nom de l'entreprise</label>
-														<input name="company" placeholder="Entrez le nom de l'entreprise" type="text" class="form-control" value="<?php echo "$compname"; ?>" required>
+														<label><i class="fa fa-building"></i> Nom de l'entreprise</label>
+														<input name="company" placeholder="Entrez le nom de votre entreprise" type="text" class="form-control" value="<?php echo "$compname"; ?>" required>
 													</div>
 													
 												</div>
@@ -165,8 +168,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Établi en</label>
-                                                    <input name="year" placeholder="Entrez l'année ex: 2016, 2017, 2018" type="text" class="form-control" value="<?php echo "$esta"; ?>" required>
+														<label><i class="fa fa-calendar"></i> Établi en</label>
+                                                    <input name="year" placeholder="Ex: 2016, 2017, 2018" type="text" class="form-control" value="<?php echo "$esta"; ?>" required>
 													</div>
 													
 												</div>
@@ -174,8 +177,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Type</label>
-                                                    <input class="form-control" placeholder="Ex: Réservation, Voyage" name="type" required type="text" value="<?php echo "$mytitle"; ?>" required> 
+														<label><i class="fa fa-tag"></i> Secteur d'activité</label>
+                                                    <input class="form-control" placeholder="Ex: Technologie, Finance, Santé" name="type" required type="text" value="<?php echo "$mytitle"; ?>" required> 
 													</div>
 													
 												</div>
@@ -185,19 +188,19 @@ header("location:../");
 												<div class="form-group">
 													
 													<div class="col-sm-6 col-md-4">
-														<label>Personnes</label>
+														<label><i class="fa fa-users"></i> Effectif</label>
 														<select name="people" required class="selectpicker show-tick form-control mb-15" data-live-search="false">
-															<option <?php if ($mypeople == "1-10") { print ' selected '; } ?> value="1-10">1-10</option>
-															<option <?php if ($mypeople == "11-100") { print ' selected '; } ?> value="11-100">11-100</option>
-															<option <?php if ($mypeople == "200+") { print ' selected '; } ?> value="200+" >200+</option>
-															<option <?php if ($mypeople == "300+") { print ' selected '; } ?> value="300+">300+</option>
-															<option <?php if ($mypeople == "1000+") { print ' selected '; } ?>value="1000+">1000+ </option>
+															<option <?php if ($mypeople == "1-10") { print ' selected '; } ?> value="1-10">1-10 employés</option>
+															<option <?php if ($mypeople == "11-100") { print ' selected '; } ?> value="11-100">11-100 employés</option>
+															<option <?php if ($mypeople == "200+") { print ' selected '; } ?> value="200+" >200+ employés</option>
+															<option <?php if ($mypeople == "300+") { print ' selected '; } ?> value="300+">300+ employés</option>
+															<option <?php if ($mypeople == "1000+") { print ' selected '; } ?>value="1000+">1000+ employés</option>
 														</select>
 													</div>
 
 													<div class="col-sm-6 col-md-4">
-														<label>Site web</label>
-														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="Entrez votre site web">
+														<label><i class="fa fa-globe"></i> Site web</label>
+														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="https://www.votre-entreprise.com">
 													</div>
 														
 												</div>
@@ -207,7 +210,7 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Ville</label>
+														<label><i class="fa fa-map-marker"></i> Ville</label>
 														<input name="city" required type="text" class="form-control" value="<?php echo "$city"; ?>" placeholder="Entrez votre ville">
 													</div>
 													
@@ -216,8 +219,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Rue</label>
-														<input name="street" required type="text" class="form-control" value="<?php echo "$street"; ?>" placeholder="Entrez votre rue">
+														<label><i class="fa fa-road"></i> Rue</label>
+														<input name="street" required type="text" class="form-control" value="<?php echo "$street"; ?>" placeholder="Entrez votre adresse">
 													</div>
 													
 												</div>
@@ -227,7 +230,7 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Code postal</label>
+														<label><i class="fa fa-mail-forward"></i> Code postal</label>
 														<input name="zip" required type="text" class="form-control" value="<?php echo "$zip"; ?>" placeholder="Entrez votre code postal">
 													</div>
 													
@@ -236,9 +239,9 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Pays</label>
+														<label><i class="fa fa-flag"></i> Pays</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Sélectionner</option>
+															<option disabled value="">Sélectionner un pays</option>
 						                                   <?php
 														   require '../constants/db_config.php';
 														   try {
@@ -273,8 +276,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Numéro de téléphone</label>
-														<input type="text" name="phone" required class="form-control" value="<?php echo "$myphone"; ?>" placeholder="Entrez votre téléphone">
+														<label><i class="fa fa-phone"></i> Téléphone</label>
+														<input type="text" name="phone" required class="form-control" value="<?php echo "$myphone"; ?>" placeholder="+33 1 23 45 67 89">
 													</div>
 													
 												</div>
@@ -282,8 +285,8 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Adresse e-mail</label>
-														<input type="email" name="email" required class="form-control" value="<?php echo "$mymail"; ?>" placeholder="Entrez votre e-mail">
+														<label><i class="fa fa-envelope"></i> Adresse e-mail</label>
+														<input type="email" name="email" required class="form-control" value="<?php echo "$mymail"; ?>" placeholder="contact@votre-entreprise.com">
 													</div>
 													
 												</div>
@@ -299,8 +302,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Historique de l'entreprise</label>
-														<textarea name="background" class="bootstrap3-wysihtml5 form-control" placeholder="Entrez l'historique de l'entreprise ..." style="height: 200px;"><?php echo "$desc"; ?></textarea>
+														<label><i class="fa fa-history"></i> Historique de l'entreprise</label>
+														<textarea name="background" class="bootstrap3-wysihtml5 form-control" placeholder="Décrivez l'histoire et l'évolution de votre entreprise..." style="height: 200px;"><?php echo "$desc"; ?></textarea>
 													</div>
 													
 												</div>
@@ -310,8 +313,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Services</label>
-														<textarea name="services" class="bootstrap3-wysihtml5 form-control" placeholder="Entrez les services de l'entreprise ..." style="height: 200px;"><?php echo "$myserv"; ?></textarea>
+														<label><i class="fa fa-cogs"></i> Services proposés</label>
+														<textarea name="services" class="bootstrap3-wysihtml5 form-control" placeholder="Listez les principaux services que votre entreprise propose..." style="height: 200px;"><?php echo "$myserv"; ?></textarea>
 													</div>
 													
 												</div>
@@ -321,8 +324,8 @@ header("location:../");
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Expertise</label>
-														<textarea name="expertise" class="bootstrap3-wysihtml5 form-control" placeholder="Entrez l'expertise de l'entreprise ..." style="height: 200px;"><?php echo "$myex"; ?></textarea>
+														<label><i class="fa fa-star"></i> Domaines d'expertise</label>
+														<textarea name="expertise" class="bootstrap3-wysihtml5 form-control" placeholder="Décrivez vos domaines d'expertise et vos spécialités..." style="height: 200px;"><?php echo "$myex"; ?></textarea>
 													</div>
 													
 												</div>
@@ -330,8 +333,12 @@ header("location:../");
 												<div class="clear"></div>
 
 												<div class="col-sm-12 mt-10">
-													<button type="submit" class="btn btn-primary">Enregistrer</button>
-													<button type="reset" class="btn btn-warning">Annuler</button>
+													<button type="submit" class="btn btn-primary">
+														<i class="fa fa-save"></i> Enregistrer les modifications
+													</button>
+													<button type="reset" class="btn btn-warning">
+														<i class="fa fa-undo"></i> Réinitialiser
+													</button>
 												</div>
 
 											</div>
@@ -343,8 +350,9 @@ header("location:../");
 										<div class="col-sm-12 col-md-12">
 												
 										<div class="form-group bootstrap3-wysihtml5-wrapper">
-										<label>Logo de l'entreprise</label>
-										<input accept="image/*" type="file" name="image"  required >
+										<label><i class="fa fa-image"></i> Logo de l'entreprise</label>
+										<input accept="image/*" type="file" name="image" required>
+										<small class="form-text text-muted">Formats acceptés: JPG, PNG, GIF. Taille maximale: 2MB</small>
 										</div>
 													
 										</div>
@@ -352,12 +360,16 @@ header("location:../");
 										<div class="clear"></div>
 
 										<div class="col-sm-12 mt-10">
-										<button type="submit" class="btn btn-primary">Mettre à jour</button>
+										<button type="submit" class="btn btn-primary">
+											<i class="fa fa-upload"></i> Mettre à jour le logo
+										</button>
 										<?php 
 										if ($logo == null) {
 
 										}else{
-										?><a onclick = "return confirm('Êtes-vous sûr de vouloir supprimer votre logo ?')" class="btn btn-primary btn-inverse" href="app/drop-dp.php">Supprimer</a> <?php
+										?><a onclick = "return confirm('Êtes-vous sûr de vouloir supprimer votre logo ?')" class="btn btn-primary btn-inverse" href="app/drop-dp.php">
+											<i class="fa fa-trash"></i> Supprimer le logo
+										</a> <?php
 										}
 										?>
 										</div>

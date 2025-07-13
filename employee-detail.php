@@ -99,6 +99,7 @@ header("location:./");
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/employee-employers-enhancements.css" rel="stylesheet">
 
 	
 </head>
@@ -126,7 +127,7 @@ header("location:./");
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="employees.php">All Employees</a></li>
+						<li><a href="employees.php">Tous les employés</a></li>
 						<li><span><?php echo "$myfname"; ?> <?php echo "$mylname"; ?></span></li>
 					</ol>
 					
@@ -163,19 +164,19 @@ header("location:./");
 										
 										<ul class="meta-list clearfix">
 											<li>
-												<h4 class="heading">Birth Day:</h4>
+												<h4 class="heading">Date de naissance :</h4>
 												<?php echo "$bdate"; ?>/<?php echo "$bmonth"; ?>/<?php echo "$byear"; ?>
 											</li>
 											<li>
-												<h4 class="heading">Age:</h4>
-												<?php echo "$myage"; ?>-year-old
+												<h4 class="heading">Âge :</h4>
+												<?php echo "$myage"; ?> ans
 											</li>
 											<li>
-												<h4 class="heading">Education:</h4>
-												<?php echo "$myedu"; ?> in <?php echo "$mytitle"; ?>
+												<h4 class="heading">Éducation :</h4>
+												<?php echo "$myedu"; ?> en <?php echo "$mytitle"; ?>
 											</li>
 											<li>
-												<h4 class="heading">Email: </h4>
+												<h4 class="heading">Email :</h4>
 												<?php echo "$mymail"; ?>
 											</li>
 										</ul>
@@ -184,7 +185,7 @@ header("location:./");
 						
 									<div class="employee-detail-company-overview mt-40 clearfix">
 									
-										<h3>Introduce my self</h3>
+										<h3>Présentation personnelle</h3>
 										
 										<p><?php echo "$about"; ?></p>
 										
@@ -192,7 +193,7 @@ header("location:./");
 										
 											<div class="col-sm-12">
 											
-												<h3>Education</h3>
+												<h3>Formation</h3>
 												
 												<ul class="employee-detail-list">
 												<?php
@@ -214,8 +215,8 @@ header("location:./");
                                                 ?>
 												<li>
 												<h5><?php echo $row['course']; ?> </h5>
-												<p class="text-muted font-italic">Level - <?php echo $row['level']; ?> , <?php echo $row['timeframe']; ?><span class="font600 text-primary"> <?php echo $row['institution']; ?></span> <?php echo $row['country']; ?></p>
-												<p><a target="_blank" class="btn btn-primary btn-sm mb-5 mb-0-sm" href="view-certificate.php?id=<?php echo $row['id']; ?>">View Certificate</a></p>
+												<p class="text-muted font-italic">Niveau - <?php echo $row['level']; ?> , <?php echo $row['timeframe']; ?><span class="font600 text-primary"> <?php echo $row['institution']; ?></span> <?php echo $row['country']; ?></p>
+												<p><a target="_blank" class="btn btn-primary btn-sm mb-5 mb-0-sm" href="view-certificate.php?id=<?php echo $row['id']; ?>">Voir le certificat</a></p>
 												</li>
 												<?php
 	                                            }
@@ -238,7 +239,7 @@ header("location:./");
 											
 										</div>
 										
-										<h3>Work Experience</h3>
+										<h3>Expérience professionnelle</h3>
 											<ul class="employee-detail-list">
 												<?php
 												require 'constants/db_config.php';
@@ -259,8 +260,8 @@ header("location:./");
                                                 ?>
 												<li>
 												<h5><?php echo $row['title']; ?> </h5>
-												<p class="text-muted font-italic"><?php echo $row['start_date']; ?> to <?php echo $row['end_date']; ?><span class="font600 text-primary"> <?php echo $row['institution']; ?></span></p>
-												<p>Supervisor : <span class="font600 text-primary"> <?php echo $row['supervisor']; ?></span> , Phone : <span class="font600 text-primary"> <?php echo $row['supervisor_phone']; ?></span> <br><?php echo $row['duties']; ?></p>
+												<p class="text-muted font-italic"><?php echo $row['start_date']; ?> à <?php echo $row['end_date']; ?><span class="font600 text-primary"> <?php echo $row['institution']; ?></span></p>
+												<p>Superviseur : <span class="font600 text-primary"> <?php echo $row['supervisor']; ?></span> , Téléphone : <span class="font600 text-primary"> <?php echo $row['supervisor_phone']; ?></span> <br><?php echo $row['duties']; ?></p>
 												</li>
 												<?php
 	                                            }
@@ -279,7 +280,7 @@ header("location:./");
 										
 							
 										
-										<h3>Training & Workshop</h3>
+										<h3>Formation et ateliers</h3>
 												<ul class="employee-detail-list">
 												<?php
 												require 'constants/db_config.php';
@@ -307,7 +308,7 @@ header("location:./");
 													
 												}else{
 												?>
-                                                <p><a target="_blank" class="btn btn-primary btn-sm mb-5 mb-0-sm" href="view-certificate-b.php?id=<?php echo $row['id']; ?>">View Certificate</a></p>
+                                                <p><a target="_blank" class="btn btn-primary btn-sm mb-5 mb-0-sm" href="view-certificate-b.php?id=<?php echo $row['id']; ?>">Voir le certificat</a></p>
                                                 <?php												
 												}
 												
@@ -329,7 +330,7 @@ header("location:./");
 													
 												</ul>
 										
-										<h3>Professional Qualifications</h3>
+										<h3>Qualifications professionnelles</h3>
 												<ul class="employee-detail-list">
 												<?php
 												require 'constants/db_config.php';
@@ -352,7 +353,7 @@ header("location:./");
 											    <li>
 												<h5><?php echo $row['title']; ?> </h5>
 												<p class="text-muted font-italic"><?php echo $row['timeframe']; ?><span class="font600 text-primary"> <?php echo $row['institution']; ?></span> <?php echo $row['country']; ?></p>
-												<p><a target="_blank" class="btn btn-primary btn-sm mb-5 mb-0-sm" href="view-certificate-c.php?id=<?php echo $row['id']; ?>">View Certificate</a></p>
+												<p><a target="_blank" class="btn btn-primary btn-sm mb-5 mb-0-sm" href="view-certificate-c.php?id=<?php echo $row['id']; ?>">Voir le certificat</a></p>
 												</li>
 												<?php
 	                                            }
@@ -369,7 +370,7 @@ header("location:./");
 												</ul>
 												
 												
-											<h3>Other Attachments</h3>
+											<h3>Autres pièces jointes</h3>
 												<ul class="employee-detail-list">
 												<?php
 												require 'constants/db_config.php';
@@ -391,7 +392,7 @@ header("location:./");
 												<li>
 												<h5><?php echo $row['title']; ?> </h5>
 												<p class="font600 text-primary"><?php echo $row['issuer']; ?></p>
-												<p><a target="_blank" class="btn btn-primary btn-sm mb-5 mb-0-sm" href="view-attachment.php?id=<?php echo $row['id']; ?>">View Attachment</a></p>
+												<p><a target="_blank" class="btn btn-primary btn-sm mb-5 mb-0-sm" href="view-attachment.php?id=<?php echo $row['id']; ?>">Voir la pièce jointe</a></p>
 												</li>
 												<?php
 	                                            }

@@ -53,7 +53,8 @@ header("location:../");
 
 
 	<link href="../css/style.css" rel="stylesheet">
-
+	<link href="../css/employee-main.css" rel="stylesheet">
+	<link href="../css/employee-sidebar.css" rel="stylesheet">
 	
 </head>
   <style>
@@ -121,43 +122,45 @@ header("location:../");
 									
 									<div class="admin-user-action text-center">
 									
-										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">Voir mon CV</a>
+										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">
+											<i class="fa fa-file-text-o"></i> Voir mon CV
+										</a>
 										
 									</div>
 									
 									<ul class="admin-user-menu clearfix">
 										<li  class="">
-											<a href="./"><i class="fa fa-user"></i> Profil</a>
+											<a href="./"><i class="fa fa-user"></i> Mon Profil</a>
 										</li>
 										<li class="active">
-										<a href="change-password.php"><i class="fa fa-key"></i> Changer le mot de passe</a>
+										<a href="change-password.php"><i class="fa fa-key"></i> Changer le Mot de Passe</a>
 										</li>
 										<li>
-											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications professionnelles</a>
+											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications Professionnelles</a>
 										</li>
 										<li>
-											<a href="language.php"><i class="fa fa-language"></i> Competences linguistiques</a>
+											<a href="language.php"><i class="fa fa-language"></i> Compétences Linguistiques</a>
 										</li>
 										<li>
 											<a href="training.php"><i class="fa fa-gears"></i> Formations & Ateliers</a>
 										</li>
 										<li>
-											<a href="referees.php"><i class="fa fa-users"></i> Referents</a>
+											<a href="referees.php"><i class="fa fa-users"></i> Références</a>
 										</li>
 										<li>
-											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplomes academiques</a>
+											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplômes Académiques</a>
 										</li>
 										<li>
-											<a href="experience.php"><i class="fa fa-briefcase"></i> Experience professionnelle</a>
+											<a href="experience.php"><i class="fa fa-briefcase"></i> Expérience Professionnelle</a>
 										</li>
 										<li>
-											<a href="attachments.php"><i class="fa fa-folder-open"></i> Autres pieces jointes</a>
+											<a href="attachments.php"><i class="fa fa-folder-open"></i> Pièces Jointes</a>
 										</li>
 										<li>
-											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres postulees</a>
+											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres Postulées</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Deconnexion</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i> Déconnexion</a>
 										</li>
 									</ul>
 									
@@ -171,8 +174,8 @@ header("location:../");
 
 									<div class="admin-section-title">
 									
-										<h2>Changer le mot de passe</h2>
-	
+										<h2><i class="fa fa-key"></i> Changer le Mot de Passe</h2>
+										<p><i class="fa fa-shield"></i> Sécurisez votre compte avec un nouveau mot de passe</p>
 										
 									</div>
 									
@@ -202,8 +205,12 @@ header("location:../");
 												</div>
 												
 												<div class="col-sm-12 mt-10">
-													<button type="submit" onclick="return check_passwords();" class="btn btn-primary">Mettre à jour</button>
-													<button type="reset" class="btn btn-primary btn-inverse">Annuler</a>
+													<button type="submit" onclick="return check_passwords();" class="btn btn-primary">
+														<i class="fa fa-save"></i> Mettre à Jour
+													</button>
+													<button type="reset" class="btn btn-primary btn-inverse">
+														<i class="fa fa-refresh"></i> Annuler
+													</button>
 												</div>
 
 											</div>

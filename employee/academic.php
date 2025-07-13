@@ -68,7 +68,8 @@ $page = 1;
 
 
 	<link href="../css/style.css" rel="stylesheet">
-
+	<link href="../css/employee-final.css" rel="stylesheet">
+	<link href="../css/employee-sidebar.css" rel="stylesheet">
 	
 </head>
   <style>
@@ -136,43 +137,45 @@ $page = 1;
 									
 									<div class="admin-user-action text-center">
 									
-										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">Voir mon CV</a>
+										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">
+											<i class="fa fa-file-text-o"></i> Voir mon CV
+										</a>
 										
 									</div>
 									
 									<ul class="admin-user-menu clearfix">
 										<li>
-											<a href="./"><i class="fa fa-user"></i> Profil</a>
+											<a href="./"><i class="fa fa-user"></i> Mon Profil</a>
 										</li>
 										<li class="">
-										<a href="change-password.php"><i class="fa fa-key"></i> Changer le mot de passe</a>
+										<a href="change-password.php"><i class="fa fa-key"></i> Changer le Mot de Passe</a>
 										</li>
 										<li  >
-											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications professionnelles</a>
+											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications Professionnelles</a>
 										</li>
 										<li>
-											<a href="language.php"><i class="fa fa-language"></i> Competences linguistiques</a>
+											<a href="language.php"><i class="fa fa-language"></i> Compétences Linguistiques</a>
 										</li>
 										<li>
 											<a href="training.php"><i class="fa fa-gears"></i> Formations & Ateliers</a>
 										</li>
 										<li>
-											<a href="referees.php"><i class="fa fa-users"></i> Referents</a>
+											<a href="referees.php"><i class="fa fa-users"></i> Références</a>
 										</li>
 										<li class="active">
-											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplomes academiques</a>
+											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplômes Académiques</a>
 										</li>
 										<li>
-											<a href="experience.php"><i class="fa fa-briefcase"></i> Experience professionnelle</a>
+											<a href="experience.php"><i class="fa fa-briefcase"></i> Expérience Professionnelle</a>
 										</li>
 										<li>
-											<a href="attachments.php"><i class="fa fa-folder-open"></i> Autres pieces jointes</a>
+											<a href="attachments.php"><i class="fa fa-folder-open"></i> Pièces Jointes</a>
 										</li>
 										<li>
-											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres postulees</a>
+											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres Postulées</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Deconnexion</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i> Déconnexion</a>
 										</li>
 									</ul>
 									
@@ -186,9 +189,55 @@ $page = 1;
 
 									<div class="admin-section-title">
 									
-										<h2>Diplômes académiques</h2>
-					
+										<h2><i class="fa fa-graduation-cap"></i> Diplômes Académiques</h2>
+										<p><i class="fa fa-info-circle"></i> Gérez vos diplômes et formations académiques</p>
 										
+									</div>
+									
+									<!-- Formulaire d'ajout de diplôme académique -->
+									<div class="academic-form-wrapper">
+										<h4><i class="fa fa-plus-circle"></i> Ajouter un nouveau diplôme</h4>
+										<form action="app/add-academic-qualification.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+											<div class="row gap-20">
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-graduation-cap"></i> Nom du diplôme</label>
+														<input class="form-control" placeholder="Ex: Master en Informatique" type="text" name="qualification" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-university"></i> Institution</label>
+														<input class="form-control" placeholder="Ex: Université de Paris" type="text" name="institution" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-calendar"></i> Date d'obtention</label>
+														<input class="form-control" placeholder="Ex: 2020" type="text" name="timeframe" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-star"></i> Note/Score</label>
+														<input class="form-control" placeholder="Ex: Mention Très Bien" type="text" name="achievement" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-12">
+													<div class="form-group"> 
+														<label><i class="fa fa-file-text"></i> Description</label>
+														<textarea class="form-control" placeholder="Décrivez votre formation, spécialisation, etc." name="description" required></textarea>
+													</div>
+												</div>
+											</div>
+											<div class="row gap-20">
+												<div class="col-sm-12">
+													<button type="submit" class="btn btn-primary">
+														<i class="fa fa-save"></i> Ajouter le diplôme
+													</button>
+												</div>
+											</div>
+										</form>
 									</div>
 									
 									<div class="resume-list-wrapper">
@@ -212,7 +261,7 @@ $page = 1;
 									 $level = $row['level'];
 									 
 									 ?>
-									 									<div class="resume-list-item">
+									 									<div class="academic-item">
 										
 											<div class="row">
 											
@@ -220,30 +269,13 @@ $page = 1;
 												
 													<div class="content">
 													
-														<a  target="_blank" href="view-certificate-c.php?id=<?php echo $row['id']; ?>" >
-
-															<div class="image">
-															<?php 
-										                    if ($myavatar == null) {
-									                    	print '<center><img src="../images/default.jpg" title="'.$myfname.'" alt="image" width="100" height="100" /></center>';
-										                    }else{
-										                    echo '<center><img alt="image" title="'.$myfname.'" width="100" height="100" src="data:image/jpeg;base64,'.base64_encode($myavatar).'"/></center>';	
-										                    }
-										                      ?>
-															</div>
-															
-															<h4><?php echo $row['course']; ?></h4>
-															
-															<div class="row">
-																<div class="col-sm-12 col-md-9">
-																	<i class="fa fa-graduation-cap text-primary mr-5"></i><strong class="mr-10"><?php echo $row['institution']; ?></strong> <i class="fa fa-map-marker text-primary mr-5"></i> <?php echo $row['country']; ?>.
-																</div>
-																<div class="col-sm-12 col-md-3 mt-10-sm">
-																	<i class="fa fa-calendar  text-primary mr-5"></i> <?php echo $row['timeframe']; ?>
-																</div>
-															</div>
-
-														</a>
+														<div class="academic-title"><?php echo $row['course']; ?></div>
+														<div class="academic-institution"><?php echo $row['institution']; ?></div>
+														<div class="academic-date"><?php echo $row['timeframe']; ?></div>
+														<div class="academic-description">
+															<i class="fa fa-graduation-cap"></i> <?php echo $row['level']; ?> | 
+															<i class="fa fa-map-marker"></i> <?php echo $row['country']; ?>
+														</div>
 													
 													</div>
 												
@@ -251,10 +283,10 @@ $page = 1;
 												
 												<div class="col-sm-12 col-md-2">
 													
-													<div class="resume-list-btn">
+													<div class="academic-actions">
 													
-														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Modifier</a>
-									<a href="app/drop-academic.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Êtes-vous sûr de vouloir supprimer cette qualification ?')" class="btn btn-primary btn-sm btn-inverse">Supprimer</a>
+														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Modifier</a>
+									<a href="app/drop-academic.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Êtes-vous sûr de vouloir supprimer ce diplôme ?')" class="btn btn-danger btn-sm">Supprimer</a>
 									<div id="edit<?php echo $row['id']; ?>" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">
@@ -442,121 +474,6 @@ $page = 1;
 										
 									</div>
 									
-									<div class="mt-30">
-									
-										<a data-toggle="modal" href="#QualifModal" class="btn btn-primary btn-lg">Ajouter</a>
-										
-									</div>
-									<div id="QualifModal" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
-			
-				                    <div class="modal-header">
-					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                 <h4 class="modal-title text-center">Ajouter des qualifications académiques</h4>
-				                    </div>
-				
-				                    <div class="modal-body">
-									<form action="app/add-academic-qualification.php" method="POST" autocomplete="off" enctype="multipart/form-data">
-					                <div class="row gap-20">
-									<div class="col-sm-12 col-md-12">
-												
-									<div class="form-group">
-									<label>Niveau d'éducation</label>
-									<select name="level" required class="selectpicker show-tick form-control" data-live-search="false">
-									<option disabled value="">Sélectionner</option>
-									<option value="Diplôme avancé">Diplôme avancé</option>
-                                    <option value="Niveau avancé (ACSE)">Niveau avancé (ACSE)</option>
-                                    <option value="Certificat">Certificat</option>
-                                    <option value="Diplôme">Diplôme</option>
-                                    <option value="Diplôme de maîtrise">Diplôme de maîtrise</option>
-                                    <option value="Niveau ordinaire (CSE)">Niveau ordinaire (CSE)</option>
-                                    <option value="PHd">PHd</option>
-                                    <option value="Diplôme d'études supérieures">Diplôme d'études supérieures</option>
-						         
-									</select>
-									</div>
-													
-									</div>
-									
-									<div class="col-sm-6 col-md-6">
-												
-									<div class="form-group">
-									<label>Pays</label>
-									<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-									<option disabled value="">Sélectionner</option>
-						            <?php
-									$stmtb = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
-                                    $stmtb->execute();
-                                    $resultb = $stmtb->fetchAll();
-
-                                    foreach($resultb as $rowb)
-                                    {
-										?>
-										<option <?php if ($ccountry == $rowb['country_name']) { print ' selected '; } ?> value="<?php echo $rowb['country_name']; ?>"><?php echo $rowb['country_name']; ?></option>
-										<?php
-		
-	                                }
-
-                                   
-									 ?>
-									</select>
-									</div>
-													
-									</div>
-
-						
-						            <div class="col-sm-6 col-md-6">
-				
-							        <div class="form-group"> 
-								    <label>Nom de l'institution</label>
-								    <input class="form-control" placeholder="Entrez le nom de l'institution" type="text" name="institution" required> 
-							        </div>
-						
-						             </div>
-						
-						             <div class="col-sm-12 col-md-6">
-						
-							        <div class="form-group"> 
-								    <label>Titre du cours</label>
-								    <input class="form-control" placeholder="Entrez le nom du cours" type="text" name="course" required> 
-							        </div>
-						
-						           </div>
-								   
-								   	<div class="col-sm-12 col-md-6">
-						
-							        <div class="form-group"> 
-								    <label>Période</label>
-								    <input class="form-control" placeholder="Ex: 2015 à 2016" type="text" name="timeframe" required> 
-							        </div>
-						
-						           </div>
-
-								   	<div class="col-sm-12 col-md-6">
-						
-							        <div class="form-group"> 
-								    <label>Certificat <i>(Laissez vide si vous ne voulez pas mettre à jour)</i></label>
-								    <input class="form-control" accept="application/pdf" type="file" name="certificate"> 
-							        </div>
-						
-						           </div>
-								   	<div class="col-sm-12 col-md-6">
-						
-							        <div class="form-group"> 
-								    <label>Transcription <i>(Laissez vide si vous ne voulez pas mettre à jour)</i></label>
-								    <input class="form-control" accept="application/pdf" type="file" name="transcript"> 
-							        </div>
-						
-						           </div>
-						
-					               </div>
-				                   </div>
-				
-				                   <div class="modal-footer text-center">
-				 	               <button type="submit" class="btn btn-primary">Soumettre</button>
-					               <button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
-				                   </div>
-				                   </form>
-			                       </div>
 									
 								</div>
 

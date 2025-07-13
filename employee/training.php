@@ -68,7 +68,8 @@ $page = 1;
 
 
 	<link href="../css/style.css" rel="stylesheet">
-
+	<link href="../css/employee-profile-cv.css" rel="stylesheet">
+	<link href="../css/employee-sidebar.css" rel="stylesheet">
 	
 </head>
   <style>
@@ -85,64 +86,7 @@ $page = 1;
 
 	<div class="container-wrapper">
 
-		<header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="../"><img src="../images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="../">Accueil</a>
-								
-							</li>
-							
-							<li>
-								<a href="../job-list.php">Liste des Offres</a>
-
-							</li>
-							
-							<li>
-								<a href="../employers.php">Employeurs</a>
-							</li>
-							
-							<li>
-								<a href="../employees.php">Employes</a>
-							</li>
-							
-							<li>
-								<a href="../contact.php">Contactez-nous</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a href="../logout.php">deconnexion</a></li>
-							<li><a href="./">Profil</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-		</header>
+		<?php include '../components/header.php'; ?>
 
 		<div class="main-wrapper">
 
@@ -193,44 +137,46 @@ $page = 1;
 									
 									<div class="admin-user-action text-center">
 									
-										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">Voir mon CV</a>
+										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">
+											<i class="fa fa-file-text-o"></i> Voir mon CV
+										</a>
 										
 									</div>
 									
 									<ul class="admin-user-menu clearfix">
 										<li>
-											<a href="./"><i class="fa fa-user"></i> Profil</a>
+											<a href="./"><i class="fa fa-user"></i> Mon Profil</a>
 										</li>
 										<li class="">
-										<a href="change-password.php"><i class="fa fa-key"></i> Changer le mot de passe</a>
+										<a href="change-password.php"><i class="fa fa-key"></i> Changer le Mot de Passe</a>
 										</li>
 										<li  >
-											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications professionnelles</a>
+											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications Professionnelles</a>
 										</li>
 										<li>
-											<a href="language.php"><i class="fa fa-language"></i> Competences linguistiques</a>
+											<a href="language.php"><i class="fa fa-language"></i> Compétences Linguistiques</a>
 										</li>
 										<li class="active">
 											<a href="training.php"><i class="fa fa-gears"></i> Formations & Ateliers</a>
 										</li>
 
 										<li>
-											<a href="referees.php"><i class="fa fa-users"></i> Referents</a>
+											<a href="referees.php"><i class="fa fa-users"></i> Références</a>
 										</li>
 										<li>
-											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplomes academiques</a>
+											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplômes Académiques</a>
 										</li>
 										<li>
-											<a href="experience.php"><i class="fa fa-briefcase"></i> Experience professionnelle</a>
+											<a href="experience.php"><i class="fa fa-briefcase"></i> Expérience Professionnelle</a>
 										</li>
 										<li>
-											<a href="attachments.php"><i class="fa fa-folder-open"></i> Autres pieces jointes</a>
+											<a href="attachments.php"><i class="fa fa-folder-open"></i> Pièces Jointes</a>
 										</li>
 										<li>
-											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres postulees</a>
+											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres Postulées</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Deconnexion</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i> Déconnexion</a>
 										</li>
 									</ul>
 									
@@ -244,8 +190,8 @@ $page = 1;
 
 									<div class="admin-section-title">
 									
-										<h2>Formations & Ateliers</h2>
-					
+										<h2><i class="fa fa-gears"></i> Formations & Ateliers</h2>
+										<p><i class="fa fa-info-circle"></i> Gérez vos formations et certifications professionnelles</p>
 										
 									</div>
 									
@@ -518,99 +464,7 @@ $page = 1;
 			
 			</div>
 
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">A propos</h5>
-											<p> est un portail d'emploi, systeme de gestion d'emplois en ligne developpe par Groupe 65 pour son projet en fevrier 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Liens rapides</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Accueil</a></li>
-											<li><a href="../job-list.php">Liste des Offres</a></li>
-											<li><a href="../employers.php">Employeurs</a></li>
-											<li><a href="../employees.php">Employes</a></li>
-											<li><a href="../contact.php">Contactez-nous</a></li>
-											<li><a href="#">Aller en haut</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title"> Contact</h5>
-								
-								<p>Adresse : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Telephone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> BwireSoft</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developpe par Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include '../components/footer.php'; ?>
 			
 		</div>
 

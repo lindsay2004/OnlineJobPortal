@@ -82,6 +82,7 @@ $title = "Liste des Offres";
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/job-list-enhancements.css" rel="stylesheet">
 
 
 	
@@ -104,13 +105,13 @@ $title = "Liste des Offres";
 					<form action="job-list.php" method="GET" autocomplete="off">
 					
 						<div class="second-search-result-inner">
-							<span class="labeling">Search a job</span>
+							<span class="labeling">Rechercher Un Emploi</span>
 							<div class="row">
 							
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
 										<select class="form-control" name="category" required/>
-										<option value="">-Select category-</option>
+										<option value="">-Sélectionner Une Catégorie-</option>
 										 <?php
 										 require 'constants/db_config.php';
 										 try {
@@ -146,7 +147,7 @@ $title = "Liste des Offres";
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
 										<select class="form-control" name="country" required/>
-										<option value="">-Select country-</option>
+										<option value="">-Sélectionner Un Pays-</option>
 										 <?php
 										 require 'constants/db_config.php';
 										 try {
@@ -180,7 +181,7 @@ $title = "Liste des Offres";
 								</div>
 								
 								<div class="col-xss-12 col-xs-6 col-sm-4 col-md-2">
-									<button name="search" value="✓" type="submit" class="btn btn-block">Search</button>
+									<button name="search" value="✓" type="submit" class="btn btn-block">Rechercher</button>
 								</div>
 							
 							</div>
@@ -291,7 +292,7 @@ $title = "Liste des Offres";
 													
 														<h4 class="heading"><?php echo $row['title']; ?></h4>
 														<div class="meta-div clearfix mb-25">
-															<span>at <a href="company.php?ref=<?php echo "$compid"; ?>"><?php echo "$thecompname"; ?></a></span>
+															<span>Chez <a href="company.php?ref=<?php echo "$compid"; ?>"><?php echo "$thecompname"; ?></a></span>
 															<?php echo "$sta"; ?>
 														</div>
 														
@@ -301,19 +302,19 @@ $title = "Liste des Offres";
 													<div class="col-sm-5 col-md-4">
 														<ul class="meta-list">
 															<li>
-																<span>Country:</span>
+																<span>Pays :</span>
 																<?php echo $row['country']; ?>
 															</li>
 															<li>
-																<span>City:</span>
+																<span>Ville :</span>
 																<?php echo $row['city']; ?>
 															</li>
 															<li>
-																<span>Experience:</span>
+																<span>Expérience :</span>
 																<?php echo $row['experience']; ?>
 															</li>
 															<li>
-																<span>Deadline: </span>
+																<span>Date Limite : </span>
 																<?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
 															</li>
 														</ul>
@@ -335,7 +336,7 @@ $title = "Liste des Offres";
 													</div>
 													
 													<div class="col-sm-5 col-md-4">
-														<a target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="btn btn-primary">View This Job</a>
+														<a target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="btn btn-primary">Voir Cette Offre</a>
 													</div>
 													
 												</div>

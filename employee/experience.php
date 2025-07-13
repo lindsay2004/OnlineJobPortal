@@ -68,7 +68,8 @@ $page = 1;
 
 
 	<link href="../css/style.css" rel="stylesheet">
-
+	<link href="../css/employee-final.css" rel="stylesheet">
+	<link href="../css/employee-sidebar.css" rel="stylesheet">
 	
 </head>
   <style>
@@ -136,44 +137,46 @@ $page = 1;
 									
 									<div class="admin-user-action text-center">
 									
-										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">Voir mon CV</a>
+										<a target="_blank" href="my_cv" class="btn btn-primary btn-sm btn-inverse">
+											<i class="fa fa-file-text-o"></i> Voir mon CV
+										</a>
 										
 									</div>
 									
 									<ul class="admin-user-menu clearfix">
 										<li>
-											<a href="./"><i class="fa fa-user"></i> Profil</a>
+											<a href="./"><i class="fa fa-user"></i> Mon Profil</a>
 										</li>
 										<li class="">
-										<a href="change-password.php"><i class="fa fa-key"></i> Changer le mot de passe</a>
+										<a href="change-password.php"><i class="fa fa-key"></i> Changer le Mot de Passe</a>
 										</li>
 										<li  >
-											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications professionnelles</a>
+											<a href="qualifications.php"><i class="fa fa-trophy"></i> Qualifications Professionnelles</a>
 										</li>
 										<li>
-											<a href="language.php"><i class="fa fa-language"></i> Competences linguistiques</a>
+											<a href="language.php"><i class="fa fa-language"></i> Compétences Linguistiques</a>
 										</li>
 										<li >
 											<a href="training.php"><i class="fa fa-gears"></i> Formations & Ateliers</a>
 										</li>
 
 										<li>
-											<a href="referees.php"><i class="fa fa-users"></i> Referents</a>
+											<a href="referees.php"><i class="fa fa-users"></i> Références</a>
 										</li>
 										<li>
-											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplomes academiques</a>
+											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Diplômes Académiques</a>
 										</li>
 										<li class="active">
-											<a href="experience.php"><i class="fa fa-briefcase"></i> Experience professionnelle</a>
+											<a href="experience.php"><i class="fa fa-briefcase"></i> Expérience Professionnelle</a>
 										</li>
 										<li>
-											<a href="attachments.php"><i class="fa fa-folder-open"></i> Autres pieces jointes</a>
+											<a href="attachments.php"><i class="fa fa-folder-open"></i> Pièces Jointes</a>
 										</li>
 										<li>
-											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres postulees</a>
+											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Offres Postulées</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Deconnexion</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i> Déconnexion</a>
 										</li>
 									</ul>
 									
@@ -187,9 +190,67 @@ $page = 1;
 
 									<div class="admin-section-title">
 									
-										<h2>Experience professionnelle</h2>
-					
+										<h2><i class="fa fa-briefcase"></i> Expérience Professionnelle</h2>
+										<p><i class="fa fa-info-circle"></i> Gérez vos expériences professionnelles</p>
 										
+									</div>
+									
+									<!-- Formulaire d'ajout d'expérience professionnelle -->
+									<div class="experience-form-wrapper">
+										<h4><i class="fa fa-plus-circle"></i> Ajouter une nouvelle expérience</h4>
+										<form action="app/add-experience.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+											<div class="row gap-20">
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-briefcase"></i> Titre du poste</label>
+														<input class="form-control" placeholder="Ex: Développeur Web Senior" type="text" name="title" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-building"></i> Nom de l'entreprise</label>
+														<input class="form-control" placeholder="Ex: Google Inc." type="text" name="institution" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-user"></i> Superviseur</label>
+														<input class="form-control" placeholder="Ex: Jean Dupont" type="text" name="supervisor" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-phone"></i> Téléphone du superviseur</label>
+														<input class="form-control" placeholder="Ex: +33 1 23 45 67 89" type="text" name="supervisor_phone" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-calendar"></i> Date de début</label>
+														<input class="form-control" placeholder="Ex: 01/01/2020" type="text" name="start_date" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"> 
+														<label><i class="fa fa-calendar"></i> Date de fin</label>
+														<input class="form-control" placeholder="Ex: 31/12/2023 (ou 'Présent')" type="text" name="end_date" required> 
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-12">
+													<div class="form-group"> 
+														<label><i class="fa fa-tasks"></i> Missions et responsabilités</label>
+														<textarea class="form-control" placeholder="Décrivez vos missions, responsabilités, réalisations..." name="duties" required></textarea>
+													</div>
+												</div>
+											</div>
+											<div class="row gap-20">
+												<div class="col-sm-12">
+													<button type="submit" class="btn btn-primary">
+														<i class="fa fa-save"></i> Ajouter l'expérience
+													</button>
+												</div>
+											</div>
+										</form>
 									</div>
 									
 									<div class="resume-list-wrapper">
@@ -215,7 +276,7 @@ $page = 1;
 									 $expid = $row['id'];
 									 
 									 ?>
-									 									<div class="resume-list-item">
+									 									<div class="experience-item">
 										
 											<div class="row">
 											
@@ -223,30 +284,12 @@ $page = 1;
 												
 													<div class="content">
 													
-														<a>
-
-															<div class="image">
-															<?php 
-										                    if ($myavatar == null) {
-									                    	print '<center><img src="../images/default.jpg" title="'.$myfname.'" alt="image" width="100" height="100" /></center>';
-										                    }else{
-										                    echo '<center><img alt="image" title="'.$myfname.'" width="100" height="100" src="data:image/jpeg;base64,'.base64_encode($myavatar).'"/></center>';	
-										                    }
-										                      ?>
-															</div>
-															
-															<h4><?php echo "$title"; ?></h4>
-															
-															<div class="row">
-																<div class="col-sm-12 col-md-7">
-																	<i class="fa fa-building text-primary mr-5"></i><strong class="mr-10"><?php echo $row['institution']; ?></strong>
-																</div>
-																<div class="col-sm-12 col-md-5 mt-10-sm">
-																	<i class="fa fa-calendar  text-primary mr-5"></i> <?php echo "$start_date"; ?> <b>à</b> <?php echo "$end_date"; ?>
-																</div>
-															</div>
-
-														</a>
+														<div class="experience-title"><?php echo "$title"; ?></div>
+														<div class="experience-company"><?php echo $row['institution']; ?></div>
+														<div class="experience-date"><?php echo "$start_date"; ?> à <?php echo "$end_date"; ?></div>
+														<div class="experience-description">
+															<?php echo substr($duties, 0, 200); ?>...
+														</div>
 													
 													</div>
 												
@@ -254,10 +297,10 @@ $page = 1;
 												
 												<div class="col-sm-12 col-md-2">
 													
-													<div class="resume-list-btn">
+													<div class="experience-actions">
 													
-														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-primary btn-sm mb-5 mb-0-sm">Modifier</a>
-									<a href="app/drop-experience.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?')" class="btn btn-primary btn-sm btn-inverse">Supprimer</a>
+														<a data-toggle="modal" href="#edit<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Modifier</a>
+									<a href="app/drop-experience.php?id=<?php echo $row['id']; ?>" onclick = "return confirm('Êtes-vous sûr de vouloir supprimer cette expérience ?')" class="btn btn-danger btn-sm">Supprimer</a>
 									<div id="edit<?php echo $row['id']; ?>" class="modal fade login-box-wrapper" tabindex="-1" data-width="550" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			
 				                    <div class="modal-header">

@@ -98,6 +98,7 @@ $job_title = $row['title'];
 	<link rel="stylesheet" href="../icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="../css/style.css" rel="stylesheet">
+	<link href="../css/employer-common.css" rel="stylesheet">
 
 	
 </head>
@@ -118,15 +119,15 @@ $job_title = $row['title'];
 
 		<?php include '../components/header.php'; ?>
 
-		<div class="main-wrapper">
+		<div class="main-wrapper employer-common-wrapper">
 
 			<div class="breadcrumb-wrapper">
 			
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="./">Accueil</a></li>
-						<li><span>Candidats pour le poste <?php echo "$job_title"; ?></</span></li>
+						<li><a href="./"><i class="fa fa-home"></i> Accueil</a></li>
+						<li><span><i class="fa fa-users"></i> Candidats pour le poste "<?php echo "$job_title"; ?>"</span></li>
 					</ol>
 					
 				</div>
@@ -140,7 +141,7 @@ $job_title = $row['title'];
 					<div class="sorting-wrappper">
 			
 						<div class="sorting-header">
-							<h3 class="sorting-title">Candidats pour le poste <?php echo "$job_title"; ?></</h3>
+							<h3 class="sorting-title"><i class="fa fa-users"></i> Candidats pour le poste "<?php echo "$job_title"; ?>"</h3>
 						</div>
 						
 		
@@ -185,13 +186,13 @@ $job_title = $row['title'];
 											
 												<div class="col-xs-6 col-sm-6">
 													<div class="text-left">
-														<button class="btn"><i class="icon-heart"></i></button> 
+														<button class="btn" title="Ajouter aux favoris"><i class="fa fa-heart"></i></button> 
 													</div>
 												</div>
 												
 												<div class="col-xs-6 col-sm-6">
 													<div class="text-right">
-														<a class="btn text-right" href="employee-detail.html"><i class="icon-action-redo"></i></a> 
+														<a class="btn text-right" href="../employee-detail.php?empid=<?php echo $rowb['member_no']; ?>" title="Voir le profil complet"><i class="fa fa-eye"></i></a> 
 													</div>
 												</div>
 												
@@ -219,10 +220,10 @@ $job_title = $row['title'];
 												<h4><?php echo $rowb['first_name'] ?> <?php echo $rowb['last_name'] ?></h4>
 												<p class="location"><i class="fa fa-map-marker"></i> <?php echo $rowb['country'] ?></p>
 												
-												<h6 class="text-primary">Éducation : <?php echo $rowb['education'] ?></h6>
+												<h6 class="text-primary"><i class="fa fa-graduation-cap"></i> <?php echo $rowb['education'] ?></h6>
 												
-                                                <h6 class="text-primary"><?php echo $rowb['title'] ?></h6>
-												<?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
+                                                <h6 class="text-primary"><i class="fa fa-briefcase"></i> <?php echo $rowb['title'] ?></h6>
+												<p class="application-date"><i class="fa fa-calendar"></i> Candidature du <?php echo "$post_date"; ?> <?php echo "$post_month"; ?> <?php echo "$post_year"; ?></p>
 												
 											</div>
 										

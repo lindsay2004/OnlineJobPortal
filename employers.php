@@ -62,6 +62,7 @@ $page = 1;
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/employee-employers-enhancements.css" rel="stylesheet">
 
 	
 </head>

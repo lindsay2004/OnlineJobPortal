@@ -43,6 +43,7 @@ include 'constants/check-login.php';
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/login-enhancements.css" rel="stylesheet">
  <script type="text/javascript">
    function update(str)
    {
@@ -90,98 +91,7 @@ include 'constants/check-login.php';
 <body class="not-transparent-header">
 
 	<div class="container-wrapper">
-
-
-		<header id="header">
-
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="./"><img src="images/logo.png" alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a href="./">Accueil</a>
-								
-							</li>
-							
-							<li>
-								<a href="job-list.php">Liste des Offres</a>
-
-							</li>
-							
-							<li>
-								<a href="employers.php">Employeurs</a>
-							</li>
-							
-							<li>
-								<a href="employees.php">Employes</a>
-							</li>
-							
-							<li>
-								<a href="contact.php">Contactez-nous</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div class="nav-mini-wrapper">
-						<ul class="nav-mini sign-in">
-							<li><a  href="login.php">connexion</a></li>
-							<li><a data-toggle="modal" href="#registerModal">inscription</a></li>
-						</ul>
-					</div>
-				
-				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-	
-			<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
-			
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title text-center">Creez votre compte gratuitement</h4>
-				</div>
-				
-				<div class="modal-body">
-				
-					<div class="row gap-20">
-					
-						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employeur</a>
-						</div>
-						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">S'inscrire comme Employe</a>
-						</div>
-
-					</div>
-				
-				</div>
-				
-				<div class="modal-footer text-center">
-					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
-				</div>
-				
-			</div>
-
-
-
-			
-		</header>
-
+   		<?php include 'components/header.php'; ?>
 
 		<div class="main-wrapper">
 
@@ -192,7 +102,7 @@ include 'constants/check-login.php';
 				
 					<ol class="breadcrumb-list">
 						<li><a href="./">Accueil</a></li>
-						<li><span>Acceder a votre compte</span></li>
+						<li><span>Accéder À Votre Compte</span></li>
 					</ol>
 					
 				</div>
@@ -215,10 +125,10 @@ include 'constants/check-login.php';
 								include 'constants/check_reply.php';	
 								?>
                                 <form name="frm" action="app/auth.php" method="POST" autocomplete="off">
-                                <div class="login-box-wrapper">
+                                <div class="login-box-wrapper shadow-enhanced">
 							
                                 <div class="modal-header">
-                                <h4 class="modal-title text-center">Acceder a votre compte</h4>
+                                <h4 class="modal-title text-center">Accéder À Votre Compte</h4>
                                 </div>
 
                                 <div class="modal-body">
@@ -230,7 +140,7 @@ include 'constants/check-login.php';
 
                                 <div class="form-group"> 
                                 <label>Adresse Email</label>
-                                <input class="form-control" placeholder="Entrez votre adresse email" name="email" required type="text"> 
+                                <input class="form-control" placeholder="Entrez Votre Adresse Email" name="email" required type="text"> 
                                 </div>
 												
                                  </div>
@@ -238,8 +148,8 @@ include 'constants/check-login.php';
                                 <div class="col-sm-12 col-md-12">
 												
                                 <div class="form-group"> 
-                                <label>Mot de passe</label>
-                                <input class="form-control" placeholder="Entrez votre mot de passe" name="password" required type="password"> 
+                                <label>Mot De Passe</label>
+                                <input class="form-control" placeholder="Entrez Votre Mot De Passe" name="password" required type="password"> 
                                 </div>
 												
                                 </div>
@@ -248,7 +158,7 @@ include 'constants/check-login.php';
 						
 					          	<div class="col-sm-12 col-md-12">
 							    <div class="login-box-link-action">
-								<a data-toggle="modal" onclick = "reset_text()" href="#forgotPasswordModal">Mot de passe oublié?</a> 
+								<a data-toggle="modal" onclick = "reset_text()" href="#forgotPasswordModal">Mot De Passe Oublié ?</a> 
 							    </div>
 						      </div>	
 
@@ -260,7 +170,7 @@ include 'constants/check-login.php';
 </div>
 
 <div class="modal-footer text-center">
-<button type="submit" class="btn btn-primary">Login</button>
+<button type="submit" class="btn btn-primary">Se Connecter</button>
 </div>
 										
 </div>
@@ -270,22 +180,22 @@ include 'constants/check-login.php';
 			
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title text-center">Restore your forgotten password</h4>
+					<h4 class="modal-title text-center">Récupérer Votre Mot De Passe Oublié</h4>
 				</div>
 
 				<div class="modal-body">
 					<div class="row gap-20">
 						
 						<div class="col-sm-12 col-md-12">
-							<p class="mb-20">Enter the email address associated to your account, we will send you the link to reset your password</p>
+							<p class="mb-20">Entrez L'Adresse Email Associée À Votre Compte, Nous Vous Enverrons Le Lien Pour Réinitialiser Votre Mot De Passe</p>
 						</div>
 						
 						<div class="col-sm-12 col-md-12">
 				
 							<div class="form-group"> 
 
-								<label>Email Address</label>
-								<input id="mymail" autocomplete="off" name="email" class="form-control" placeholder="Enter your email address" type="email" required> 
+								<label>Adresse Email</label>
+								<input id="mymail" autocomplete="off" name="email" class="form-control" placeholder="Entrez Votre Adresse Email" type="email" required> 
 							</div>
 						
 						</div>
@@ -294,7 +204,7 @@ include 'constants/check-login.php';
 						
 						<div class="col-sm-12 col-md-12">
 							<div class="login-box-box-action">
-								Return to <a data-dismiss="modal">Log-in</a>
+								Retour À <a data-dismiss="modal">La Connexion</a>
 								<p id="data"></p>
 							</div>
 							
@@ -304,8 +214,8 @@ include 'constants/check-login.php';
 				</div>
 				
 				<div class="modal-footer text-center">
-					<button  onclick="update(mymail.value)" type="submit" class="btn btn-primary">Restore</button>
-					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Close</button>
+					<button  onclick="update(mymail.value)" type="submit" class="btn btn-primary">Récupérer</button>
+					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Fermer</button>
 				</div>
 		
 			</div>
@@ -321,99 +231,7 @@ include 'constants/check-login.php';
 				</div>
 			
 			</div>
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">About </h5>
-											<p> is a job portal, online job management system Developed by Groupe 65 for his project in february 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Quick Links</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="./">Accueil</a></li>
-											<li><a href="job-list.php">Liste des Offres</a></li>
-											<li><a href="employers.php">Employeurs</a></li>
-											<li><a href="employees.php">Employes</a></li>
-											<li><a href="contact.php">Contactez-nous</a></li>
-											<li><a href="#">Go to top</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title"> Contact</h5>
-								
-								<p>Address : Takoradi, School Junction PO.BOX AX40</p>
-								<p>Email : <a href="mailto:nightingale.nath2@gmail.com">nightingale.nath2@gmail.com</a></p>
-								<p>Phone : <a href="tel:+233546607474">+233 546 607 474</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> Nightingale Vision Software</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Developed by Groupe 65</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
+			<?php include 'components/footer.php'; ?>
 			
 		</div>
 

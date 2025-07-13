@@ -1,0 +1,625 @@
+/* ===== CSS pour les fichiers de profil et CV - Employee ===== */
+
+/* Améliorations générales pour qualifications.php, language.php, training.php */
+
+/* Amélioration du titre de section */
+.admin-section-title h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.admin-section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+.admin-section-title p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Amélioration du contenu principal */
+.admin-content-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+/* Amélioration du breadcrumb */
+.breadcrumb-wrapper {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb-list {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-list li {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.breadcrumb-list li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-list li a:hover {
+    color: #f39c12;
+    transform: translateX(5px);
+}
+
+.breadcrumb-list li span {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+/* ===== SPÉCIFIQUE POUR QUALIFICATIONS.PHP ===== */
+
+/* Amélioration de la liste des qualifications */
+.resume-list-wrapper {
+    margin-top: 2rem;
+}
+
+.qualification-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #ecf0f1;
+}
+
+.qualification-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.qualification-item .content {
+    padding: 1.5rem;
+}
+
+.qualification-item .qualification-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.qualification-item .qualification-institution {
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.qualification-item .qualification-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.qualification-item .qualification-description {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.qualification-item .qualification-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.qualification-item .qualification-actions a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.qualification-item .qualification-actions .btn-edit {
+    background: #f39c12;
+    color: white;
+}
+
+.qualification-item .qualification-actions .btn-edit:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+.qualification-item .qualification-actions .btn-remove {
+    background: #e74c3c;
+    color: white;
+}
+
+.qualification-item .qualification-actions .btn-remove:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Amélioration du formulaire d'ajout de qualification */
+.qualification-form-wrapper {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.qualification-form-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.qualification-form-wrapper .form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.qualification-form-wrapper .form-control {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.qualification-form-wrapper .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.qualification-form-wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ===== SPÉCIFIQUE POUR LANGUAGE.PHP ===== */
+
+/* Amélioration de la liste des langues */
+.language-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #ecf0f1;
+}
+
+.language-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.language-item .content {
+    padding: 1.5rem;
+}
+
+.language-item .language-name {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.language-item .language-level {
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.language-item .language-skills {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.language-item .language-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.language-item .language-actions a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.language-item .language-actions .btn-edit {
+    background: #f39c12;
+    color: white;
+}
+
+.language-item .language-actions .btn-edit:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+.language-item .language-actions .btn-remove {
+    background: #e74c3c;
+    color: white;
+}
+
+.language-item .language-actions .btn-remove:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Amélioration du formulaire d'ajout de langue */
+.language-form-wrapper {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.language-form-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.language-form-wrapper .form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.language-form-wrapper .form-control {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.language-form-wrapper .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+/* ===== SPÉCIFIQUE POUR TRAINING.PHP ===== */
+
+/* Amélioration de la liste des formations */
+.training-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #ecf0f1;
+}
+
+.training-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.training-item .content {
+    padding: 1.5rem;
+}
+
+.training-item .training-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.training-item .training-institution {
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.training-item .training-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.training-item .training-description {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.training-item .training-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.training-item .training-actions a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.training-item .training-actions .btn-edit {
+    background: #f39c12;
+    color: white;
+}
+
+.training-item .training-actions .btn-edit:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+.training-item .training-actions .btn-remove {
+    background: #e74c3c;
+    color: white;
+}
+
+.training-item .training-actions .btn-remove:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Amélioration du formulaire d'ajout de formation */
+.training-form-wrapper {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.training-form-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.training-form-wrapper .form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.training-form-wrapper .form-control {
+    border-radius: 8px;
+    border: 2px solid #ecf0f1;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.training-form-wrapper .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.training-form-wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Amélioration des boutons */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.8rem 2rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: #3498db;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.btn-success {
+    background: #27ae60;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.btn-success:hover {
+    background: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.btn-danger {
+    background: #e74c3c;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.btn-warning {
+    background: #f39c12;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.btn-warning:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .admin-content-wrapper {
+        padding: 1rem;
+    }
+    
+    .qualification-item .content,
+    .language-item .content,
+    .training-item .content {
+        padding: 1rem;
+    }
+    
+    .qualification-form-wrapper,
+    .language-form-wrapper,
+    .training-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .admin-section-title h2 {
+        font-size: 1.5rem;
+    }
+    
+    .qualification-item .qualification-actions a,
+    .language-item .language-actions a,
+    .training-item .training-actions a {
+        display: block;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-container-wrapper {
+        margin: 1rem 0;
+    }
+    
+    .qualification-form-wrapper,
+    .language-form-wrapper,
+    .training-form-wrapper {
+        padding: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-content-wrapper {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.qualification-item,
+.language-item,
+.training-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.qualification-item:nth-child(1) { animation-delay: 0.1s; }
+.qualification-item:nth-child(2) { animation-delay: 0.2s; }
+.qualification-item:nth-child(3) { animation-delay: 0.3s; }
+.qualification-item:nth-child(4) { animation-delay: 0.4s; }
+.qualification-item:nth-child(5) { animation-delay: 0.5s; }
+
+.language-item:nth-child(1) { animation-delay: 0.1s; }
+.language-item:nth-child(2) { animation-delay: 0.2s; }
+.language-item:nth-child(3) { animation-delay: 0.3s; }
+.language-item:nth-child(4) { animation-delay: 0.4s; }
+.language-item:nth-child(5) { animation-delay: 0.5s; }
+
+.training-item:nth-child(1) { animation-delay: 0.1s; }
+.training-item:nth-child(2) { animation-delay: 0.2s; }
+.training-item:nth-child(3) { animation-delay: 0.3s; }
+.training-item:nth-child(4) { animation-delay: 0.4s; }
+.training-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Améliorations pour l'accessibilité */
+.form-control:focus,
+.btn:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* États de chargement */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Amélioration des messages d'erreur */
+.alert {
+    border-radius: 8px;
+    border: none;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+} 
